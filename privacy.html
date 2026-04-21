@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Mascot AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('mascot-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <div class="brand-mark"><img src="assets/mascot-bear.png" alt="Mascot AI bear" /></div>
+          <span class="brand-name">Mascot AI</span>
+        </a>
+        <nav class="nav">
+          <a class="nav-link" href="https://dev.mascot-ai.com">Beta Login</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="legal-page">
+      <div class="legal-container">
+        <div class="legal-header">
+          <h1>Privacy Policy (Beta)</h1>
+          <a class="legal-back" href="index.html">← Back</a>
+        </div>
+
+        <div class="legal-body">
+          <p class="legal-meta"><strong>Last Updated:</strong> April 19, 2026</p>
+
+          <div class="legal-section">
+            <h2>Introduction</h2>
+            <p>Welcome to MascotAI. We are committed to protecting your privacy and being transparent about how we collect, use, and protect your personal information. This Privacy Policy explains our practices regarding data collection and usage while our platform is in beta.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>What Data We Collect</h2>
+            <p>We collect the following types of information:</p>
+            <ul>
+              <li><strong>Account Information:</strong> Email address, name, password (encrypted), and role (student, parent, counselor)</li>
+              <li><strong>Profile Information:</strong> Academic history (GPA, test scores, coursework), extracurricular activities, honors, hometown, graduation year, and college preferences</li>
+              <li><strong>Usage Data:</strong> Pages visited, features used, time spent on platform, and interactions with our services</li>
+              <li><strong>Communication Data:</strong> Messages between students, parents, and counselors</li>
+            </ul>
+          </div>
+
+          <div class="legal-section">
+            <h2>How We Use Your Data</h2>
+            <p>We use collected data for the following purposes:</p>
+            <ul>
+              <li><strong>Account Creation &amp; Authentication:</strong> To create and maintain your account</li>
+              <li><strong>University Matching:</strong> To recommend universities that fit your profile and preferences</li>
+              <li><strong>Counselor Connections:</strong> To facilitate connections between students and counselors</li>
+              <li><strong>Product Improvement:</strong> To improve features and user experience (anonymized data)</li>
+              <li><strong>Communication:</strong> To send important updates about your account or the service</li>
+            </ul>
+          </div>
+
+          <div class="legal-section">
+            <h2>AI-Powered Features</h2>
+            <div class="legal-info">
+              <p><strong>Use of AI Services:</strong> MascotAI uses third-party AI providers to power features including university matching, profile analysis, conversational chat, and content assistance. Your profile data and chat messages may be processed by these providers to deliver personalized recommendations and insights.</p>
+              <ul>
+                <li><strong>Anthropic Claude</strong> — conversational AI, essay coaching, and content generation. <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer" class="link">Anthropic Privacy Policy</a></li>
+                <li><strong>Google Gemini</strong> — AI-powered analysis and recommendations. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="link">Google Privacy Policy</a></li>
+              </ul>
+              <p>We do not use your data to train AI models, and we do not share personally identifiable information with AI providers beyond what is necessary to deliver our services.</p>
+            </div>
+          </div>
+
+          <div class="legal-section">
+            <h2>Data Security</h2>
+            <p>We take security seriously:</p>
+            <ul>
+              <li><strong>Encryption:</strong> Passwords are encrypted using industry-standard bcrypt hashing</li>
+              <li><strong>HTTPS:</strong> All data transmission is encrypted using SSL/TLS</li>
+              <li><strong>Access Control:</strong> Only authorized personnel can access user data</li>
+              <li><strong>MongoDB Security:</strong> Database is secured with authentication and network restrictions</li>
+            </ul>
+            <div class="legal-notice">
+              <p><strong>Beta Notice:</strong> While we implement security best practices, MascotAI is in beta. We recommend not submitting highly sensitive personal information during this testing phase.</p>
+            </div>
+          </div>
+
+          <div class="legal-section">
+            <h2>Who Can See Your Data</h2>
+            <p>Access to your data is limited based on your relationships:</p>
+            <ul>
+              <li><strong>You:</strong> Full access to all your profile information</li>
+              <li><strong>Your Counselors:</strong> Can view and edit your profile (with your permission)</li>
+              <li><strong>Your Parents:</strong> Can view your profile in read-only mode (if linked)</li>
+              <li><strong>Your Organization:</strong> Organization admins can see basic info of members</li>
+              <li><strong>MascotAI Team:</strong> Limited access for support and system maintenance only</li>
+            </ul>
+            <p><strong>We NEVER sell your personal data to third parties.</strong></p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Your Rights (GDPR &amp; CCPA)</h2>
+            <p>You have the following rights regarding your personal data:</p>
+            <ul>
+              <li><strong>Access:</strong> Request a copy of all data we have about you</li>
+              <li><strong>Correction:</strong> Update or correct your personal information</li>
+              <li><strong>Deletion:</strong> Request deletion of your account and all associated data</li>
+              <li><strong>Portability:</strong> Request your data in a machine-readable format</li>
+              <li><strong>Opt-Out:</strong> Unsubscribe from marketing emails</li>
+            </ul>
+            <p>To exercise any of these rights, email us at <a href="mailto:pranrosh@gmail.com" class="link">pranrosh@gmail.com</a>. We will respond within 30 days.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Cookies &amp; Tracking</h2>
+            <p>MascotAI currently uses minimal tracking:</p>
+            <ul>
+              <li><strong>Authentication Token:</strong> Stored in localStorage to keep you logged in</li>
+              <li><strong>Session Data:</strong> Basic session management for security</li>
+            </ul>
+            <p>We do not currently use third-party analytics or advertising cookies. If this changes, we will update this policy and notify users.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Children's Privacy (COPPA)</h2>
+            <p>MascotAI is intended for users aged <strong>13 and older</strong>. We comply with the Children's Online Privacy Protection Act (COPPA):</p>
+            <ul>
+              <li>We require age verification during registration</li>
+              <li>We do not knowingly collect data from children under 13</li>
+              <li>Parents can link to their student's account to monitor activity</li>
+              <li>If we discover a user is under 13, we will delete their account</li>
+            </ul>
+            <p>If you believe a child under 13 has created an account, please contact us immediately at <a href="mailto:pranrosh@gmail.com" class="link">pranrosh@gmail.com</a>.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Data Retention</h2>
+            <p><strong>During Beta:</strong> We retain your data for as long as your account is active. After account deletion, most data is permanently removed within 30 days.</p>
+            <div class="legal-notice">
+              <p><strong>Beta Notice:</strong> Data retention policies may change as we transition from beta to production. We will provide advance notice of any significant changes.</p>
+            </div>
+          </div>
+
+          <div class="legal-section">
+            <h2>Third-Party Services</h2>
+            <p>We integrate with the following third-party services:</p>
+            <ul>
+              <li><strong>Google OAuth:</strong> For optional login/registration (governed by Google's privacy policy)</li>
+              <li><strong>Anthropic Claude:</strong> For AI-powered features (data processing only, not training)</li>
+              <li><strong>Google Gemini:</strong> For AI-powered analysis and recommendations (data processing only, not training)</li>
+              <li><strong>MongoDB Atlas:</strong> Cloud database hosting with encryption and security</li>
+            </ul>
+            <p>Each third-party service has its own privacy policy. We recommend reviewing their policies if you have concerns about specific integrations.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you via email or through a prominent notice on the platform. The "Last Updated" date at the top of this policy reflects when changes were last made.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Contact Us</h2>
+            <p>Questions, concerns, or privacy requests? We're here to help:</p>
+            <div class="legal-contact-box">
+              <p><strong>Privacy Contact</strong></p>
+              <p>Email: <a href="mailto:pranrosh@gmail.com" class="link">pranrosh@gmail.com</a></p>
+              <p style="font-size:0.875rem; color: rgb(var(--color-text-muted)); margin-top: 6px;">We typically respond to privacy requests within 30 days.</p>
+            </div>
+          </div>
+
+          <hr class="legal-divider" />
+          <p class="legal-footer-note">By using MascotAI, you acknowledge that you have read and understood this Privacy Policy and agree to the collection, use, and disclosure of your information as described herein.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Mascot AI. All rights reserved.</div>
+        <div class="footer-links">
+          <a class="link" href="privacy.html">Privacy</a>
+          <a class="link" href="terms.html">Terms</a>
+          <a class="link" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var html = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      btn.addEventListener('click', function () {
+        var isDark = html.classList.toggle('dark');
+        localStorage.setItem('mascot-theme', isDark ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>
