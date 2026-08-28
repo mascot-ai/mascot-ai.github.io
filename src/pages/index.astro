@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureBlock from '../components/FeatureBlock.astro';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import ShotPlaceholder from '../components/ShotPlaceholder.astro';
+import VoiceRecreation from '../components/VoiceRecreation.astro';
+import RadarChart from '../components/RadarChart.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES } from '../lib/site.js';
+---
+
+<BaseLayout path="/">
+  <!-- 2 · Hero -->
+  <section class="relative overflow-hidden">
+    <div
+      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgb(var(--color-brand-primary)/0.12),transparent)]"
+    >
+    </div>
+    <div class="container-x grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-border-primary bg-bg-card px-3 py-1 text-xs font-medium text-text-secondary"
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-brand-secondary"></span> Now in private beta
+        </span>
+        <h1 class="mt-5 text-4xl leading-[1.08] sm:text-5xl md:text-6xl">
+          Talk through college.<br />Mascot handles the rest.
+        </h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-text-tertiary">
+          Mascot is a voice-first counselor for high schoolers. Talk through your goals, get a
+          personalized college list, and write stronger essays &mdash; in one app.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href={BETA_FORM_URL} target="_blank" rel="noopener" class="btn-primary">Request beta access</a>
+          <a href={APP_LOGIN_URL} class="btn-ghost">Log in</a>
+        </div>
+      </div>
+      <div data-anim>
+        <VoiceRecreation />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Trust strip -->
+  <section class="border-y border-border-primary bg-bg-secondary">
+    <div
+      class="container-x grid gap-4 py-6 text-center text-sm text-text-secondary sm:grid-cols-2 lg:grid-cols-4"
+      data-anim-group
+    >
+      <p data-anim>
+        <span class="font-headline text-lg font-bold text-text-primary" data-count="4800" data-suffix="+"
+          >{TOTAL_UNIVERSITIES}</span
+        > universities
+      </p>
+      <p data-anim>Voice, matching &amp; essays in one place</p>
+      <p data-anim>Built with 20 students and 2 school counselors</p>
+      <p data-anim>Students &amp; parents &mdash; parent accounts free</p>
+    </div>
+  </section>
+
+  <!-- 4 · Talk to Mascot -->
+  <FeatureBlock
+    id="talk"
+    eyebrow="Talk to Mascot"
+    title="A counselor you can actually talk to"
+    body="Real voice conversations, not forms. Mascot asks about your interests, activities, and goals, remembers every session, and turns it into a story that admissions officers care about."
+    bullets={['Natural voice chat', 'Resumes where you left off', 'Builds your story topic by topic']}
+  >
+    <VoiceRecreation
+      lines={[
+        { who: 'mascot', text: 'Last time you mentioned debate. How did that go this month?' },
+        { who: 'you', text: 'We won regionals and I started coaching the novice team.' },
+        { who: 'mascot', text: "Coaching is a leadership signal. Let's add it to your story." },
+      ]}
+    />
+  </FeatureBlock>
+
+  <!-- 5 · AI Matching -->
+  <FeatureBlock
+    id="matching"
+    reverse
+    eyebrow="AI Matching"
+    title="A college list built around you"
+    body="Mascot reads your whole profile and ranks schools in two passes &mdash; a fast filter, then a deep review &mdash; so every match comes with a clear reason it fits. Regenerate whenever your profile changes."
+    bullets={['Target / reach / likely balance', 'Per-school fit analysis', 'On-demand match for any school']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/matches">
+      <img src="/screenshots/beta-dashboard.png" alt="Mascot AI matches and dashboard" width="1200" height="800" class="w-full" loading="lazy" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <!-- 6 · University Search -->
+  <FeatureBlock
+    id="search"
+    eyebrow="Explore"
+    title={`${TOTAL_UNIVERSITIES} schools, in real depth`}
+    body="Filter by location, size, selectivity, and major. Open any school for six tabs of real data &mdash; academics, admissions, cost, outcomes, student life &mdash; then save it to your list."
+    bullets={['Filter by state, size, selectivity, major', 'Six tabs of real data per school', 'Save schools to your list']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/universities">
+      <ShotPlaceholder name="University search + detail tabs" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <!-- 7 · Essays -->
+  <FeatureBlock
+    id="essays"
+    reverse
+    eyebrow="Essays"
+    title="Write with a coach in the margin"
+    body="Draft in a clean editor. Ask Bear for feedback in a side chat, run a full analysis, and mine your own stories for evidence. Writing is always free &mdash; no limits."
+    bullets={['AI analysis', 'Chat coaching per essay', 'Story & evidence mining']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/essays">
+      <ShotPlaceholder name="Essay workspace + Bear coaching" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <!-- 8 · Profile Builder -->
+  <FeatureBlock
+    id="profile"
+    eyebrow="Your Profile"
+    title="Build it once &mdash; by talking or typing"
+    body="A guided setup covers grades, tests, courses, activities, honors, and goals. Upload a transcript and Mascot parses it for you. Prefer to talk? Do the whole thing by voice."
+    bullets={['Guided wizard', 'Transcript upload + AI parsing', 'Or complete it by voice']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/profile">
+      <ShotPlaceholder name="Profile wizard + progress" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <!-- 9 · Your Story -->
+  <section class="border-b border-border-primary py-20 sm:py-28">
+    <div class="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div data-anim>
+        <p class="eyebrow">Story coverage</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Every conversation fills in your story</h2>
+        <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+          Mascot tracks how much you've covered across the topics that make up a strong
+          application &mdash; accomplishments, leadership, challenges, community impact, goals &mdash;
+          and steers each talk toward the gaps.
+        </p>
+      </div>
+      <div data-anim>
+        <RadarChart />
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · For Parents -->
+  <FeatureBlock
+    id="parents"
+    reverse
+    eyebrow="For Parents"
+    title="Stay in the loop &mdash; read-only"
+    body="Link to your student with their approval. See their profile, matches, and essays; never edit them. Cover the subscription or hand billing back any time. Parent accounts are free."
+    bullets={['Linked with student approval', 'Read-only view of profile, matches, essays', 'Hold or hand back billing anytime']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/parent">
+      <ShotPlaceholder name="Parent read-only student view" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <!-- 11 · Pricing preview -->
+  <section class="border-b border-border-primary py-20 sm:py-24">
+    <div class="container-x">
+      <div class="text-center" data-anim>
+        <p class="eyebrow">Pricing</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Start free. Upgrade when you're ready.</h2>
+      </div>
+      <div class="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2" data-anim-group>
+        <div class="rounded-2xl border border-border-primary bg-bg-card p-6" data-anim>
+          <h3 class="font-headline text-lg">Explorer</h3>
+          <p class="mt-1 text-2xl font-bold">Free</p>
+          <ul class="mt-4 space-y-2 text-sm text-text-secondary">
+            <li>Profile builder with voice</li>
+            <li>University search &amp; browse</li>
+            <li>Unlimited essays &amp; drafts</li>
+            <li>Limited AI matching &amp; voice minutes</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl border border-brand-primary bg-bg-card p-6" data-anim>
+          <span class="absolute -top-3 left-6 rounded-full bg-brand-primary px-3 py-1 text-xs font-bold text-white"
+            >Coming soon</span
+          >
+          <h3 class="font-headline text-lg">Navigator</h3>
+          <p class="mt-1 text-2xl font-bold">$14.99<span class="text-sm font-normal text-text-muted">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-text-secondary">
+            <li>Everything in Explorer, plus:</li>
+            <li>Unlimited AI match generations</li>
+            <li>AI essay coaching with Bear</li>
+            <li>More voice session minutes</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-8 text-center text-sm" data-anim>
+        <a href="/pricing" class="font-semibold text-brand-primary hover:underline">See full pricing &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 12 · Counselors coming soon -->
+  <section class="border-b border-border-primary bg-bg-secondary py-12">
+    <div class="container-x flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left" data-anim>
+      <p class="text-sm text-text-secondary">
+        <span class="font-semibold text-text-primary">Counselors:</span> a workspace for advisors is on the
+        way &mdash; full caseload, matching across every student, outcome tracking.
+      </p>
+      <a href="/contact" class="btn-ghost !py-2 text-sm">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- 13 · Final CTA -->
+  <CtaBand />
+</BaseLayout>

@@ -1,0 +1,91 @@
+---
+import { STORY_TOPICS } from '../lib/site.js';
+
+// Illustrative coverage per topic (0-1). Not real user data.
+const coverage = [0.85, 0.62, 0.9, 0.72, 0.8, 0.55, 0.45];
+const size = 320;
+const c = size / 2;
+const rMax = 118;
+const n = STORY_TOPICS.length;
+
+const pt = (i, r) => {
+  const a = (Math.PI * 2 * i) / n - Math.PI / 2;
+  return [c + r * Math.cos(a), c + r * Math.sin(a)];
+};
+
+const rings = [0.25, 0.5, 0.75, 1].map((lvl) =>
+  STORY_TOPICS.map((_, i) => pt(i, rMax * lvl).join(',')).join(' ')
+);
+const axes = STORY_TOPICS.map((_, i) => pt(i, rMax));
+const dataPoly = STORY_TOPICS.map((_, i) => pt(i, rMax * coverage[i]));
+const dataPolyStr = dataPoly.map((p) => p.join(',')).join(' ');
+const labels = STORY_TOPICS.map((t, i) => ({ t, p: pt(i, rMax + 24) }));
+---
+
+<figure
+  data-radar
+  class="mx-auto w-full max-w-md rounded-2xl border border-border-primary bg-bg-card p-6 shadow-[0_24px_60px_-24px_rgba(30,27,90,0.35)]"
+>
+  <svg viewBox={`0 0 ${size} ${size}`} class="w-full overflow-visible" role="img" aria-label="Illustrative story coverage across the topics Mascot tracks">
+    {rings.map((r) => <polygon points={r} fill="none" stroke="rgb(var(--color-border-primary))" stroke-width="1" />)}
+    {axes.map(([x, y]) => <line x1={c} y1={c} x2={x} y2={y} stroke="rgb(var(--color-border-primary))" stroke-width="1" />)}
+
+    <polygon
+      data-radar-fill
+      points={dataPolyStr}
+      fill="rgb(var(--color-brand-primary) / 0.15)"
+      stroke="rgb(var(--color-brand-primary))"
+      stroke-width="2"
+      style="transform-box: fill-box; transform-origin: center;"
+    />
+    {dataPoly.map(([x, y]) => <circle data-radar-dot cx={x} cy={y} r="3.5" fill="rgb(var(--color-brand-primary))" />)}
+
+    {
+      labels.map(({ t, p }) => (
+        <text
+          x={p[0]}
+          y={p[1]}
+          text-anchor="middle"
+          dominant-baseline="middle"
+          class="fill-text-tertiary text-[9px] font-medium"
+        >
+          {t.split(' ').map((w, wi) => (
+            <tspan x={p[0]} dy={wi === 0 ? 0 : 10}>{w}</tspan>
+          ))}
+        </text>
+      ))
+    }
+  </svg>
+  <figcaption class="mt-3 text-center text-xs text-text-muted">
+    Illustrative — your chart fills in as you talk.
+  </figcaption>
+</figure>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-radar]').forEach((root) => {
+    const fill = root.querySelector('[data-radar-fill]');
+    const dots = root.querySelectorAll('[data-radar-dot]');
+    if (reduce || !fill) return;
+
+    fill.style.opacity = '0';
+    fill.style.transform = 'scale(0.2)';
+    fill.style.transition = 'transform 900ms cubic-bezier(0.22,1,0.36,1), opacity 500ms ease';
+    dots.forEach((d) => {
+      d.style.opacity = '0';
+      d.style.transition = 'opacity 300ms ease';
+    });
+
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        if (!entries[0].isIntersecting) return;
+        obs.disconnect();
+        fill.style.opacity = '1';
+        fill.style.transform = 'scale(1)';
+        dots.forEach((d, i) => setTimeout(() => (d.style.opacity = '1'), 500 + i * 70));
+      },
+      { threshold: 0.4 }
+    );
+    io.observe(root);
+  });
+</script>

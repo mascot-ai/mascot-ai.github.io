@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const rows = [
+  ['Profile builder with voice', true, true],
+  ['University search & browse', true, true],
+  ['Unlimited essays & drafts', true, true],
+  ['Application planner', true, true],
+  ['Save universities', 'Limited', 'Unlimited'],
+  ['AI match generations', 'A few each month', 'Unlimited'],
+  ['Voice session minutes', 'Limited', 'More'],
+  ['AI essay coaching with Bear', false, true],
+  ['Detailed per-school match analysis', 'Basic', 'Detailed'],
+];
+
+const faqs = [
+  ['Can I switch plans anytime?', 'Yes. Upgrade or downgrade at any time; changes take effect immediately.'],
+  ['Is my data safe?', 'We use encryption in transit and at rest and never share your personal information with colleges without your consent.'],
+  ['What happens to my essays if I downgrade?', 'Your essays and profile data are always yours. Downgrading only limits AI features, not your saved content.'],
+  ['Do parents need a separate subscription?', 'No. Parent accounts are free with read-only access to their linked student. Either the student or a parent can hold the subscription.'],
+];
+
+const cell = (v) =>
+  v === true
+    ? '<svg class="mx-auto h-4 w-4 text-brand-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
+    : v === false
+      ? '<span class="text-text-muted">&mdash;</span>'
+      : `<span class="text-text-secondary">${v}</span>`;
+---
+
+<BaseLayout
+  path="/pricing"
+  title="Pricing — Mascot AI"
+  description="Explorer is free forever. Navigator unlocks unlimited AI matching and essay coaching for $14.99/month — coming soon."
+>
+  <section class="container-x py-16 text-center sm:py-20">
+    <h1 class="text-4xl sm:text-5xl">Plans &amp; pricing</h1>
+    <p class="mx-auto mt-4 max-w-xl text-lg text-text-tertiary">
+      Start free. Writing is always free &mdash; only AI features have limits.
+    </p>
+  </section>
+
+  <section class="container-x pb-16">
+    <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2" data-anim-group>
+      <div class="rounded-2xl border border-border-primary bg-bg-card p-8" data-anim>
+        <h2 class="font-headline text-xl">Explorer</h2>
+        <p class="mt-1 text-sm text-text-tertiary">Get started with the core tools.</p>
+        <p class="mt-5 text-3xl font-bold">Free</p>
+        <a href="/pricing#compare" class="btn-ghost mt-6 w-full">See what's included</a>
+      </div>
+      <div class="relative rounded-2xl border border-brand-primary bg-bg-card p-8" data-anim>
+        <span class="absolute -top-3 left-8 rounded-full bg-brand-primary px-3 py-1 text-xs font-bold text-white"
+          >Coming soon</span
+        >
+        <h2 class="font-headline text-xl">Navigator</h2>
+        <p class="mt-1 text-sm text-text-tertiary">The full power of AI college counseling.</p>
+        <p class="mt-5 text-3xl font-bold">$14.99<span class="text-base font-normal text-text-muted">/month</span></p>
+        <button class="btn-primary mt-6 w-full opacity-60" disabled>Coming soon</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare" class="container-x pb-20">
+    <div class="mx-auto max-w-4xl overflow-x-auto rounded-2xl border border-border-primary">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-border-primary bg-bg-secondary text-left">
+            <th class="px-5 py-4 font-semibold">Feature</th>
+            <th class="px-5 py-4 text-center font-semibold">Explorer</th>
+            <th class="px-5 py-4 text-center font-semibold">Navigator</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map(([label, e, n]) => (
+              <tr class="border-b border-border-primary last:border-0">
+                <td class="px-5 py-4 text-text-secondary">{label}</td>
+                <td class="px-5 py-4 text-center" set:html={cell(e)} />
+                <td class="px-5 py-4 text-center" set:html={cell(n)} />
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="mx-auto mt-3 max-w-4xl text-xs text-text-muted">
+      Exact limits are shown in the app and may change during beta.
+    </p>
+  </section>
+
+  <section class="container-x pb-20">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="text-2xl">Frequently asked questions</h2>
+      <dl class="mt-6 space-y-6" data-anim-group>
+        {
+          faqs.map(([q, a]) => (
+            <div data-anim>
+              <dt class="font-medium text-text-primary">{q}</dt>
+              <dd class="mt-1 text-sm text-text-tertiary">{a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CONTACT_EMAIL } from '../lib/site.js';
+// NOTE: Draft. Ported from the in-app Terms of Service with beta-era updates
+// (voice + Gemini, Stripe billing, counselor section replaced with billing).
+// Governing-law jurisdiction is a TODO. Pending the user's legal review.
+---
+
+<BaseLayout
+  path="/terms"
+  title="Terms of Service — Mascot AI"
+  description="The terms that govern your use of Mascot AI during the private beta."
+>
+  <article class="container-x max-w-3xl py-16 legal sm:py-20">
+    <h1 class="text-4xl">Terms of Service</h1>
+    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> August 28, 2026</p>
+
+    <div class="callout">
+      <strong>Beta service notice:</strong> Mascot AI is in private beta. By using the service you
+      acknowledge that features may change, data retention policies may be modified, and service
+      availability is not guaranteed. We recommend not submitting highly sensitive personal
+      information during this period.
+    </div>
+
+    <h2>1. Acceptance of terms</h2>
+    <p>
+      By accessing or using Mascot AI ("the Service"), you agree to be bound by these Terms of
+      Service. If you do not agree, do not use the Service.
+    </p>
+
+    <h2>2. Description of service</h2>
+    <p>Mascot AI is a college counseling platform that helps students:</p>
+    <ul>
+      <li>have voice conversations with an AI counselor and build a profile from them;</li>
+      <li>create academic and personal profiles, including transcript upload and parsing;</li>
+      <li>discover and explore universities with detailed institutional data;</li>
+      <li>generate personalized university matches with fit explanations;</li>
+      <li>draft and refine application essays with AI feedback;</li>
+      <li>track application deadlines and status for saved schools.</li>
+    </ul>
+
+    <h2>3. AI-powered features</h2>
+    <p>
+      Mascot AI uses third-party AI services to power core features: Claude (by Anthropic) for
+      university matching, essay analysis, and transcript parsing, and Gemini (by Google) for
+      real-time voice conversations.
+    </p>
+    <ul>
+      <li>By using AI-powered features, you acknowledge that your relevant data is processed by these third-party AI services under their respective terms.</li>
+      <li>We do not use your data to train AI models, and we do not share personally identifiable information without your consent.</li>
+      <li>AI output is guidance, not professional advice, and is not a guarantee of any admission outcome. Verify important information independently.</li>
+    </ul>
+
+    <h2>4. User eligibility</h2>
+    <p>You must be at least 13 years old to use Mascot AI. By using the Service you represent that:</p>
+    <ul>
+      <li>you are at least 13 years of age;</li>
+      <li>if you are under 18, you have parental or guardian consent;</li>
+      <li>all information you provide is accurate and truthful;</li>
+      <li>you will comply with all applicable laws.</li>
+    </ul>
+
+    <h2>5. User accounts and security</h2>
+    <p>You are responsible for your account credentials and all activity under your account. You agree to:</p>
+    <ul>
+      <li>provide accurate registration information;</li>
+      <li>keep your password secure;</li>
+      <li>notify us immediately of any unauthorized access;</li>
+      <li>accept responsibility for all activity under your account.</li>
+    </ul>
+
+    <h2>6. Acceptable use</h2>
+    <p>You agree not to use the Service to:</p>
+    <ul>
+      <li>violate any laws or regulations;</li>
+      <li>infringe the intellectual property rights of others;</li>
+      <li>upload malicious code or harmful content;</li>
+      <li>harass, abuse, or harm other users;</li>
+      <li>impersonate another person or entity;</li>
+      <li>attempt to gain unauthorized access to the Service;</li>
+      <li>use automated systems to scrape or collect data;</li>
+      <li>share false or misleading information.</li>
+    </ul>
+
+    <h2>7. Intellectual property</h2>
+    <p>
+      The Service and its original content, features, and functionality are owned by Mascot AI and
+      protected by copyright, trademark, and other laws.
+    </p>
+    <p>
+      You retain ownership of content you create and upload. By uploading content, you grant us a
+      license to use, store, and display it solely to provide the Service to you.
+    </p>
+
+    <h2>8. Third-party services</h2>
+    <p>Mascot AI integrates with third-party services, including:</p>
+    <ul>
+      <li><strong>Anthropic (Claude)</strong> and <strong>Google (Gemini)</strong> — AI features.</li>
+      <li><strong>Google OAuth</strong> — optional authentication.</li>
+      <li><strong>Stripe</strong> — subscription payments.</li>
+      <li><strong>University data providers</strong> — institutional information.</li>
+    </ul>
+    <p>
+      We are not responsible for the content, privacy practices, or availability of third-party
+      services. Your use of them is subject to their own terms.
+    </p>
+
+    <h2>9. Subscriptions and billing</h2>
+    <p>
+      Mascot AI offers a free plan and, where available, a paid subscription billed monthly through
+      Stripe. You may cancel at any time; cancellation stops future billing and takes effect at the
+      end of the current billing period. A student or a linked parent may hold the subscription, and
+      billing responsibility can be transferred between them. During the beta, paid plans and pricing
+      may change.
+    </p>
+
+    <h2>10. Disclaimer of warranties</h2>
+    <p>
+      THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+      UNINTERRUPTED OR ERROR-FREE OPERATION, AND ACCURACY OR RELIABILITY OF INFORMATION.
+    </p>
+
+    <h2>11. Limitation of liability</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, MASCOT AI SHALL NOT BE LIABLE FOR:</p>
+    <ul>
+      <li>indirect, incidental, special, consequential, or punitive damages;</li>
+      <li>loss of profits, data, or goodwill;</li>
+      <li>service interruptions or data loss;</li>
+      <li>actions or decisions made based on information from the Service;</li>
+      <li>college admission outcomes.</li>
+    </ul>
+    <p>
+      Our total liability for any claims related to the Service shall not exceed the amount you paid
+      for the Service, if any, in the 12 months preceding the claim.
+    </p>
+
+    <h2>12. Data and privacy</h2>
+    <p>
+      Your use of the Service is also governed by our <a href="/privacy">Privacy Policy</a>. Please
+      review it to understand how we collect, use, and protect your information.
+    </p>
+
+    <h2>13. Termination</h2>
+    <p>
+      We may suspend or terminate your account and access to the Service at our discretion, without
+      notice, for conduct we believe violates these Terms, harms other users or the Service, breaks
+      applicable law, or exposes us to legal liability. You may terminate your account at any time by
+      contacting us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> or using the account
+      deletion feature in your settings.
+    </p>
+
+    <h2>14. Changes to terms</h2>
+    <p>
+      We may modify these Terms at any time. We will notify users of material changes by email or
+      through the Service. Continued use after changes take effect constitutes acceptance.
+    </p>
+
+    <h2>15. Beta service modifications</h2>
+    <p>During the beta period, we may:</p>
+    <ul>
+      <li>add, modify, or remove features without notice;</li>
+      <li>change data retention policies;</li>
+      <li>temporarily suspend the Service for maintenance;</li>
+      <li>reset or modify user data for testing, with advance notice where possible.</li>
+    </ul>
+
+    <h2>16. Governing law</h2>
+    <p>
+      These Terms are governed by the laws of the jurisdiction in which Mascot AI operates, without
+      regard to conflict-of-law provisions.
+    </p>
+
+    <h2>17. Contact</h2>
+    <p>
+      Questions about these Terms: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We aim to
+      respond within 2&ndash;3 business days.
+    </p>
+
+    <p class="mt-8 text-sm italic text-text-tertiary">
+      By using Mascot AI, you acknowledge that you have read, understood, and agree to be bound by
+      these Terms of Service and our Privacy Policy.
+    </p>
+  </article>
+</BaseLayout>

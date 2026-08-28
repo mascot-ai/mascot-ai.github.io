@@ -1,0 +1,132 @@
+---
+// Animated recreation of a Talk-to-Mascot voice session. Not a screenshot.
+const {
+  lines = [
+    { who: 'mascot', text: 'What are you thinking about studying?' },
+    { who: 'you', text: 'Maybe environmental engineering. I run our school recycling program.' },
+    { who: 'mascot', text: "That's a strong thread. Tell me what got you started." },
+  ],
+} = Astro.props;
+const data = JSON.stringify(lines);
+---
+
+<div
+  data-voicedemo
+  data-lines={data}
+  class="rounded-2xl border border-border-primary bg-bg-card p-5 shadow-[0_24px_60px_-24px_rgba(30,27,90,0.35)]"
+>
+  <div class="flex items-center gap-3">
+    <span class="inline-flex items-center gap-2 rounded-full bg-brand-primary/10 px-3 py-1 text-xs font-semibold text-brand-primary">
+      <span class="relative flex h-2 w-2">
+        <span class="voice-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-primary"></span>
+      </span>
+      Talk to Mascot
+    </span>
+    <div class="voice-wave flex items-end gap-1" aria-hidden="true">
+      {Array.from({ length: 9 }).map((_, i) => <span data-bar={i} class="w-1 rounded-full bg-brand-primary/60"></span>)}
+    </div>
+  </div>
+
+  <div data-transcript class="mt-5 space-y-3 text-sm" aria-live="polite">
+    {
+      lines.map((l) => (
+        <p
+          data-line
+          class:list={[
+            'max-w-[85%] rounded-2xl px-3.5 py-2.5 leading-snug',
+            l.who === 'mascot'
+              ? 'bg-bg-tertiary text-text-primary'
+              : 'ml-auto bg-brand-primary text-white',
+          ]}
+        >
+          {l.text}
+        </p>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .voice-wave span {
+    height: 8px;
+    animation: voice-bar 1s ease-in-out infinite;
+  }
+  .voice-wave span:nth-child(2n) { animation-delay: 0.15s; }
+  .voice-wave span:nth-child(3n) { animation-delay: 0.3s; }
+  .voice-wave span:nth-child(4n) { animation-delay: 0.45s; }
+  @keyframes voice-bar {
+    0%, 100% { height: 6px; }
+    50% { height: 20px; }
+  }
+  .voice-ping { animation: voice-ping 1.4s cubic-bezier(0, 0, 0.2, 1) infinite; }
+  @keyframes voice-ping {
+    75%, 100% { transform: scale(2.2); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .voice-wave span, .voice-ping { animation: none; }
+    .voice-wave span { height: 12px; }
+  }
+</style>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('[data-voicedemo]').forEach((root) => {
+    const lineEls = root.querySelectorAll('[data-line]');
+    if (reduce) return; // leave all lines visible
+
+    lineEls.forEach((el, i) => {
+      el.dataset.full = el.textContent;
+      // Keep the first line visible so the card is never a blank box.
+      if (i > 0) {
+        el.textContent = '';
+        el.style.visibility = 'hidden';
+      }
+    });
+
+    const typeLine = (el) =>
+      new Promise((resolve) => {
+        el.style.visibility = 'visible';
+        const full = el.dataset.full;
+        let i = 0;
+        const tick = () => {
+          el.textContent = full.slice(0, i++);
+          if (i <= full.length) setTimeout(tick, 18);
+          else setTimeout(resolve, 550);
+        };
+        tick();
+      });
+
+    const run = async () => {
+      for (let i = 0; i < lineEls.length; i++) {
+        if (i === 0) {
+          lineEls[0].textContent = lineEls[0].dataset.full;
+          await new Promise((r) => setTimeout(r, 700));
+        } else {
+          await typeLine(lineEls[i]);
+        }
+      }
+      setTimeout(reset, 3000);
+    };
+    const reset = () => {
+      lineEls.forEach((el, i) => {
+        if (i === 0) return; // first line stays put
+        el.textContent = '';
+        el.style.visibility = 'hidden';
+      });
+      run();
+    };
+
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        if (entries[0].isIntersecting) {
+          obs.disconnect();
+          run();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(root);
+  });
+</script>
