@@ -6,7 +6,7 @@ import ShotPlaceholder from '../components/ShotPlaceholder.astro';
 import VoiceRecreation from '../components/VoiceRecreation.astro';
 import RadarChart from '../components/RadarChart.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES } from '../lib/site.js';
+import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../lib/site.js';
 ---
 
 <BaseLayout path="/">
@@ -155,6 +155,7 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES } from '../lib/site.js
     title="Stay in the loop &mdash; read-only"
     body="Link to your student with their approval. See their profile, matches, and essays; never edit them. Cover the subscription or hand billing back any time. Parent accounts are free."
     bullets={['Linked with student approval', 'Read-only view of profile, matches, essays', 'Hold or hand back billing anytime']}
+    link={{ href: '/for-parents', label: 'More for parents' }}
   >
     <BrowserFrame label="app.mascot-ai.com/parent">
       <ShotPlaceholder name="Parent read-only student view" />
@@ -176,20 +177,20 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES } from '../lib/site.js
             <li>Profile builder with voice</li>
             <li>University search &amp; browse</li>
             <li>Unlimited essays &amp; drafts</li>
-            <li>Limited AI matching &amp; voice minutes</li>
+            <li>1 AI match run / month, 60 voice minutes</li>
           </ul>
         </div>
         <div class="relative rounded-2xl border border-brand-primary bg-bg-card p-6" data-anim>
-          <span class="absolute -top-3 left-6 rounded-full bg-brand-primary px-3 py-1 text-xs font-bold text-white"
-            >Coming soon</span
-          >
+          {!PRICING.navigatorLive && (
+            <span class="absolute -top-3 left-6 rounded-full bg-brand-primary px-3 py-1 text-xs font-bold text-white">Coming soon</span>
+          )}
           <h3 class="font-headline text-lg">Navigator</h3>
-          <p class="mt-1 text-2xl font-bold">$14.99<span class="text-sm font-normal text-text-muted">/mo</span></p>
+          <p class="mt-1 text-2xl font-bold">{PRICING.navigatorMonthly}<span class="text-sm font-normal text-text-muted">/mo</span></p>
           <ul class="mt-4 space-y-2 text-sm text-text-secondary">
             <li>Everything in Explorer, plus:</li>
-            <li>Unlimited AI match generations</li>
-            <li>AI essay coaching with Bear</li>
-            <li>More voice session minutes</li>
+            <li>Unlimited AI match runs</li>
+            <li>25 saved universities</li>
+            <li>Essay AI slots &amp; 2 essays coached at once</li>
           </ul>
         </div>
       </div>
@@ -206,7 +207,7 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES } from '../lib/site.js
         <span class="font-semibold text-text-primary">Counselors:</span> a workspace for advisors is on the
         way &mdash; full caseload, matching across every student, outcome tracking.
       </p>
-      <a href="/contact" class="btn-ghost !py-2 text-sm">Get in touch</a>
+      <a href="/counselors" class="btn-ghost !py-2 text-sm">Learn more</a>
     </div>
   </section>
 
