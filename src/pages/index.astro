@@ -1,12 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FeatureBlock from '../components/FeatureBlock.astro';
 import BrowserFrame from '../components/BrowserFrame.astro';
 import Screenshot from '../components/Screenshot.astro';
 import VoiceRecreation from '../components/VoiceRecreation.astro';
-import RadarChart from '../components/RadarChart.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../lib/site.js';
+
+const tools = [
+  ['Talk to Mascot', 'Voice conversations that build your profile'],
+  ['AI Matching', 'A ranked college list with a reason for each pick'],
+  ['University Search', `${TOTAL_UNIVERSITIES} schools with six tabs of real data`],
+  ['Essays', 'A clean editor with analysis and a coach'],
+  ['Profile Builder', 'Grades, activities, and goals, by voice or typing'],
+  ['Application Planner', 'Deadlines, tasks, and status in one view'],
+];
 ---
 
 <BaseLayout path="/">
@@ -58,77 +65,60 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../li
     </div>
   </section>
 
-  <!-- Feature teasers. Detail lives on /features. -->
-  <FeatureBlock
-    eyebrow="Talk to Mascot"
-    title="A counselor you can actually talk to"
-    body="Have real voice conversations about your goals and activities. Mascot remembers every session and turns what you say into a profile."
-  >
-    <VoiceRecreation
-      lines={[
-        { who: 'mascot', text: 'Last time you mentioned debate. How did that go this month?' },
-        { who: 'you', text: 'We won regionals and I started coaching the novice team.' },
-        { who: 'mascot', text: "Coaching is a leadership signal. I'll add it to your story." },
-      ]}
-    />
-  </FeatureBlock>
-
-  <FeatureBlock
-    reverse
-    eyebrow="AI Matching"
-    title="A college list that fits you"
-    body="Mascot ranks schools against your whole profile and gives a reason for every match. Regenerate it whenever your profile changes."
-  >
-    <BrowserFrame label="app.mascot-ai.com/matches">
-      <Screenshot src="/screenshots/matches.jpg" alt="Mascot AI matches split into reach, target, and safety schools" />
-    </BrowserFrame>
-  </FeatureBlock>
-
-  <FeatureBlock
-    eyebrow="Explore"
-    title={`${TOTAL_UNIVERSITIES} schools, in real depth`}
-    body="Filter by location, size, selectivity, and major. Open any school for six tabs of real data, then save the ones you like."
-  >
-    <BrowserFrame label="app.mascot-ai.com/universities">
-      <Screenshot src="/screenshots/university-detail.jpg" alt="A university detail view in Mascot AI with tabbed sections" />
-    </BrowserFrame>
-  </FeatureBlock>
-
-  <FeatureBlock
-    reverse
-    eyebrow="Essays"
-    title="Write with a coach a click away"
-    body="Draft in a clean editor. Run a full analysis, talk a paragraph through with Mascot, or pull evidence from your own activities. Writing is always free."
-  >
-    <BrowserFrame label="app.mascot-ai.com/essays">
-      <Screenshot src="/screenshots/essays.jpg" alt="The Mascot AI essay workspace with a draft and formatting toolbar" />
-    </BrowserFrame>
-  </FeatureBlock>
-
-  <FeatureBlock
-    eyebrow="Your Profile"
-    title="Build it once, by talking or typing"
-    body="A guided setup covers grades, tests, courses, activities, and goals. Upload a transcript and Mascot parses it, or do the whole thing by voice."
-  >
-    <BrowserFrame label="app.mascot-ai.com">
-      <Screenshot src="/screenshots/dashboard.jpg" alt="The Mascot AI dashboard with profile completion and next steps" width={1354} height={908} />
-    </BrowserFrame>
-  </FeatureBlock>
-
-  <!-- Story coverage -->
-  <section class="border-b border-border-primary py-20 sm:py-28">
+  <!-- What Mascot does (summary; detail on /features) -->
+  <section class="border-b border-border-primary py-20 sm:py-24">
     <div class="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
       <div data-anim>
-        <p class="eyebrow">Story coverage</p>
-        <h2 class="mt-3 text-3xl sm:text-4xl">Every conversation fills in your story</h2>
+        <p class="eyebrow">One app</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">The whole college process in one place</h2>
         <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
-          Mascot tracks seven parts of your story, from your proudest accomplishment to your
-          future goals, and steers each conversation toward the ones you have covered least.
+          You talk, Mascot builds your profile. From that one profile it matches schools, opens
+          real data on each, coaches your essays, and tracks every deadline.
         </p>
+        <a
+          href="/features"
+          class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline"
+        >
+          See how each part works
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
       <div data-anim>
-        <RadarChart />
+        <BrowserFrame label="app.mascot-ai.com/matches">
+          <Screenshot src="/screenshots/matches.jpg" alt="Mascot AI matches split into reach, target, and safety schools" />
+        </BrowserFrame>
       </div>
+    </div>
+
+    <div class="container-x mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-anim-group>
+      {
+        tools.map(([name, gloss]) => (
+          <div class="rounded-2xl border border-border-primary bg-bg-card p-5" data-anim>
+            <p class="font-headline font-bold text-text-primary">{name}</p>
+            <p class="mt-1 text-sm text-text-tertiary">{gloss}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Why we built it (summary; detail on /about) -->
+  <section class="border-b border-border-primary bg-bg-secondary py-20 sm:py-24">
+    <div class="container-x max-w-2xl" data-anim>
+      <p class="eyebrow">Why Mascot</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl">Good counseling shouldn't cost $300 an hour</h2>
+      <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+        A private counselor is out of reach for most students. Mascot gives every student one that
+        knows the whole application process and remembers every conversation. We designed and
+        tested it in private beta with 20 students and 2 school counselors.
+      </p>
+      <a
+        href="/about"
+        class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline"
+      >
+        More about Mascot
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </section>
 
@@ -147,7 +137,7 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../li
             <li>Profile builder with voice</li>
             <li>University search and browse</li>
             <li>Unlimited essays and drafts</li>
-            <li>1 AI match run a month, 60 voice minutes</li>
+            <li>2 AI credits, 1 match run a month, 60 voice minutes</li>
           </ul>
         </div>
         <div class="relative rounded-2xl border border-brand-primary bg-bg-card p-6" data-anim>
