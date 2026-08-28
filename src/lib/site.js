@@ -6,9 +6,9 @@ export const CONTACT_EMAIL = 'pranrosh@gmail.com'; // TODO: branded address?
 export const TOTAL_UNIVERSITIES = '4,800+';
 
 export const NAV_LINKS = [
-  { href: '/features', label: 'Features' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/about', label: 'About' },
+  { href: '/features/', label: 'Features' },
+  { href: '/pricing/', label: 'Pricing' },
+  { href: '/about/', label: 'About' },
 ];
 
 // Navigator tier limits from project_counselor_backend/scripts/seed_platform_config.py

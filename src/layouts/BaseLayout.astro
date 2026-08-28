@@ -11,6 +11,30 @@ const {
 
 const canonical = new URL(path, Astro.site).href;
 const ogImage = new URL('/og.png', Astro.site).href;
+
+// Site-wide structured data. Emitted on every page; Google dedupes by @id.
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://mascot-ai.com/#org',
+      name: 'Mascot AI',
+      url: 'https://mascot-ai.com/',
+      logo: 'https://mascot-ai.com/mascot-bear.png',
+      description:
+        'Voice-first AI college counseling for high school students: profile building, university matching, and essay coaching in one app.',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://mascot-ai.com/#website',
+      url: 'https://mascot-ai.com/',
+      name: 'Mascot AI',
+      publisher: { '@id': 'https://mascot-ai.com/#org' },
+      inLanguage: 'en-US',
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -18,17 +42,28 @@ const ogImage = new URL('/og.png', Astro.site).href;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="/mascot-bear.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#4F46E5" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mascot AI" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

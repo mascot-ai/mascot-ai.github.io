@@ -1,0 +1,20 @@
+# Mascot AI
+
+> Voice-first AI college counseling for high school students. Talk through your
+> goals, get a college list that fits, and write stronger essays, all in one app.
+> Currently in private beta.
+
+## Pages
+
+- [Features](https://mascot-ai.com/features/): Voice counseling, AI university matching, deep school data, essay coaching, profile builder, application planner.
+- [Pricing](https://mascot-ai.com/pricing/): Explorer is free. Navigator adds more AI matching and essay coaching. One-time add-ons on either plan.
+- [About](https://mascot-ai.com/about/): Why Mascot exists and how the product works end to end.
+- [What's next](https://mascot-ai.com/coming-soon/): Roadmap: parent access, a counselor workspace, a scholarship finder.
+- [Contact](https://mascot-ai.com/contact/): How to reach the team.
+- [Privacy Policy](https://mascot-ai.com/privacy/)
+- [Terms of Service](https://mascot-ai.com/terms/)
+
+## Notes
+
+- The web app lives at https://dev.mascot-ai.com and is invite-only during the beta.
+- Beta access requests: https://forms.gle/Jbpa86AMPhssyeoi8
