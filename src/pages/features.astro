@@ -11,21 +11,21 @@ import { TOTAL_UNIVERSITIES } from '../lib/site.js';
 
 <BaseLayout
   path="/features"
-  title="Features — Mascot AI"
-  description="Voice counseling, AI university matching, deep school data, essay coaching, and a guided profile builder — everything Mascot AI does for high schoolers."
+  title="Features: Mascot AI"
+  description="How each part of Mascot AI works: voice counseling, university matching, deep school data, essay coaching, a profile builder, and an application planner."
 >
   <section class="container-x py-16 text-center sm:py-20">
-    <h1 class="text-4xl sm:text-5xl">Everything Mascot does</h1>
+    <h1 class="text-4xl sm:text-5xl">How Mascot works</h1>
     <p class="mx-auto mt-4 max-w-2xl text-lg text-text-tertiary">
-      Six tools that work off one profile. Writing is always free; only AI features have limits.
+      Six tools that run off one profile. Writing is always free. Only the AI features have limits.
     </p>
   </section>
 
   <FeatureBlock
     eyebrow="Talk to Mascot"
     title="Voice counseling that remembers"
-    body="Have real conversations about your interests, activities, and goals. Mascot listens, asks follow-ups, and keeps a running picture of your story across sessions."
-    bullets={['1. Start or resume a voice session', '2. Talk through a topic — activities, goals, a setback', '3. Mascot logs what it learned to your profile']}
+    body="Start a voice session and talk through a topic: an activity, a goal, a setback. Mascot asks follow-up questions, then writes what it learned to your profile. The next session picks up where the last one ended."
+    bullets={['Natural voice, not a form', 'Sessions resume across days', 'Fills in your story topic by topic']}
   >
     <VoiceRecreation />
   </FeatureBlock>
@@ -34,8 +34,8 @@ import { TOTAL_UNIVERSITIES } from '../lib/site.js';
     reverse
     eyebrow="AI Matching"
     title="A ranked list with reasons"
-    body="Matching runs in two passes: a fast filter narrows thousands of schools, then a deeper model ranks the finalists against your full profile and explains each fit."
-    bullets={['1. Complete enough of your profile to unlock matching', '2. Run a match and watch the batch progress', '3. Read the per-school fit analysis, then regenerate as you grow']}
+    body="Matching runs in two passes. A fast filter narrows thousands of schools, then a deeper model ranks the finalists against your full profile and writes a fit explanation for each one. Run it again any time your profile changes."
+    bullets={['Reach, target, and safety split out', 'A fit explanation per school', 'On-demand match for any single school']}
   >
     <BrowserFrame label="app.mascot-ai.com/matches">
       <Screenshot src="/screenshots/matches.jpg" alt="Mascot AI matches split into reach, target, and safety schools with strengths and tips" />
@@ -45,8 +45,8 @@ import { TOTAL_UNIVERSITIES } from '../lib/site.js';
   <FeatureBlock
     eyebrow="University Search"
     title={`${TOTAL_UNIVERSITIES} schools, six tabs deep`}
-    body="Every school has Overview, Admissions, Academics, Costs, Student Life, and Life After Graduation tabs built from real data. Filter the list, open what interests you, save the keepers."
-    bullets={['1. Filter by state, size, selectivity, major', '2. Open a school and read all six tabs', '3. Save it — saved schools feed your planner']}
+    body="Filter the list by state, size, selectivity, and major. Open a school for six tabs of real data: Overview, Admissions, Academics, Costs, Student Life, and Life After Graduation. Save the ones worth tracking."
+    bullets={['Filter by state, size, selectivity, major', 'Six tabs of real data per school', 'Saved schools feed your planner']}
   >
     <BrowserFrame label="app.mascot-ai.com/universities">
       <Screenshot src="/screenshots/universities.jpg" alt="The Mascot AI university list with filters and school cards" />
@@ -57,8 +57,8 @@ import { TOTAL_UNIVERSITIES } from '../lib/site.js';
     reverse
     eyebrow="Essays"
     title="Draft, analyze, and mine your stories"
-    body="A focused editor with Essay Coach a click away. Run a full analysis for structure and voice, talk through a paragraph with Mascot, or mine your activities for concrete evidence."
-    bullets={['1. Create an essay and draft freely — no limits', '2. Run analysis or open Essay Coach', '3. Pull in evidence from your own activities']}
+    body="A focused editor with Essay Coach a click away. Run a full analysis for structure and voice, talk a paragraph through with Mascot, or pull concrete evidence out of your own activities. Drafting itself has no limit."
+    bullets={['Full structure and voice analysis', 'Essay Coach conversation per essay', 'Evidence pulled from your activities']}
   >
     <BrowserFrame label="app.mascot-ai.com/essays">
       <Screenshot src="/screenshots/essays.jpg" alt="The Mascot AI essay workspace with a draft, prompt, and formatting toolbar" />
@@ -68,8 +68,8 @@ import { TOTAL_UNIVERSITIES } from '../lib/site.js';
   <FeatureBlock
     eyebrow="Profile Builder"
     title="One profile, built your way"
-    body="A guided wizard walks through academics, testing, coursework, activities, honors, and goals. Upload a transcript and Mascot parses your courses. Or skip typing and do it by voice."
-    bullets={['1. Work through the wizard sections', '2. Upload a transcript for automatic course parsing', '3. Fill gaps by talking to Mascot']}
+    body="A guided wizard covers academics, testing, coursework, activities, honors, and goals. Upload a transcript and Mascot parses your courses for you. Or skip the typing and fill it in by voice."
+    bullets={['Guided, section by section', 'Automatic transcript parsing', 'Or complete it by talking to Mascot']}
   >
     <BrowserFrame label="app.mascot-ai.com">
       <Screenshot src="/screenshots/dashboard.jpg" alt="The Mascot AI dashboard showing profile completion, next steps, and story coverage" width={1354} height={908} />
@@ -80,8 +80,8 @@ import { TOTAL_UNIVERSITIES } from '../lib/site.js';
     reverse
     eyebrow="Application Planner"
     title="Deadlines and status in one view"
-    body="Your saved schools become a checklist: set application type and deadline, track tasks and recommendation letters, and watch an application-health score as things get done."
-    bullets={['1. Save schools from search or matches', '2. Set deadline and application type', '3. Work the task checklist through the cycle']}
+    body="Your saved schools become a checklist. Set an application type and deadline for each, track tasks and recommendation letters, and watch an application-health score move as you finish things."
+    bullets={['Deadline and application type per school', 'Task checklist and recommendation letters', 'A health score for the whole cycle']}
   >
     <BrowserFrame label="app.mascot-ai.com/planner">
       <Screenshot src="/screenshots/planner.jpg" alt="The Mascot AI application planner with deadlines, a task checklist, and recommendation letters" />
@@ -94,8 +94,8 @@ import { TOTAL_UNIVERSITIES } from '../lib/site.js';
         <p class="eyebrow">Story coverage</p>
         <h2 class="mt-3 text-3xl sm:text-4xl">See what's still missing</h2>
         <p class="mt-4 text-lg text-text-tertiary">
-          Mascot tracks seven parts of your story and scores how fully each one is covered, so
-          you always know what to talk about next.
+          Mascot tracks seven parts of your story and scores how fully each one is covered, so you
+          always know what to talk about next.
         </p>
       </div>
       <div data-anim><RadarChart /></div>

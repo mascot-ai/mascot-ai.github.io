@@ -1,6 +1,6 @@
 ---
 // One feature row: copy on one side, visual (slot) on the other.
-const { eyebrow, title, body, bullets = [], reverse = false, id, link } = Astro.props;
+const { eyebrow, title, body, bullets = [], reverse = false, id } = Astro.props;
 ---
 
 <section id={id} class="border-b border-border-primary py-20 sm:py-28">
@@ -24,14 +24,6 @@ const { eyebrow, title, body, bullets = [], reverse = false, id, link } = Astro.
               </li>
             ))}
           </ul>
-        )
-      }
-      {
-        link && (
-          <a href={link.href} class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline">
-            {link.label}
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
         )
       }
     </div>

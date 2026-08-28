@@ -22,7 +22,7 @@ export const PRICING = {
 
 export const ADDONS = [
   { name: '+30 Voice Minutes', price: '$19.99', grants: '30 voice minutes' },
-  { name: 'AI Credit', price: '$1.99', grants: 'one AI action — essay help, analysis, and more' },
+  { name: 'AI Credit', price: '$1.99', grants: 'one AI action: essay help, analysis, and more' },
   { name: '+1 AI Match Run', price: '$3.99', grants: '1 match run' },
   { name: '+10 School Saves', price: '$9.99', grants: '10 saved-school slots' },
 ];

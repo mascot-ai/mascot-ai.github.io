@@ -8,7 +8,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
 
 <BaseLayout
   path="/privacy"
-  title="Privacy Policy — Mascot AI"
+  title="Privacy Policy: Mascot AI"
   description="How Mascot AI collects, uses, and protects your data during the private beta."
 >
   <article class="container-x max-w-3xl py-16 legal sm:py-20">
@@ -51,11 +51,11 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       platform, and only as needed to deliver the service:
     </p>
     <ul>
-      <li><strong>MongoDB Atlas</strong> — database hosting and storage.</li>
-      <li><strong>Google Cloud Platform</strong> — application hosting.</li>
-      <li><strong>Stripe</strong> — subscription payments.</li>
-      <li><strong>Anthropic (Claude)</strong> — AI processing for university matching, essay analysis, and transcript parsing.</li>
-      <li><strong>Google (Gemini)</strong> — AI processing for real-time voice conversations. Google is also used for optional "Sign in with Google" authentication.</li>
+      <li><strong>MongoDB Atlas</strong>: database hosting and storage.</li>
+      <li><strong>Google Cloud Platform</strong>: application hosting.</li>
+      <li><strong>Stripe</strong>: subscription payments.</li>
+      <li><strong>Anthropic (Claude)</strong>: AI processing for university matching, essay analysis, and transcript parsing.</li>
+      <li><strong>Google (Gemini)</strong>: AI processing for real-time voice conversations. Google also handles optional "Sign in with Google" authentication.</li>
     </ul>
     <p>
       When you use AI features, your relevant content is processed by these third-party AI services
@@ -81,9 +81,8 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       <li>in connection with a business transfer such as a merger or acquisition.</li>
     </ul>
     <p>
-      For students, a linked parent can be granted read-only access to parts of your profile,
-      matches, and essays. This link requires your approval, and you control which sections are
-      shared.
+      If parent linking is enabled for your account, a parent you approve can be granted read-only
+      access to parts of your profile, matches, and essays. You control which sections are shared.
     </p>
 
     <h2>Your rights</h2>
@@ -114,8 +113,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
     <h2>Payments</h2>
     <p>
       Paid subscriptions are processed by Stripe. We receive subscription status and limited billing
-      metadata; we do not receive or store full card numbers. A student or a linked parent may hold
-      the subscription, and billing responsibility can be transferred between them.
+      metadata, and we do not receive or store full card numbers.
     </p>
 
     <div class="callout">
@@ -140,10 +138,10 @@ import { CONTACT_EMAIL } from '../lib/site.js';
 
     <h2>Contact us</h2>
     <p>
-      For questions or requests regarding this policy or your data &mdash; including account deletion,
-      data access or portability, privacy complaints, and GDPR or CCPA requests &mdash; contact us at
+      For questions or requests about this policy or your data, including account deletion, data
+      access or portability, privacy complaints, and GDPR or CCPA requests, contact us at
       <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We respond to all requests within a
-      reasonable timeframe, typically within 30 days.
+      reasonable time, usually within 30 days.
     </p>
   </article>
 </BaseLayout>

@@ -6,42 +6,42 @@ import { PRICING, ADDONS } from '../lib/site.js';
 // Rows mirror the tier limits in seed_platform_config.py (free vs plus).
 const rows = [
   ['Profile builder with voice', true, true],
-  ['University search & browse', true, true],
-  ['Unlimited essays & drafts', true, true],
+  ['University search and browse', true, true],
+  ['Unlimited essays and drafts', true, true],
   ['Application planner', true, true],
   ['Saved universities', '10', '25'],
-  ['AI match runs', '1 / month', 'Unlimited'],
-  ['Voice minutes', '60 total', '60 / month'],
+  ['AI match runs', '1 a month', 'Unlimited'],
+  ['Voice minutes', '60 total', '60 a month'],
   ['Essay AI', 'Pool of 5 suggestions', '10 suggestions per slot'],
   ['Essays with AI coaching at once', '1', '2'],
-  ['Transcript upload & parsing', true, true],
+  ['Transcript upload and parsing', true, true],
 ];
 
 const faqs = [
-  ['Can I switch plans anytime?', 'Yes. Upgrade or downgrade at any time; changes take effect immediately.'],
-  ['What are add-ons?', 'One-time top-ups you can buy on either plan without upgrading — extra voice minutes, AI credits, an extra match run, or more saved-school slots.'],
-  ['Is my data safe?', 'We use encryption in transit and at rest and never share your personal information with colleges without your consent.'],
+  ['Can I switch plans anytime?', 'Yes. Upgrade or downgrade at any time. Changes take effect immediately.'],
+  ['What are add-ons?', 'One-time top-ups you can buy on either plan without upgrading: extra voice minutes, AI credits, an extra match run, or more saved-school slots.'],
+  ['Is the free plan really free?', "Yes. Explorer is free and doesn't need a card. Writing, search, and the planner have no limits on any plan. Only the AI features are metered."],
+  ['Is my data safe?', 'We use encryption in transit and at rest, and we never share your personal information with colleges without your consent.'],
   ['What happens to my essays if I downgrade?', 'Your essays and profile data are always yours. Downgrading only limits AI features, not your saved content.'],
-  ['Do parents need a separate subscription?', 'No. Parent accounts are free with read-only access to their linked student. Either the student or a parent can hold the subscription, and billing can be transferred between them.'],
 ];
 
 const cell = (v) =>
   v === true
     ? '<svg class="mx-auto h-4 w-4 text-brand-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
     : v === false
-      ? '<span class="text-text-muted">&mdash;</span>'
+      ? '<span class="text-text-muted">-</span>'
       : `<span class="text-text-secondary">${v}</span>`;
 ---
 
 <BaseLayout
   path="/pricing"
-  title="Pricing — Mascot AI"
-  description="Explorer is free forever. Navigator unlocks unlimited AI matching and essay coaching. Add-ons let you top up on either plan."
+  title="Pricing: Mascot AI"
+  description="Explorer is free. Navigator adds unlimited AI matching and essay coaching. Add-ons let you top up on either plan."
 >
   <section class="container-x py-16 text-center sm:py-20">
-    <h1 class="text-4xl sm:text-5xl">Plans &amp; pricing</h1>
+    <h1 class="text-4xl sm:text-5xl">Plans and pricing</h1>
     <p class="mx-auto mt-4 max-w-xl text-lg text-text-tertiary">
-      Start free. Writing is always free &mdash; only AI features have limits.
+      Start free. Writing is always free. Only the AI features have limits.
     </p>
   </section>
 
@@ -110,7 +110,7 @@ const cell = (v) =>
     <div class="mx-auto max-w-4xl">
       <h2 class="text-2xl">Add-ons</h2>
       <p class="mt-2 text-sm text-text-tertiary">
-        One-time top-ups on either plan &mdash; no upgrade required.
+        One-time top-ups on either plan. No upgrade required.
       </p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2" data-anim-group>
         {
