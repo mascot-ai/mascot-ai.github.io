@@ -11,8 +11,9 @@ export const NAV_LINKS = [
   { href: '/about', label: 'About' },
 ];
 
-// From project_counselor_backend/scripts/seed_platform_config.py (config v1.1.0).
-// Confirm against the live platform_config collection before launch.
+// Navigator tier limits from project_counselor_backend/scripts/seed_platform_config.py
+// (config v1.1.0). Add-on prices set by the product team 2026-08-28 and supersede
+// the seed values. Confirm the live platform_config before launch.
 export const PRICING = {
   navigatorMonthly: '$39.99',
   navigatorAnnual: '$383.88', // ~$31.99/mo
@@ -20,10 +21,10 @@ export const PRICING = {
 };
 
 export const ADDONS = [
-  { name: '+30 Voice Minutes', price: '$4.99', grants: '30 voice minutes' },
-  { name: '+1 AI Match Run', price: '$2.99', grants: '1 match run' },
-  { name: 'Essay AI Slot', price: '$9.99', grants: '10 essay suggestions' },
-  { name: '+10 University Save Slots', price: '$0.99', grants: '10 save slots' },
+  { name: '+30 Voice Minutes', price: '$19.99', grants: '30 voice minutes' },
+  { name: 'AI Credit', price: '$1.99', grants: 'one AI action — essay help, analysis, and more' },
+  { name: '+1 AI Match Run', price: '$3.99', grants: '1 match run' },
+  { name: '+10 School Saves', price: '$9.99', grants: '10 saved-school slots' },
 ];
 
 // Narrative topics Mascot tracks in conversation. Labels verbatim from
