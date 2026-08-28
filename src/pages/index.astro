@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import Screenshot from '../components/Screenshot.astro';
+import VoiceRecreation from '../components/VoiceRecreation.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../lib/site.js';
+
+const tools = [
+  ['Talk to Mascot', 'Voice conversations that build your profile'],
+  ['AI Matching', 'A ranked college list with a reason for each pick'],
+  ['University Search', `${TOTAL_UNIVERSITIES} schools with six tabs of real data`],
+  ['Essays', 'A clean editor with analysis and a coach'],
+  ['Profile Builder', 'Grades, activities, and goals, by voice or typing'],
+  ['Application Planner', 'Deadlines, tasks, and status in one view'],
+];
+---
+
+<BaseLayout path="/">
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div
+      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgb(var(--color-brand-primary)/0.12),transparent)]"
+    >
+    </div>
+    <div class="container-x grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-border-primary bg-bg-card px-3 py-1 text-xs font-medium text-text-secondary"
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-brand-secondary"></span> Now in private beta
+        </span>
+        <h1 class="mt-5 text-4xl leading-[1.08] sm:text-5xl md:text-6xl">
+          Talk through college.<br />Mascot handles the rest.
+        </h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-text-tertiary">
+          Mascot is a voice-first counselor for high schoolers. Talk through your goals, get a
+          college list that fits, and write stronger essays. All in one app.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href={BETA_FORM_URL} target="_blank" rel="noopener" class="btn-primary">Request beta access</a>
+          <a href={APP_LOGIN_URL} class="btn-ghost">Log in</a>
+        </div>
+      </div>
+      <div data-anim>
+        <VoiceRecreation />
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="border-y border-border-primary bg-bg-secondary">
+    <div
+      class="container-x grid gap-4 py-6 text-center text-sm text-text-secondary sm:grid-cols-2"
+      data-anim-group
+    >
+      <p data-anim>
+        <span class="font-headline text-lg font-bold text-text-primary" data-count="4800" data-suffix="+"
+          >{TOTAL_UNIVERSITIES}</span
+        > universities
+      </p>
+      <p data-anim>Voice, college matching, and essays in one place</p>
+    </div>
+  </section>
+
+  <!-- What Mascot does (summary; detail on /features) -->
+  <section class="border-b border-border-primary py-20 sm:py-24">
+    <div class="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div data-anim>
+        <p class="eyebrow">One app</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">The whole college process in one place</h2>
+        <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+          You talk, Mascot builds your profile. From that one profile it matches schools, opens
+          real data on each, coaches your essays, and tracks every deadline.
+        </p>
+        <a
+          href="/features/"
+          class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline"
+        >
+          See how each part works
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div data-anim>
+        <BrowserFrame label="app.mascot-ai.com/matches">
+          <Screenshot src="/screenshots/matches.jpg" alt="Mascot AI matches split into reach, target, and safety schools" />
+        </BrowserFrame>
+      </div>
+    </div>
+
+    <div class="container-x mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-anim-group>
+      {
+        tools.map(([name, gloss]) => (
+          <div class="rounded-2xl border border-border-primary bg-bg-card p-5" data-anim>
+            <p class="font-headline font-bold text-text-primary">{name}</p>
+            <p class="mt-1 text-sm text-text-tertiary">{gloss}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Why we built it (summary; detail on /about) -->
+  <section class="border-b border-border-primary bg-bg-secondary py-20 sm:py-24">
+    <div class="container-x max-w-2xl" data-anim>
+      <p class="eyebrow">Why Mascot</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl">Good counseling shouldn't cost $300 an hour</h2>
+      <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+        A private counselor is out of reach for most students. Mascot gives every student one that
+        knows the whole application process and remembers every conversation. We designed and
+        tested it in private beta with students and school counselors.
+      </p>
+      <a
+        href="/about/"
+        class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline"
+      >
+        More about Mascot
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Pricing preview -->
+  <section class="border-b border-border-primary py-20 sm:py-24">
+    <div class="container-x">
+      <div class="text-center" data-anim>
+        <p class="eyebrow">Pricing</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Start free. Upgrade when you're ready.</h2>
+      </div>
+      <div class="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2" data-anim-group>
+        <div class="rounded-2xl border border-border-primary bg-bg-card p-6" data-anim>
+          <h3 class="font-headline text-lg">Explorer</h3>
+          <p class="mt-1 text-2xl font-bold">Free</p>
+          <ul class="mt-4 space-y-2 text-sm text-text-secondary">
+            <li>Profile builder with voice</li>
+            <li>University search and browse</li>
+            <li>Unlimited essays and drafts</li>
+            <li>2 AI credits, 1 match run a month, 30 voice minutes</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl border border-brand-primary bg-bg-card p-6" data-anim>
+          {!PRICING.navigatorLive && (
+            <span class="absolute -top-3 left-6 rounded-full bg-brand-primary px-3 py-1 text-xs font-bold text-white">Coming soon</span>
+          )}
+          <h3 class="font-headline text-lg">Navigator</h3>
+          <p class="mt-1 text-2xl font-bold">{PRICING.navigatorMonthly}<span class="text-sm font-normal text-text-muted">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-text-secondary">
+            <li>Everything in Explorer, plus:</li>
+            <li>10 AI match runs a month</li>
+            <li>25 saved universities</li>
+            <li>AI credits that refill monthly</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-8 text-center text-sm" data-anim>
+        <a href="/pricing/" class="font-semibold text-brand-primary hover:underline">See full pricing &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Roadmap strip -->
+  <section class="border-b border-border-primary bg-bg-secondary py-12">
+    <div class="container-x flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left" data-anim>
+      <p class="text-sm text-text-secondary">
+        <span class="font-semibold text-text-primary">On the roadmap:</span> parent access, a
+        counselor workspace, and a scholarship finder.
+      </p>
+      <a href="/coming-soon/" class="btn-ghost !py-2 text-sm">See what's next</a>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CONTACT_EMAIL } from '../lib/site.js';
+
+const items = [
+  {
+    title: 'Parent access',
+    body: 'A read-only view for a linked parent: your profile, your matches, your essays, with billing they can hold or hand back. In testing now.',
+  },
+  {
+    title: 'Counselor workspace',
+    body: 'A place for advisors to see a full caseload, run matching across every student, and track outcomes. School counselors are helping us build it.',
+  },
+  {
+    title: 'Scholarship finder',
+    body: 'Scholarships matched to your profile, activities, and academics, the same way school matching works today.',
+  },
+];
+---
+
+<BaseLayout
+  path="/coming-soon/"
+  title="Mascot AI Roadmap: Parent Access and Counselor Tools"
+  description="What Mascot AI is building next: read-only parent access, a counselor workspace, and a scholarship finder. Here is where each one stands."
+>
+  <section class="container-x py-16 sm:py-24">
+    <p class="eyebrow">On the roadmap</p>
+    <h1 class="mt-3 max-w-3xl text-4xl leading-tight sm:text-5xl">What we are building next</h1>
+    <p class="mt-5 max-w-2xl text-lg leading-relaxed text-text-tertiary">
+      Mascot AI is built for students today. These are the pieces we are working on now. If you
+      want any of them, tell us.
+    </p>
+    <a href={`mailto:${CONTACT_EMAIL}?subject=Roadmap`} class="btn-primary mt-8">Get in touch</a>
+  </section>
+
+  <section class="border-t border-border-primary py-16">
+    <div class="container-x grid gap-6 sm:grid-cols-3" data-anim-group>
+      {
+        items.map((it) => (
+          <div class="rounded-2xl border border-border-primary bg-bg-card p-6" data-anim>
+            <span class="inline-block rounded-full bg-bg-tertiary px-2.5 py-1 text-xs font-semibold text-text-secondary">
+              Coming soon
+            </span>
+            <h2 class="mt-3 font-headline text-lg">{it.title}</h2>
+            <p class="mt-2 text-sm text-text-tertiary">{it.body}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="container-x mt-6 text-sm text-text-muted">
+      Timing depends on testing and on what we hear from students, parents, and counselors.
+    </p>
+  </section>
+</BaseLayout>

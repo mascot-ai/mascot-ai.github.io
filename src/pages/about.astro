@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const steps = [
+  [
+    'Set up your profile by talking',
+    'Join the platform and have a voice conversation with Mascot. It asks about your interests, activities, grades, and goals, and builds your profile from your answers.',
+  ],
+  [
+    'Get your college matches',
+    'Mascot ranks schools against your profile and gives a reason for each one, split into reach, target, and safety.',
+  ],
+  [
+    'Pick matches and see the essays',
+    'Choose the schools you want to apply to. Mascot shows you every essay you will need to write for them.',
+  ],
+  [
+    'Write each essay with an agent',
+    'Talk an essay through with Mascot to work out what it should be about and pull in details about you. Then draft several versions, get grammar and structure feedback, and refine until it is ready.',
+  ],
+];
+---
+
+<BaseLayout
+  path="/about/"
+  title="About Mascot AI: College Counseling for Every Student"
+  description="A private college counselor costs hundreds an hour. Mascot AI gives every high schooler a voice-first counselor. Built in beta with students and counselors."
+>
+  <section class="container-x py-16 sm:py-24">
+    <h1 class="max-w-3xl text-4xl leading-tight sm:text-5xl">
+      College counseling shouldn't depend on who you can afford.
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-tertiary">
+      A private college counselor can cost hundreds of dollars an hour, and most students never
+      get one. Mascot AI puts a voice-first counselor in every student's pocket. It knows the
+      whole application process, remembers every conversation, and works off real data on
+      thousands of schools.
+    </p>
+  </section>
+
+  <section class="border-y border-border-primary bg-bg-secondary py-16">
+    <div class="container-x max-w-3xl">
+      <h2 class="text-2xl">How it works, start to finish</h2>
+      <ol class="mt-8 space-y-8" data-anim-group>
+        {
+          steps.map(([t, d], i) => (
+            <li class="flex gap-5" data-anim>
+              <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-primary/10 font-headline text-sm font-bold text-brand-primary">
+                {i + 1}
+              </span>
+              <div>
+                <h3 class="font-headline text-lg">{t}</h3>
+                <p class="mt-1 leading-relaxed text-text-tertiary">{d}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="container-x py-16">
+    <div class="max-w-2xl">
+      <h2 class="text-2xl">Built with students and counselors</h2>
+      <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+        Mascot AI was designed and tested in private beta with high school students and school
+        counselors. The voice conversations, the matching logic, and the essay coaching were all
+        shaped by watching students use the product and hearing from the counselors who guide them
+        every day. That work is still going.
+      </p>
+      <p class="mt-4 text-sm text-text-muted">
+        Mascot AI is in private beta. Features, data retention, and availability may change.
+      </p>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

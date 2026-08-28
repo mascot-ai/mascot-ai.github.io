@@ -1,0 +1,18 @@
+---
+// Chrome-style frame around a screenshot or a stylized recreation.
+const { label = 'app.mascot-ai.com' } = Astro.props;
+---
+
+<div
+  class="overflow-hidden rounded-2xl border border-border-primary bg-bg-card shadow-[0_24px_60px_-24px_rgba(30,27,90,0.35)]"
+>
+  <div class="flex items-center gap-2 border-b border-border-primary bg-bg-secondary px-4 py-2.5">
+    <span class="h-2.5 w-2.5 rounded-full bg-rose-400"></span>
+    <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+    <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+    <span class="ml-3 truncate text-xs text-text-muted">{label}</span>
+  </div>
+  <div class="bg-bg-primary">
+    <slot />
+  </div>
+</div>

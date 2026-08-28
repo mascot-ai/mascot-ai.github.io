@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mascot-ai.com/sitemap.xml

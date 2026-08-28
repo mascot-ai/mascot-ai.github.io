@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CONTACT_EMAIL } from '../lib/site.js';
+// NOTE: Draft. Mirrors the in-app Privacy Policy with beta-era updates
+// (voice transcripts, essay content, AI subprocessors, Stripe). Pending the
+// user's legal review before this is treated as final.
+---
+
+<BaseLayout
+  path="/privacy/"
+  title="Privacy Policy: Mascot AI"
+  description="How Mascot AI collects, uses, and protects your data during the private beta."
+>
+  <article class="container-x max-w-3xl py-16 legal sm:py-20">
+    <h1 class="text-4xl">Privacy Policy (Beta)</h1>
+    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> August 28, 2026</p>
+
+    <h2>Introduction</h2>
+    <p>
+      Mascot AI is committed to protecting your privacy and being transparent about how we collect,
+      use, and protect your personal information. This policy explains our practices while the
+      platform is in private beta.
+    </p>
+
+    <h2>What data we collect</h2>
+    <ul>
+      <li><strong>Account information:</strong> email address, name, password (stored hashed), and account type (student or parent).</li>
+      <li><strong>Profile information:</strong> academic history (GPA, test scores, coursework), extracurricular activities, honors, hometown, graduation year, college preferences, and free-text responses about your goals and experiences.</li>
+      <li><strong>Uploaded documents:</strong> transcripts and other files you choose to upload for parsing.</li>
+      <li><strong>Voice conversations:</strong> audio from voice sessions with Mascot and the text transcripts generated from them.</li>
+      <li><strong>Essay content:</strong> drafts you write and the feedback conversations you have about them.</li>
+      <li><strong>Usage data:</strong> features used, pages visited, and time spent, to operate and improve the service.</li>
+      <li><strong>Device information:</strong> browser type, device type, IP address, and operating system, for support and security.</li>
+      <li><strong>Billing information:</strong> subscription status and payment metadata. Card details are handled by Stripe and are not stored on our servers.</li>
+    </ul>
+
+    <h2>Why we collect this data</h2>
+    <ul>
+      <li><strong>Account creation and authentication:</strong> to create and maintain your account and verify your identity.</li>
+      <li><strong>Voice counseling and profile building:</strong> to hold conversations, remember what you've discussed, and build your profile.</li>
+      <li><strong>College matching:</strong> to analyze your profile and produce personalized university recommendations with explanations.</li>
+      <li><strong>Essay assistance:</strong> to analyze drafts and provide coaching feedback.</li>
+      <li><strong>Product improvement:</strong> to understand how the platform is used and improve it.</li>
+      <li><strong>Communication:</strong> to send important updates about your account and the service.</li>
+      <li><strong>Security:</strong> to protect against fraud, abuse, and unauthorized access.</li>
+    </ul>
+
+    <h2>Service providers and AI processing</h2>
+    <p>
+      We do not sell your personal data. We share data only with providers that help us run the
+      platform, and only as needed to deliver the service:
+    </p>
+    <ul>
+      <li><strong>MongoDB Atlas</strong>: database hosting and storage.</li>
+      <li><strong>Google Cloud Platform</strong>: application hosting.</li>
+      <li><strong>Stripe</strong>: subscription payments.</li>
+      <li><strong>Anthropic (Claude)</strong>: AI processing for university matching, essay analysis, and transcript parsing.</li>
+      <li><strong>Google (Gemini)</strong>: AI processing for real-time voice conversations. Google also handles optional "Sign in with Google" authentication.</li>
+    </ul>
+    <p>
+      When you use AI features, your relevant content is processed by these third-party AI services
+      under their own privacy terms. We do not use your data to train AI models, and we do not share
+      personally identifiable information with third parties for their own purposes without your
+      consent.
+    </p>
+
+    <h2>Data security</h2>
+    <ul>
+      <li>Passwords are stored using secure hashing algorithms.</li>
+      <li>Data is transmitted over HTTPS.</li>
+      <li>Access to personal data is restricted to authorized personnel.</li>
+      <li>We review and update our security practices regularly.</li>
+    </ul>
+
+    <h2>Data sharing</h2>
+    <p><strong>We do not sell your personal data to third parties.</strong> We may share information only:</p>
+    <ul>
+      <li>with your explicit consent;</li>
+      <li>with the service providers listed above;</li>
+      <li>when required by law or to protect our legal rights;</li>
+      <li>in connection with a business transfer such as a merger or acquisition.</li>
+    </ul>
+    <p>
+      If parent linking is enabled for your account, a parent you approve can be granted read-only
+      access to parts of your profile, matches, and essays. You control which sections are shared.
+    </p>
+
+    <h2>Your rights</h2>
+    <ul>
+      <li><strong>Access:</strong> view and export your profile information from your account settings.</li>
+      <li><strong>Correction:</strong> update your information at any time in your account.</li>
+      <li><strong>Deletion:</strong> request deletion of your account and associated data by contacting us.</li>
+      <li><strong>Data portability:</strong> request a copy of your data in a machine-readable format.</li>
+      <li><strong>Opt-out:</strong> opt out of certain data collection and communications.</li>
+    </ul>
+
+    <h2>Data retention</h2>
+    <p>
+      We retain your personal information for as long as your account is active or as needed to
+      provide the service. Deleted content is first marked inactive and then removed. If you request
+      account deletion, we delete your personal information within 30 days, except where we are
+      required to retain it for legal or regulatory purposes.
+    </p>
+
+    <h2>Children's privacy</h2>
+    <p>
+      Mascot AI is intended for students aged 13 and older, and for parents assisting students. For
+      users under 18 we require parental or guardian consent, and for users under 13 we require
+      verifiable parental consent before an account is activated. If you believe we have collected
+      information from a child without the required consent, contact us and we will delete it.
+    </p>
+
+    <h2>Payments</h2>
+    <p>
+      Paid subscriptions are processed by Stripe. We receive subscription status and limited billing
+      metadata, and we do not receive or store full card numbers.
+    </p>
+
+    <div class="callout">
+      <strong>Beta notice:</strong> Mascot AI is in private beta. Features, data retention policies,
+      and service availability may change. We recommend not submitting highly sensitive personal
+      information during the beta period, and we will notify users of significant changes to these
+      practices.
+    </div>
+
+    <h2>International users</h2>
+    <p>
+      If you access the service from outside the United States, your information may be transferred
+      to, stored, and processed in the United States. By using the service, you consent to this
+      transfer.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      We may update this policy from time to time. We will post the updated policy on this page and
+      change the "Last updated" date, and we will notify users of material changes.
+    </p>
+
+    <h2>Contact us</h2>
+    <p>
+      For questions or requests about this policy or your data, including account deletion, data
+      access or portability, privacy complaints, and GDPR or CCPA requests, contact us at
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We respond to all requests within a
+      reasonable time, usually within 30 days.
+    </p>
+  </article>
+</BaseLayout>

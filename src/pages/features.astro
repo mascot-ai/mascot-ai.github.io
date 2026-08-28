@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureBlock from '../components/FeatureBlock.astro';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import Screenshot from '../components/Screenshot.astro';
+import VoiceRecreation from '../components/VoiceRecreation.astro';
+import RadarChart from '../components/RadarChart.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { TOTAL_UNIVERSITIES } from '../lib/site.js';
+---
+
+<BaseLayout
+  path="/features/"
+  title="How Mascot AI Works: Voice College Counseling and Matching"
+  description="See how Mascot AI works: voice counseling, AI university matching, deep school data, essay coaching, a profile builder, and an application planner in one app."
+>
+  <section class="container-x py-16 text-center sm:py-20">
+    <h1 class="text-4xl sm:text-5xl">How Mascot works</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-text-tertiary">
+      Six tools that run off one profile. Writing is always free. Only the AI features have limits.
+    </p>
+  </section>
+
+  <FeatureBlock
+    eyebrow="Talk to Mascot"
+    title="Voice counseling that remembers"
+    body="Start a voice session and talk through a topic: an activity, a goal, a setback. Mascot asks follow-up questions, then writes what it learned to your profile. The next session picks up where the last one ended."
+    bullets={['Natural voice, not a form', 'Sessions resume across days', 'Fills in your story topic by topic']}
+  >
+    <VoiceRecreation />
+  </FeatureBlock>
+
+  <FeatureBlock
+    reverse
+    eyebrow="AI Matching"
+    title="A ranked list with reasons"
+    body="Matching runs in two passes. A fast filter narrows thousands of schools, then a deeper model ranks the finalists against your full profile and writes a fit explanation for each one. Run it again any time your profile changes."
+    bullets={['Reach, target, and safety split out', 'A fit explanation per school', 'On-demand match for any single school']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/matches">
+      <Screenshot src="/screenshots/matches.jpg" alt="Mascot AI matches split into reach, target, and safety schools with strengths and tips" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <FeatureBlock
+    eyebrow="University Search"
+    title={`${TOTAL_UNIVERSITIES} schools, six tabs deep`}
+    body="Filter the list by state, size, selectivity, and major. Open a school for six tabs of real data: Overview, Admissions, Academics, Costs, Student Life, and Life After Graduation. Save the ones worth tracking."
+    bullets={['Filter by state, size, selectivity, major', 'Six tabs of real data per school', 'Saved schools feed your planner']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/universities">
+      <Screenshot src="/screenshots/university-detail.jpg" alt="A university detail view in Mascot AI with tabbed sections" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <FeatureBlock
+    reverse
+    eyebrow="Essays"
+    title="Draft, analyze, and mine your stories"
+    body="A focused editor with Essay Coach a click away. Run a full analysis for structure and voice, talk a paragraph through with Mascot, or pull concrete evidence out of your own activities. Drafting itself has no limit."
+    bullets={['Full structure and voice analysis', 'Essay Coach conversation per essay', 'Evidence pulled from your activities']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/essays">
+      <Screenshot src="/screenshots/essays.jpg" alt="The Mascot AI essay workspace with a draft, prompt, and formatting toolbar" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <FeatureBlock
+    eyebrow="Profile Builder"
+    title="One profile, built your way"
+    body="A guided wizard covers academics, testing, coursework, activities, honors, and goals. Upload a transcript and Mascot parses your courses for you. Or skip the typing and fill it in by voice."
+    bullets={['Guided, section by section', 'Automatic transcript parsing', 'Or complete it by talking to Mascot']}
+  >
+    <BrowserFrame label="app.mascot-ai.com">
+      <Screenshot src="/screenshots/dashboard.jpg" alt="The Mascot AI dashboard showing profile completion, next steps, and story coverage" width={1354} height={908} />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <FeatureBlock
+    reverse
+    eyebrow="Application Planner"
+    title="Deadlines and status in one view"
+    body="Your saved schools become a checklist. Set an application type and deadline for each, track tasks and recommendation letters, and watch an application-health score move as you finish things."
+    bullets={['Deadline and application type per school', 'Task checklist and recommendation letters', 'A health score for the whole cycle']}
+  >
+    <BrowserFrame label="app.mascot-ai.com/planner">
+      <Screenshot src="/screenshots/planner.jpg" alt="The Mascot AI application planner with deadlines, a task checklist, and recommendation letters" />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <section class="border-b border-border-primary py-20 sm:py-24">
+    <div class="container-x grid items-center gap-12 lg:grid-cols-2">
+      <div data-anim>
+        <p class="eyebrow">Story coverage</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">See what's still missing</h2>
+        <p class="mt-4 text-lg text-text-tertiary">
+          Mascot tracks seven parts of your story and scores how fully each one is covered, so you
+          always know what to talk about next.
+        </p>
+      </div>
+      <div data-anim><RadarChart /></div>
+    </div>
+  </section>
+
+  <CtaBand title="Try it with your own profile" />
+</BaseLayout>

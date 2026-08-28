@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Brand color tokens (mirrors counselor-frontend) ──────────── */
+:root {
+  --color-bg-primary: 240 242 255; /* #F0F2FF */
+  --color-bg-secondary: 248 249 255; /* #F8F9FF */
+  --color-bg-tertiary: 232 234 255; /* #E8EAFF */
+  --color-bg-card: 255 255 255;
+  --color-text-primary: 26 27 58; /* #1A1B3A */
+  --color-text-secondary: 74 85 104; /* #4A5568 */
+  --color-text-tertiary: 100 116 139; /* #64748B */
+  --color-text-muted: 148 163 184; /* #94A3B8 */
+  --color-border-primary: 226 228 240; /* #E2E4F0 */
+  --color-brand-primary: 79 70 229; /* #4F46E5 */
+  --color-brand-secondary: 16 185 129; /* #10B981 */
+}
+
+.dark {
+  --color-bg-primary: 15 17 35;
+  --color-bg-secondary: 22 25 50;
+  --color-bg-tertiary: 35 38 68;
+  --color-bg-card: 22 25 50;
+  --color-text-primary: 237 238 255;
+  --color-text-secondary: 178 185 210;
+  --color-text-tertiary: 140 148 178;
+  --color-text-muted: 100 108 138;
+  --color-border-primary: 45 48 80;
+  --color-brand-primary: 99 102 241;
+  --color-brand-secondary: 52 211 153;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-headline font-bold tracking-tight text-text-primary;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-primary ring-offset-2 ring-offset-bg-primary rounded-sm;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-[92%] max-w-content;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold
+           transition-colors duration-200 cursor-pointer;
+  }
+  .btn-primary {
+    @apply btn bg-brand-primary text-white hover:bg-indigo-700;
+  }
+  .btn-ghost {
+    @apply btn border border-border-primary text-text-secondary hover:bg-bg-tertiary;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-brand-primary;
+  }
+
+  /* Long-form legal prose. */
+  .legal {
+    @apply text-text-secondary;
+  }
+  .legal h2 {
+    @apply mt-10 text-xl sm:text-2xl;
+  }
+  .legal h3 {
+    @apply mt-6 font-headline text-base font-semibold text-text-primary;
+  }
+  .legal p {
+    @apply mt-3 leading-relaxed;
+  }
+  .legal ul {
+    @apply mt-3 list-disc space-y-1.5 pl-6;
+  }
+  .legal a {
+    @apply font-medium text-brand-primary hover:underline;
+  }
+  .legal .callout {
+    @apply mt-4 rounded-xl border border-border-primary bg-bg-secondary p-4 text-sm;
+  }
+}
+
+/* Motion is opt-in: [data-anim] starts hidden ONLY when JS is running and
+   motion is allowed. No JS, or reduced motion -> content always shows. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-anim] {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-anim] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
