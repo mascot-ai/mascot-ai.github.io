@@ -3,9 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 
 const steps = [
-  ['Talk', 'Have voice conversations with Mascot about your interests, activities, and goals. It builds your profile as you go.'],
-  ['Match', 'Mascot ranks schools against your full profile and explains why each one fits, so your list stays balanced and honest.'],
-  ['Apply', 'Draft essays with a coach, then track deadlines and status for every school in one place.'],
+  [
+    'Set up your profile by talking',
+    'Join the platform and have a voice conversation with Mascot. It asks about your interests, activities, grades, and goals, and builds your profile from your answers.',
+  ],
+  [
+    'Get your college matches',
+    'Mascot ranks schools against your profile and gives a reason for each one, split into reach, target, and safety.',
+  ],
+  [
+    'Pick matches and see the essays',
+    'Choose the schools you want to apply to. Mascot shows you every essay you will need to write for them.',
+  ],
+  [
+    'Write each essay with an agent',
+    'Talk an essay through with Mascot to work out what it should be about and pull in details about you. Then draft several versions, get grammar and structure feedback, and refine until it is ready.',
+  ],
 ];
 ---
 
@@ -27,15 +40,19 @@ const steps = [
   </section>
 
   <section class="border-y border-border-primary bg-bg-secondary py-16">
-    <div class="container-x">
-      <h2 class="text-2xl">How it works</h2>
-      <ol class="mt-8 grid gap-6 sm:grid-cols-3" data-anim-group>
+    <div class="container-x max-w-3xl">
+      <h2 class="text-2xl">How it works, start to finish</h2>
+      <ol class="mt-8 space-y-8" data-anim-group>
         {
           steps.map(([t, d], i) => (
-            <li class="rounded-2xl border border-border-primary bg-bg-card p-6" data-anim>
-              <span class="font-headline text-sm font-bold text-brand-primary">0{i + 1}</span>
-              <h3 class="mt-2 font-headline text-lg">{t}</h3>
-              <p class="mt-2 text-sm text-text-tertiary">{d}</p>
+            <li class="flex gap-5" data-anim>
+              <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-primary/10 font-headline text-sm font-bold text-brand-primary">
+                {i + 1}
+              </span>
+              <div>
+                <h3 class="font-headline text-lg">{t}</h3>
+                <p class="mt-1 leading-relaxed text-text-tertiary">{d}</p>
+              </div>
             </li>
           ))
         }
@@ -47,7 +64,7 @@ const steps = [
     <div class="max-w-2xl">
       <h2 class="text-2xl">Built with students and counselors</h2>
       <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
-        Mascot AI was designed and tested in private beta with 20 high school students and 2 school
+        Mascot AI was designed and tested in private beta with high school students and school
         counselors. The voice conversations, the matching logic, and the essay coaching were all
         shaped by watching students use the product and hearing from the counselors who guide them
         every day. That work is still going.
