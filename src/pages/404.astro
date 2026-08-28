@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BETA_FORM_URL } from '../lib/site.js';
+
+// GitHub Pages serves this as 404.html with a 404 status on any unknown path.
+---
+
+<BaseLayout title="Page not found: Mascot AI" description="This page does not exist.">
+  <section class="container-x flex max-w-2xl flex-col items-center py-24 text-center sm:py-32">
+    <p class="font-headline text-5xl font-extrabold text-brand-primary">404</p>
+    <h1 class="mt-4 text-3xl sm:text-4xl">This page does not exist</h1>
+    <p class="mt-4 text-lg text-text-tertiary">
+      The link may be old or mistyped. Here is the way back.
+    </p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a href="/" class="btn-primary">Go to the home page</a>
+      <a href={BETA_FORM_URL} target="_blank" rel="noopener" class="btn-ghost">Request beta access</a>
+    </div>
+    <nav class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-text-secondary">
+      <a href="/features/" class="hover:text-text-primary">Features</a>
+      <a href="/pricing/" class="hover:text-text-primary">Pricing</a>
+      <a href="/about/" class="hover:text-text-primary">About</a>
+      <a href="/contact/" class="hover:text-text-primary">Contact</a>
+    </nav>
+  </section>
+</BaseLayout>
