@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { GA_ID } from '../lib/site.js';
 
 const {
   title = 'Mascot AI: AI College Counselor for High School Students',
@@ -71,6 +72,18 @@ const schema = {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    {
+      GA_ID && import.meta.env.PROD && (
+        <Fragment>
+          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+          <script
+            is:inline
+            set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+          />
+        </Fragment>
+      )
+    }
 
     <!-- Apply saved theme + mark JS active before paint (avoids theme flash and
          keeps [data-anim] content visible if the bundle fails to load). -->

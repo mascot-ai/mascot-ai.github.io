@@ -5,6 +5,10 @@ export const APP_LOGIN_URL = 'https://dev.mascot-ai.com';
 export const CONTACT_EMAIL = 'pranrosh@gmail.com'; // TODO: branded address?
 export const TOTAL_UNIVERSITIES = '4,800+';
 
+// GA4 Measurement ID for the "Mascot AI Website" property (account "Mascot AI").
+// The tag only loads in production builds (see BaseLayout).
+export const GA_ID = 'G-YFSFMPDLCH';
+
 export const NAV_LINKS = [
   { href: '/features/', label: 'Features' },
   { href: '/pricing/', label: 'Pricing' },
