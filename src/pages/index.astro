@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FeatureBlock from '../components/FeatureBlock.astro';
 import BrowserFrame from '../components/BrowserFrame.astro';
 import ShotPlaceholder from '../components/ShotPlaceholder.astro';
+import Screenshot from '../components/Screenshot.astro';
 import VoiceRecreation from '../components/VoiceRecreation.astro';
 import RadarChart from '../components/RadarChart.astro';
 import CtaBand from '../components/CtaBand.astro';
@@ -85,7 +86,7 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../li
     bullets={['Target / reach / likely balance', 'Per-school fit analysis', 'On-demand match for any school']}
   >
     <BrowserFrame label="app.mascot-ai.com/matches">
-      <img src="/screenshots/beta-dashboard.png" alt="Mascot AI matches and dashboard" width="1200" height="800" class="w-full" loading="lazy" />
+      <Screenshot src="/screenshots/matches.jpg" alt="Mascot AI matches split into reach, target, and safety schools" />
     </BrowserFrame>
   </FeatureBlock>
 
@@ -94,11 +95,11 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../li
     id="search"
     eyebrow="Explore"
     title={`${TOTAL_UNIVERSITIES} schools, in real depth`}
-    body="Filter by location, size, selectivity, and major. Open any school for six tabs of real data &mdash; academics, admissions, cost, outcomes, student life &mdash; then save it to your list."
+    body="Filter by location, size, selectivity, and major. Open any school for six tabs of real data &mdash; admissions, academics, cost, student life, and life after graduation &mdash; then save it to your list."
     bullets={['Filter by state, size, selectivity, major', 'Six tabs of real data per school', 'Save schools to your list']}
   >
     <BrowserFrame label="app.mascot-ai.com/universities">
-      <ShotPlaceholder name="University search + detail tabs" />
+      <Screenshot src="/screenshots/university-detail.jpg" alt="A university detail view in Mascot AI with tabbed sections" />
     </BrowserFrame>
   </FeatureBlock>
 
@@ -108,11 +109,11 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../li
     reverse
     eyebrow="Essays"
     title="Write with a coach in the margin"
-    body="Draft in a clean editor. Ask Bear for feedback in a side chat, run a full analysis, and mine your own stories for evidence. Writing is always free &mdash; no limits."
-    bullets={['AI analysis', 'Chat coaching per essay', 'Story & evidence mining']}
+    body="Draft in a clean editor. Ask Mascot for feedback in a side chat, run a full analysis, and mine your own stories for evidence. Writing is always free &mdash; no limits."
+    bullets={['AI analysis', 'Essay Coach conversation per essay', 'Story & evidence mining']}
   >
     <BrowserFrame label="app.mascot-ai.com/essays">
-      <ShotPlaceholder name="Essay workspace + Bear coaching" />
+      <Screenshot src="/screenshots/essays.jpg" alt="The Mascot AI essay workspace with a draft and formatting toolbar" />
     </BrowserFrame>
   </FeatureBlock>
 
@@ -124,8 +125,8 @@ import { BETA_FORM_URL, APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../li
     body="A guided setup covers grades, tests, courses, activities, honors, and goals. Upload a transcript and Mascot parses it for you. Prefer to talk? Do the whole thing by voice."
     bullets={['Guided wizard', 'Transcript upload + AI parsing', 'Or complete it by voice']}
   >
-    <BrowserFrame label="app.mascot-ai.com/profile">
-      <ShotPlaceholder name="Profile wizard + progress" />
+    <BrowserFrame label="app.mascot-ai.com">
+      <Screenshot src="/screenshots/dashboard.jpg" alt="The Mascot AI dashboard with profile completion and next steps" width={1354} height={908} />
     </BrowserFrame>
   </FeatureBlock>
 
