@@ -13,7 +13,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
 >
   <article class="container-x max-w-3xl py-16 legal sm:py-20">
     <h1 class="text-4xl">Terms of Service</h1>
-    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> August 28, 2026</p>
+    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> August 31, 2026</p>
 
     <div class="callout">
       <strong>Beta service notice:</strong> Mascot AI is in private beta. By using the service you
@@ -43,7 +43,10 @@ import { CONTACT_EMAIL } from '../lib/site.js';
     <p>
       Mascot AI uses third-party AI services to power core features: Claude (by Anthropic) for
       university matching, essay analysis, and transcript parsing, and Gemini (by Google) for
-      real-time voice conversations.
+      real-time voice conversations. For real-time voice conversations, this includes audio
+      processed by Google's Gemini API. We store the resulting text transcript; we do not store the
+      audio ourselves. We currently use Gemini's free API tier, under which Google may retain the
+      underlying audio under its own terms.
     </p>
     <ul>
       <li>By using AI-powered features, you acknowledge that your relevant data is processed by these third-party AI services under their respective terms.</li>
