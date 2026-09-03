@@ -12,6 +12,7 @@ export const GA_ID = 'G-YFSFMPDLCH';
 export const NAV_LINKS = [
   { href: '/features/', label: 'Features' },
   { href: '/pricing/', label: 'Pricing' },
+  { href: '/parents/', label: 'For Parents' },
   { href: '/about/', label: 'About' },
 ];
 
