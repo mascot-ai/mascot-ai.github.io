@@ -10,7 +10,7 @@ export const TOTAL_UNIVERSITIES = '4,800+';
 export const GA_ID = 'G-YFSFMPDLCH';
 
 export const NAV_LINKS = [
-  { href: '/features/', label: 'Features' },
+  { href: '/features/', label: 'For Students' },
   { href: '/pricing/', label: 'Pricing' },
   { href: '/parents/', label: 'For Parents' },
   { href: '/about/', label: 'About' },
