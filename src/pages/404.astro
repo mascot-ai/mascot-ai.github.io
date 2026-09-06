@@ -5,7 +5,12 @@ import { BETA_FORM_URL } from '../lib/site.js';
 // GitHub Pages serves this as 404.html with a 404 status on any unknown path.
 ---
 
-<BaseLayout title="Page not found: Mascot AI" description="This page does not exist.">
+<BaseLayout
+  path="/404/"
+  noindex
+  title="Page not found: Mascot AI"
+  description="This page does not exist."
+>
   <section class="container-x flex max-w-2xl flex-col items-center py-24 text-center sm:py-32">
     <p class="font-headline text-5xl font-extrabold text-brand-primary">404</p>
     <h1 class="mt-4 text-3xl sm:text-4xl">This page does not exist</h1>

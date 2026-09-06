@@ -8,6 +8,7 @@ const {
   title = 'Mascot AI: AI College Counselor for High School Students',
   description = 'Mascot AI is a Conversational AI Counselor for high schoolers. Talk through your goals, get a college list that fits, and write stronger essays in one app.',
   path = '',
+  noindex = false,
 } = Astro.props;
 
 const canonical = new URL(path, Astro.site).href;
@@ -49,6 +50,7 @@ const schema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Mascot AI" />
