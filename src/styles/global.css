@@ -64,6 +64,58 @@
     @apply text-xs font-semibold uppercase tracking-[0.14em] text-brand-primary;
   }
 
+  /* Long-form blog prose. Frontmatter title is the H1, so bodies start at H2. */
+  .post {
+    @apply text-text-secondary;
+  }
+  .post > * + * {
+    @apply mt-4;
+  }
+  .post h2 {
+    @apply mt-10 font-headline text-xl font-bold text-text-primary sm:text-2xl;
+  }
+  .post h3 {
+    @apply mt-8 font-headline text-lg font-semibold text-text-primary;
+  }
+  .post p {
+    @apply leading-relaxed;
+  }
+  .post ul {
+    @apply list-disc space-y-1.5 pl-6;
+  }
+  .post ol {
+    @apply list-decimal space-y-1.5 pl-6;
+  }
+  .post a {
+    @apply font-medium text-brand-primary hover:underline;
+  }
+  .post strong {
+    @apply font-semibold text-text-primary;
+  }
+  .post blockquote {
+    @apply border-l-2 border-brand-primary pl-4 italic text-text-tertiary;
+  }
+  .post code {
+    @apply rounded bg-bg-tertiary px-1.5 py-0.5 text-sm;
+  }
+  .post img {
+    @apply rounded-xl border border-border-primary;
+  }
+  .post h2 + p,
+  .post h3 + p {
+    @apply mt-3;
+  }
+  .post table {
+    @apply block w-full overflow-x-auto text-sm sm:table;
+  }
+  .post th,
+  .post td {
+    @apply border border-border-primary px-3 py-2 text-left align-top;
+  }
+  .post th {
+    @apply bg-bg-secondary font-semibold text-text-primary;
+  }
+
   /* Long-form legal prose. */
   .legal {
     @apply text-text-secondary;

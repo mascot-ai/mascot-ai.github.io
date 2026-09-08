@@ -23,3 +23,5 @@ npm-debug.log*
 
 # planning docs — not for public repo
 docs/
+BLOG_CALENDAR.md
+BLOG_CALENDAR*.md

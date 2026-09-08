@@ -98,6 +98,8 @@ const schema = {
         if (saved === 'dark' || (!saved && prefersDark)) el.classList.add('dark');
       })();
     </script>
+
+    <slot name="head" />
   </head>
   <body>
     <a
