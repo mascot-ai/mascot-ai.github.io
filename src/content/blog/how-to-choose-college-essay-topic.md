@@ -30,9 +30,9 @@ Start with the mechanics. On the Common App, the personal statement can run up t
 
 By the time a reader opens your essay, they already have your transcript, the rigor of your courses, your test scores if you sent them, and your activities list. Those parts tell them what you did. The essay is where they get a sense of how you think, what you notice, and how you handle something that did not go to plan.
 
-It matters, but it sits below the academic record. In NACAC's most recent State of College Admission report, which draws on a 2017 survey of admissions offices, about a quarter of colleges said the essay carried "considerable importance" in the decision, well behind grades in college-prep courses and the strength of a student's curriculum. That is the most recent published version of that data, so treat it as a direction rather than a current measurement. The essay is closer to a tie-breaker and a character check than a lever.
+It matters, but it sits below the academic record. In [NACAC's most recent State of College Admission report](https://nacacnet.org/wp-content/uploads/2022/10/soca2019_ch3.pdf), published in 2019 using data from a 2017 survey of admissions offices, about a quarter of colleges said the essay carried "considerable importance" in the decision, well behind grades in college-prep courses and the strength of a student's curriculum. That is the most recent published version of that data, so treat it as a direction rather than a current measurement. The essay is closer to a tie-breaker and a character check than a lever.
 
-The reason the topic has to do its work quickly is the sheer volume readers are moving through. Higher Ed Dive, reporting on Common App data, put the count at roughly 6.7 million applications from more than 1.2 million first-year applicants through January 1, 2025, up about 5 percent from the year before and around 40 percent over four cycles. A reader is going through a stack of essays in one sitting. Yours does not get a slow, generous read on the first pass.
+The reason the topic has to do its work quickly is the sheer volume readers are moving through. [Higher Ed Dive](https://www.highereddive.com/news/common-app-data-shows-5-jump-in-first-year-college-applicants/737732/), reporting on Common App data, put the count at roughly 6.7 million applications from more than 1.2 million first-year applicants through January 1, 2025, up about 5 percent from the year before and around 40 percent over four cycles. A reader is going through a stack of essays in one sitting. Yours does not get a slow, generous read on the first pass.
 
 You may have seen a specific number for how long a reader spends on each essay, often "four minutes" or an "eight-minute rule." There is no reliable current figure for this. The numbers that circulate are either unsourced or trace back to old journalism about a single office, and admissions reading has changed a great deal since then. The honest version is just that the first read is quick, so the opening and the topic have to carry.
 
@@ -76,7 +76,7 @@ Hard experiences can make strong essays, usually once there is some distance and
 
 Readers can usually tell when a student is writing about the prestigious internship, the award, or the trip because they believe that is what admissions wants. The writing goes flat because the interest is not real. A plain topic you actually care about will beat an impressive one you do not.
 
-The pattern across all four is the same. The subject is rarely the problem. The reflection is. College Essay Guy makes this point with the classic sports-injury essay, which "fails when it's about the injury" and "succeeds when it's about the identity crisis that followed." A line often attributed to MIT Admissions puts it more bluntly, that there are no trite topics, only trite answers. Whether or not that exact phrasing is theirs, it is the right idea. Fix the thinking and most "bad" topics are fine.
+The pattern across all four is the same. The subject is rarely the problem. The reflection is. [College Essay Guy](https://www.collegeessayguy.com/blog/what-not-to-write-college-essay) makes this point with the classic sports-injury essay, which "fails when it's about the injury" and "succeeds when it's about the identity crisis that followed." A line often attributed to MIT Admissions puts it more bluntly, that there are no trite topics, only trite answers. Whether or not that exact phrasing is theirs, it is the right idea. Fix the thinking and most "bad" topics are fine.
 
 ## The overdone-topic question
 
@@ -84,7 +84,7 @@ More students abandon a good idea over this than over any other worry. You have 
 
 Certain topics genuinely do recur, year after year, and admissions people say so openly. Across write-ups from Georgia Tech, College Essay Guy, and others, the same ones come up: the sports injury or the big game, the service trip or mission trip, the immigrant-family story or the grandparent's sacrifice, the death of a relative, moving to a new place, and the "my hero is my parent" essay. If you are writing one of these, a reader has very likely seen several versions of it that same week.
 
-That is not disqualifying. Rick Clark, who runs admissions at Georgia Tech, said in a 2022 piece for Grown and Flown that "knowing the topic won't differentiate you" and that "your voice has to be evident" instead. He also made the point that "there is no utterly unique topic." Nobody is holding out for a subject that has never been written about, because it does not exist. What separates two essays on the same event is the specific detail and the specific thinking.
+That is not disqualifying. Rick Clark, who runs admissions at Georgia Tech, said in a [2022 piece for Grown and Flown](https://grownandflown.com/director-admission-college-essays/) that "knowing the topic won't differentiate you" and that "your voice has to be evident" instead. He also made the point that "there is no utterly unique topic." Nobody is holding out for a subject that has never been written about, because it does not exist. What separates two essays on the same event is the specific detail and the specific thinking.
 
 The practical test is this. Ask whether your version could have been written by a hundred other applicants who went through the same thing. If the answer is yes, the problem is not the topic, it is that you have not reached the part only you can write. Add the specific moment and the specific reaction that the other ninety-nine would not have had. If you cannot find that part, then it may be worth picking something else, especially if you were half-drawn to it because it sounded serious.
 
@@ -113,7 +113,7 @@ Good essays are often about something that sounds like nothing. Johns Hopkins pu
 
 ### Run each idea through "so what"
 
-Take a candidate topic and describe what happened in a few sentences. Then ask, so what. What changed in how you see things. What would a reader understand about you that is not already on the application. If you have a real answer, you have a topic. If the honest answer is "nothing really, it was just a good day," keep it on the list but keep looking.
+Take a candidate topic and describe what happened in a few sentences. Then ask: so what? What changed in how you see things? What would a reader understand about you that is not already on the application? If you have a real answer, you have a topic. If the honest answer is "nothing really, it was just a good day," keep it on the list but keep looking.
 
 ### Do not start from the prompts
 
@@ -143,7 +143,7 @@ The rest of this guide is written to the student. This part is for you.
 
 You can help most by being a memory. Students forget their own material: the summer job that went sideways, the thing they built when they were twelve, the way they handled a hard stretch last year. Remind them of moments, then step back. You can also be the person they talk it through with, and the question worth asking is "what did you make of that," not "is that impressive enough."
 
-What does not help is choosing the topic for them, vetoing a small idea because it does not sound weighty, or editing sentences until the essay sounds like you wrote it. The most common overreach is that last one. Admissions readers know what a seventeen-year-old sounds like, and they catch adult-sounding sentences fast. When the voice on the page is clearly a parent's, it counts against the student. The essay is one of the few parts of the application that is entirely theirs. Keep it that way.
+What does not help is choosing the topic for them, vetoing a small idea because it does not sound weighty, or editing sentences until the essay sounds like you wrote it. The most common overreach is that last one. Admissions readers know what a seventeen-year-old sounds like, and they catch adult-sounding sentences fast. An essay that clearly had a parent's hand on the wording tends to work against the student, not for them. The essay is one of the few parts of the application that is entirely theirs. Keep it that way.
 
 ## What to do once you have a topic
 
@@ -151,8 +151,8 @@ A topic and a page of notes is the finish line for this guide. From here, the wo
 
 A useful page of notes has the concrete moment written down in plain detail, a few sentences on what you thought at the time, a few more on what you think now, and one line on what you want a reader to understand about you. That is enough to start. If your notes are only a summary of the event with no thinking attached, go back to the "so what" test before you draft, because that gap does not close on its own once you start writing.
 
-This is also the part of Mascot that runs as a conversation. You talk through your experiences out loud, it helps you hear which thread has something behind it, and you come away with a topic and notes, not a draft. It does not write the essay. That part is yours.
+This is also the part of [Mascot](/features/) that runs as a conversation. You talk through your experiences out loud, it helps you hear which thread has something behind it, and you come away with a topic and notes, not a draft. It does not write the essay. That part is yours.
 
-## Last thing
+## Keeping this in perspective
 
-The topic question feels larger than it is. You are not hunting for a story no one has ever told, or for the single most dramatic thing that has happened to you. You are looking for something true, something specific, and something you still have thinking left to do about. Most students already have three or four of those. The real work is noticing them, and then being willing to write plainly about what they meant.
+The topic question feels larger than it is. You are not hunting for a story no one has ever told, or for the single most dramatic thing that has happened to you. You are looking for something true, something specific, and something you still have thinking left to do about. Most students I work with already have three or four of those. The real work is noticing them, and then being willing to write plainly about what they meant.

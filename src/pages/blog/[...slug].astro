@@ -55,7 +55,7 @@ const schema = {
 };
 ---
 
-<BaseLayout path={path} title={`${title} | Mascot AI`} description={description}>
+<BaseLayout path={path} title={`${title} | Mascot AI`} description={description} ogType="article">
   <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="head" />
 
   <article class="container-x max-w-3xl py-16 sm:py-20">
