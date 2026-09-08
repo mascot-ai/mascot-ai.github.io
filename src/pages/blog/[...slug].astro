@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import BlogAuthor from '../../components/BlogAuthor.astro';
+import { PILLARS, AUTHOR } from '../../lib/blog.js';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (p) => (import.meta.env.PROD ? !p.data.draft : true));
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post, posts },
+  }));
+}
+
+const { post, posts } = Astro.props;
+const { Content } = await post.render();
+const { title, description, pubDate, updatedDate, pillar } = post.data;
+
+const path = `/blog/${post.slug}/`;
+const url = new URL(path, Astro.site).href;
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+const related = posts
+  .filter((p) => p.data.pillar === pillar && p.slug !== post.slug)
+  .filter((p) => !(import.meta.env.PROD && p.data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${url}#post`,
+      headline: title,
+      description,
+      datePublished: pubDate.toISOString(),
+      dateModified: (updatedDate ?? pubDate).toISOString(),
+      author: { '@type': 'Person', name: AUTHOR.byline, description: AUTHOR.bio },
+      publisher: { '@id': 'https://mascot-ai.com/#org' },
+      isPartOf: { '@id': 'https://mascot-ai.com/#website' },
+      mainEntityOfPage: url,
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mascot-ai.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://mascot-ai.com/blog/' },
+        { '@type': 'ListItem', position: 3, name: title, item: url },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout path={path} title={`${title} | Mascot AI`} description={description} ogType="article">
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="head" />
+
+  <article class="container-x max-w-3xl py-16 sm:py-20">
+    <nav class="text-sm text-text-muted" aria-label="Breadcrumb">
+      <a href="/blog/" class="hover:text-text-primary">Guides</a>
+      <span class="mx-1.5">/</span>
+      <span>{PILLARS[pillar]}</span>
+    </nav>
+
+    <h1 class="mt-4 text-3xl leading-tight sm:text-4xl">{title}</h1>
+    <p class="mt-4 text-sm text-text-muted">
+      By {AUTHOR.byline} · {fmt(pubDate)}{updatedDate && ` · Updated ${fmt(updatedDate)}`}
+    </p>
+
+    <div class="post mt-10">
+      <Content />
+    </div>
+
+    <BlogAuthor />
+
+    {
+      related.length > 0 && (
+        <section class="mt-14 border-t border-border-primary pt-8">
+          <h2 class="text-lg">More on {PILLARS[pillar].toLowerCase()}</h2>
+          <ul class="mt-4 space-y-3">
+            {related.map((p) => (
+              <li>
+                <a
+                  href={`/blog/${p.slug}/`}
+                  class="font-medium text-brand-primary hover:underline"
+                >
+                  {p.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </article>
+
+  <CtaBand
+    title="Talk it through with Mascot"
+    subtitle="Mascot builds your profile and college list from a conversation. Request access to the private beta."
+  />
+</BaseLayout>

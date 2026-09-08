@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import BlogAuthor from '../../components/BlogAuthor.astro';
+import { PILLARS } from '../../lib/blog.js';
+
+const posts = (await getCollection('blog', (p) => (import.meta.env.PROD ? !p.data.draft : true)))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<BaseLayout
+  path="/blog/"
+  title="Guides: Choosing Where to Apply and What to Write About | Mascot AI"
+  description="Counselor-written guides on the parts of the college application that take real thought: picking essay topics, building a balanced college list, and the application timeline."
+>
+  <section class="container-x max-w-3xl py-16 sm:py-20">
+    <p class="eyebrow">Guides</p>
+    <h1 class="mt-3 text-4xl leading-tight sm:text-5xl">
+      Guides for the parts of applying to college that take real thought
+    </h1>
+    <p class="mt-6 text-lg leading-relaxed text-text-tertiary">
+      Most of the application is logistics: deadlines, forms, fee waivers, score reports. The parts
+      that take real thought are narrower. Which schools belong on your list, and what you write
+      your essays about. That is what these guides cover. They are written by a college counselor
+      who does this work with students every year. We will not write your essay for you, and we
+      will not hand you the one right answer, because there usually isn't one.
+    </p>
+  </section>
+
+  <section class="container-x max-w-3xl pb-16">
+    {
+      posts.length === 0 ? (
+        <p class="text-text-tertiary">The first guides are on the way.</p>
+      ) : (
+        <ul class="divide-y divide-border-primary border-y border-border-primary">
+          {posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`} class="group block py-6">
+                <p class="text-xs font-semibold uppercase tracking-wider text-brand-primary">
+                  {PILLARS[post.data.pillar]}
+                </p>
+                <h2 class="mt-2 font-headline text-xl font-bold text-text-primary group-hover:text-brand-primary">
+                  {post.data.title}
+                </h2>
+                <p class="mt-2 leading-relaxed text-text-tertiary">{post.data.description}</p>
+                <p class="mt-3 text-sm text-text-muted">{fmt(post.data.pubDate)}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    <BlogAuthor />
+
+    <section class="mt-8 text-sm leading-relaxed text-text-tertiary">
+      <h2 class="font-headline text-base font-semibold text-text-primary">How we handle facts</h2>
+      <p class="mt-2">
+        Requirements, deadlines, and prompt wording come from the source: the Common App, the
+        colleges themselves, and the testing organizations. These change year to year, so every
+        guide shows when it was last updated. Statistics are attributed to a named source or left
+        out. If a guide gets something wrong, tell us at
+        <a href="/contact/" class="font-medium text-brand-primary hover:underline">our contact page</a>
+        and we will fix it.
+      </p>
+      <p class="mt-2">
+        These guides are general. They do not know your grades, your budget, or your list. For
+        advice built around your situation, talk to your school counselor.
+      </p>
+    </section>
+  </section>
+
+  <CtaBand
+    title="Talk it through with Mascot"
+    subtitle="Mascot builds your profile and college list from a conversation. Request access to the private beta."
+  />
+</BaseLayout>

@@ -13,6 +13,7 @@ export const NAV_LINKS = [
   { href: '/features/', label: 'For Students' },
   { href: '/parents/', label: 'For Parents' },
   { href: '/pricing/', label: 'Pricing' },
+  { href: '/blog/', label: 'Guides' },
   { href: '/about/', label: 'About' },
 ];
 

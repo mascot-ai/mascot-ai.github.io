@@ -10,6 +10,7 @@
 - [Pricing](https://mascot-ai.com/pricing/): Explorer is free. Navigator adds more AI matching and essay coaching. One-time add-ons on either plan.
 - [For Parents](https://mascot-ai.com/parents/): Link a parent account to a student for a read-only view of their profile and progress, plus billing management. Students stay in control of their work.
 - [About](https://mascot-ai.com/about/): Why Mascot exists and how the product works end to end.
+- [Guides](https://mascot-ai.com/blog/): Counselor-written guides on choosing college essay topics, building a balanced college list, self-discovery for applications, and the application timeline.
 - [What's next](https://mascot-ai.com/coming-soon/): Roadmap: a counselor workspace and a scholarship finder.
 - [Contact](https://mascot-ai.com/contact/): How to reach the team.
 - [Privacy Policy](https://mascot-ai.com/privacy/)
