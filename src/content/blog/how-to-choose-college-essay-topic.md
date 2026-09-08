@@ -151,7 +151,7 @@ A topic and a page of notes is the finish line for this guide. From here, the wo
 
 A useful page of notes has the concrete moment written down in plain detail, a few sentences on what you thought at the time, a few more on what you think now, and one line on what you want a reader to understand about you. That is enough to start. If your notes are only a summary of the event with no thinking attached, go back to the "so what" test before you draft, because that gap does not close on its own once you start writing.
 
-This is also the part of [Mascot](/features/) that runs as a conversation. You talk through your experiences out loud, it helps you hear which thread has something behind it, and you come away with a topic and notes, not a draft. It does not write the essay. That part is yours.
+This is also the part of [Mascot](https://mascot-ai.com/app/talk-to-bear) that runs as a conversation. You talk through your experiences out loud, it helps you hear which thread has something behind it, and you come away with a topic and notes, not a draft. It does not write the essay. That part is yours.
 
 ## Keeping this in perspective
 
