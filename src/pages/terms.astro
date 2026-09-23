@@ -1,26 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { CONTACT_EMAIL } from '../lib/site.js';
-// NOTE: Draft. Ported from the in-app Terms of Service with beta-era updates
-// (voice + Gemini, Stripe billing, counselor section replaced with billing).
-// Governing-law jurisdiction is a TODO. Pending the user's legal review.
+// NOTE: Draft. Governing law set to California pending the CA entity filing;
+// confirm with counsel before treating as final.
 ---
 
 <BaseLayout
   path="/terms/"
   title="Terms of Service: Mascot AI"
-  description="The terms that govern your use of Mascot AI during the private beta."
+  description="The terms that govern your use of Mascot AI."
 >
   <article class="container-x max-w-3xl py-16 legal sm:py-20">
     <h1 class="text-4xl">Terms of Service</h1>
-    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> August 31, 2026</p>
-
-    <div class="callout">
-      <strong>Beta service notice:</strong> Mascot AI is in private beta. By using the service you
-      acknowledge that features may change, data retention policies may be modified, and service
-      availability is not guaranteed. We recommend not submitting highly sensitive personal
-      information during this period.
-    </div>
+    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> October 1, 2026</p>
 
     <h2>1. Acceptance of terms</h2>
     <p>
@@ -112,7 +104,8 @@ import { CONTACT_EMAIL } from '../lib/site.js';
     <p>
       Mascot AI offers a free plan and, where available, a paid subscription billed monthly through
       Stripe. You may cancel at any time. Cancellation stops future billing and takes effect at the
-      end of the current billing period. During the beta, paid plans and pricing may change.
+      end of the current billing period. Plans and pricing may change; we will notify you of price
+      changes affecting your active subscription before they take effect.
     </p>
 
     <h2>10. Disclaimer of warranties</h2>
@@ -157,19 +150,21 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       through the Service. Continued use after changes take effect constitutes acceptance.
     </p>
 
-    <h2>15. Beta service modifications</h2>
-    <p>During the beta period, we may:</p>
-    <ul>
-      <li>add, modify, or remove features without notice;</li>
-      <li>change data retention policies;</li>
-      <li>temporarily suspend the Service for maintenance;</li>
-      <li>reset or modify user data for testing, with advance notice where possible.</li>
-    </ul>
-
-    <h2>16. Governing law</h2>
+    <h2>15. Governing law</h2>
     <p>
-      These Terms are governed by the laws of the jurisdiction in which Mascot AI operates, without
-      regard to conflict-of-law provisions.
+      These Terms are governed by the laws of the State of California, without regard to
+      conflict-of-law provisions. Any dispute not subject to informal resolution will be brought in
+      the state or federal courts located in California, and you consent to their jurisdiction.
+    </p>
+
+    <h2>16. California residents</h2>
+    <p>
+      If you are a California resident, see the "California privacy rights (CCPA/CPRA)" section of
+      our <a href="/privacy/">Privacy Policy</a> for your rights to know, delete, correct, and limit
+      use of your personal information. Under California Civil Code Section 1789.3, California
+      residents may reach the Complaint Assistance Unit of the Division of Consumer Services of the
+      California Department of Consumer Affairs at 1625 North Market Blvd., Suite N 112, Sacramento,
+      CA 95834, or by phone at (800) 952-5210.
     </p>
 
     <h2>17. Contact</h2>
