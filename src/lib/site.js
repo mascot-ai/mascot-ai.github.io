@@ -1,7 +1,6 @@
 // Shared external links + copy constants. One place to change them.
-export const BETA_FORM_URL = 'https://forms.gle/Jbpa86AMPhssyeoi8';
-export const APP_URL = 'https://dev.mascot-ai.com';
-export const APP_LOGIN_URL = 'https://dev.mascot-ai.com';
+export const APP_URL = 'https://dev.mascot-ai.com'; // dev/staging instance, linked from the footer only
+export const APP_LOGIN_URL = 'https://app.mascot-ai.com';
 export const CONTACT_EMAIL = 'pranrosh@gmail.com'; // TODO: branded address?
 export const TOTAL_UNIVERSITIES = '4,800+';
 

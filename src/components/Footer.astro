@@ -1,4 +1,5 @@
 ---
+import { APP_URL } from '../lib/site.js';
 const year = new Date().getFullYear();
 ---
 
@@ -46,10 +47,7 @@ const year = new Date().getFullYear();
     <div
       class="container-x flex flex-col gap-2 py-5 text-xs text-text-muted sm:flex-row sm:items-center sm:justify-between"
     >
-      <p>
-        Mascot AI is in private beta. Features and availability may change. Please don't submit
-        sensitive personal information.
-      </p>
+      <a href={APP_URL} class="text-text-muted hover:text-text-primary">Dev environment</a>
       <p>© {year} Mascot AI. All rights reserved.</p>
     </div>
   </div>

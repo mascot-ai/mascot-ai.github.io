@@ -1,25 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { CONTACT_EMAIL } from '../lib/site.js';
-// NOTE: Draft. Mirrors the in-app Privacy Policy with beta-era updates
-// (voice transcripts, essay content, AI subprocessors, Stripe). Pending the
-// user's legal review before this is treated as final.
+// NOTE: Draft, including the California Privacy Rights (CCPA/CPRA) section.
+// Pending the user's attorney review before the CA filing / production launch.
 ---
 
 <BaseLayout
   path="/privacy/"
   title="Privacy Policy: Mascot AI"
-  description="How Mascot AI collects, uses, and protects your data during the private beta."
+  description="How Mascot AI collects, uses, and protects your data."
 >
   <article class="container-x max-w-3xl py-16 legal sm:py-20">
-    <h1 class="text-4xl">Privacy Policy (Beta)</h1>
-    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> August 31, 2026</p>
+    <h1 class="text-4xl">Privacy Policy</h1>
+    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> October 1, 2026</p>
 
     <h2>Introduction</h2>
     <p>
       Mascot AI is committed to protecting your privacy and being transparent about how we collect,
-      use, and protect your personal information. This policy explains our practices while the
-      platform is in private beta.
+      use, and protect your personal information. This policy explains our practices.
     </p>
 
     <h2>What data we collect</h2>
@@ -115,6 +113,43 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       <li><strong>Opt-out:</strong> opt out of certain data collection and communications.</li>
     </ul>
 
+    <h2>California privacy rights (CCPA/CPRA)</h2>
+    <p>
+      If you are a California resident, the California Consumer Privacy Act as amended by the
+      California Privacy Rights Act (CCPA/CPRA) gives you the following rights over the personal
+      information we hold about you:
+    </p>
+    <ul>
+      <li><strong>Right to know:</strong> the categories and specific pieces of personal information we have collected about you, the categories of sources, our purpose for collecting it, and the categories of third parties we disclose it to.</li>
+      <li><strong>Right to delete:</strong> request deletion of personal information we have collected from you, subject to certain legal exceptions.</li>
+      <li><strong>Right to correct:</strong> request correction of inaccurate personal information we maintain about you.</li>
+      <li><strong>Right to opt out of sale or sharing:</strong> we do not sell personal information for money, and we do not "share" it for cross-context behavioral advertising as CPRA defines that term. Google Signals is turned off on our Google Analytics property, so analytics data is not linked to ad profiles. Because we do not sell or share, there is nothing to opt out of, but you can reach us at any time to confirm this for your account.</li>
+      <li><strong>Right to limit use of sensitive personal information:</strong> some information you provide (such as academic records or content revealing your background) may qualify as sensitive personal information under CPRA. We use it only to provide the counseling, matching, and essay features you request, which is a permitted use that does not require a separate opt-out.</li>
+      <li><strong>Right to non-discrimination:</strong> we will not deny you service, charge you a different price, or provide a different level of service because you exercised any of these rights.</li>
+      <li><strong>Authorized agent:</strong> you may designate an authorized agent to make a request on your behalf; we may require proof of the agent's authorization and verification of your identity.</li>
+    </ul>
+    <p>
+      To exercise any of these rights, contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+      We verify your identity using your account email before fulfilling a request, and we respond
+      within 45 days as required by CCPA/CPRA (with one 45-day extension when reasonably necessary).
+      We have not sold or shared personal information, and have not used or disclosed sensitive
+      personal information for purposes beyond those permitted under CPRA, in the preceding 12
+      months.
+    </p>
+    <p>
+      <strong>Minors:</strong> we do not sell or share the personal information of consumers we
+      actually know are under 16 years of age. Because our student users are high schoolers, this
+      may include minors; we require parental or guardian consent as described under "Children's
+      privacy" below, and we do not need separate opt-in consent to sell or share their data because
+      we do not sell or share it.
+    </p>
+    <p>
+      <strong>Shine the Light:</strong> California Civil Code Section 1798.83 lets California
+      residents ask what personal information we share with third parties for those third parties'
+      direct marketing purposes. We do not share personal information for third-party direct
+      marketing, so there is nothing to disclose under this law.
+    </p>
+
     <h2>Data retention</h2>
     <p>
       We retain your personal information for as long as your account is active or as needed to
@@ -142,13 +177,6 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       Paid subscriptions are processed by Stripe. We receive subscription status and limited billing
       metadata, and we do not receive or store full card numbers.
     </p>
-
-    <div class="callout">
-      <strong>Beta notice:</strong> Mascot AI is in private beta. Features, data retention policies,
-      and service availability may change. We recommend not submitting highly sensitive personal
-      information during the beta period, and we will notify users of significant changes to these
-      practices.
-    </div>
 
     <h2>International users</h2>
     <p>
