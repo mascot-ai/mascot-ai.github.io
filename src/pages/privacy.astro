@@ -16,7 +16,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
 
     <h2>Introduction</h2>
     <p>
-      Mascot AI is committed to protecting your privacy and being transparent about how we collect,
+      Mascot AI Labs, Inc. ("Mascot AI," "we," or "us"), a California corporation, is committed to protecting your privacy and being transparent about how we collect,
       use, and protect your personal information. This policy explains our practices.
     </p>
 
@@ -25,7 +25,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       <li><strong>Account information:</strong> email address, name, password (stored hashed), and account type (student or parent).</li>
       <li><strong>Profile information:</strong> academic history (GPA, test scores, coursework), extracurricular activities, honors, hometown, graduation year, college preferences, and free-text responses about your goals and experiences.</li>
       <li><strong>Uploaded documents:</strong> transcripts and other files you choose to upload for parsing.</li>
-      <li><strong>Voice conversations:</strong> your voice audio is processed in real time by Google's Gemini API to hold the conversation and generate a text transcript. We store the text transcript in your account. We do not store the audio recording ourselves. We currently use Gemini's free API tier, under which Google may retain the audio it processes and use it to improve its own products, see "Service providers and AI processing" below for details.</li>
+      <li><strong>Voice conversations:</strong> your voice audio is processed in real time by Google's Gemini model on Google Cloud Vertex AI to hold the conversation and generate a text transcript. We store the text transcript in your account. We do not store the audio recording ourselves, and under Google Cloud's terms Google does not use it to train its models; see "Service providers and AI processing" below for details.</li>
       <li><strong>Essay content:</strong> drafts you write and the feedback conversations you have about them.</li>
       <li><strong>Usage data:</strong> features used, pages visited, and time spent, to operate and improve the service.</li>
       <li><strong>Device information:</strong> browser type, device type, IP address, and operating system, for support and security.</li>
@@ -45,8 +45,8 @@ import { CONTACT_EMAIL } from '../lib/site.js';
 
     <p>
       Before your first voice session, you'll be asked to confirm you understand that the
-      conversation is processed in real time by Google's Gemini API and that Google may retain the
-      audio under its free-tier terms, as described below.
+      conversation is processed in real time by Google's Gemini model on Google Cloud Vertex AI,
+      as described below.
     </p>
 
     <h2>Service providers and AI processing</h2>
@@ -58,16 +58,16 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       <li><strong>MongoDB Atlas</strong>: database hosting and storage.</li>
       <li><strong>Google Cloud Platform</strong>: application hosting.</li>
       <li><strong>Stripe</strong>: subscription payments.</li>
-      <li><strong>Anthropic (Claude)</strong>: AI processing for university matching, essay analysis, and transcript parsing.</li>
-      <li><strong>Google (Gemini)</strong>: AI processing for real-time voice conversations. We currently use Gemini's free API tier. Under Google's terms for this tier, Google may retain voice audio it processes through the API and use it to improve its own products; this differs from Google's paid tier, which does not retain or use this audio. Google also handles optional "Sign in with Google" authentication.</li>
+      <li><strong>Anthropic (Claude), via Google Cloud Vertex AI</strong>: AI processing for university matching, essay analysis, and transcript parsing.</li>
+      <li><strong>Google (Gemini), via Google Cloud Vertex AI</strong>: AI processing for real-time voice conversations. Under Google Cloud's terms, Google does not use this data to train its models. Google also handles optional "Sign in with Google" authentication.</li>
       <li><strong>Google Analytics</strong>: aggregate traffic and usage measurement for our public website.</li>
     </ul>
     <p>
       When you use AI features, your relevant content is processed by these third-party AI services
       under their own privacy terms. We do not use your data to train AI models, and we do not share
       personally identifiable information with third parties for their own purposes without your
-      consent. This commitment applies to Mascot AI directly. Google's own handling of voice audio
-      processed through the Gemini API is governed by Google's terms, as described above.
+      consent. Content processed through Google Cloud Vertex AI is handled under Google Cloud's terms, as
+      described above.
     </p>
 
     <h2>Analytics and cookies</h2>
@@ -159,8 +159,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
     </p>
     <p>
       <strong>Voice recordings:</strong> we do not retain audio ourselves; only the text transcript
-      is stored under the retention terms above. Audio processed through Google's Gemini API is
-      retained or discarded according to Google's own terms for the free tier we currently use, as
+      is stored under the retention terms above. Audio processed through Google Cloud Vertex AI is handled under Google Cloud's terms, as
       described in "Service providers and AI processing."
     </p>
 
