@@ -22,6 +22,7 @@ export const NAV_LINKS = [
 // ai_credits). Confirm the live platform_config before launch.
 export const PRICING = {
   navigatorMonthly: '$39.99',
+  navigatorSemiannual: '$199.99', // ~$33.33/mo
   navigatorAnnual: '$383.88', // ~$31.99/mo
   navigatorLive: false, // flip to true when the plus tier is purchasable
 };
@@ -30,7 +31,7 @@ export const ADDONS = [
   { name: '+10 school saves', price: '$9.99', grants: '10 school saves' },
   { name: '+30 voice minutes', price: '$19.99', grants: '30 voice minutes' },
   { name: '+1 AI match run', price: '$3.99', grants: '1 match run' },
-  { name: '+10 AI credits', price: '$9.99', grants: '10 AI actions: essay help, analysis, grammar' },
+  { name: '+10 AI credits', price: '$19.99', grants: '10 AI actions: essay help, analysis, grammar' },
 ];
 
 // Narrative topics Mascot tracks in conversation. Labels verbatim from
