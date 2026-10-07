@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { CONTACT_EMAIL, APP_URL, BETA_FORM_URL } from '../lib/site.js';
+import { CONTACT_EMAIL, APP_LOGIN_URL } from '../lib/site.js';
 ---
 
 <BaseLayout
   path="/contact/"
   title="Contact Mascot AI"
-  description="Reach the Mascot AI team with questions, product feedback, a privacy request, or to ask about private beta access."
+  description="Reach the Mascot AI team with questions, product feedback, or a privacy request."
 >
   <section class="container-x max-w-2xl py-16 sm:py-24">
     <h1 class="text-4xl sm:text-5xl">Contact us</h1>
@@ -27,28 +27,13 @@ import { CONTACT_EMAIL, APP_URL, BETA_FORM_URL } from '../lib/site.js';
       </a>
 
       <a
-        href={BETA_FORM_URL}
-        target="_blank"
-        rel="noopener"
-        class="flex items-center gap-4 rounded-2xl border border-border-primary bg-bg-card p-5 transition-colors hover:bg-bg-tertiary"
-      >
-        <svg class="h-6 w-6 text-brand-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></svg>
-        <span>
-          <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted">Request beta access</span>
-          <span class="text-text-primary">Students: join the private beta</span>
-        </span>
-      </a>
-
-      <a
-        href={APP_URL}
-        target="_blank"
-        rel="noopener"
+        href={APP_LOGIN_URL}
         class="flex items-center gap-4 rounded-2xl border border-border-primary bg-bg-card p-5 transition-colors hover:bg-bg-tertiary"
       >
         <svg class="h-6 w-6 text-brand-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
         <span>
-          <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted">Existing beta users</span>
-          <span class="text-text-primary">dev.mascot-ai.com</span>
+          <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted">Log in</span>
+          <span class="text-text-primary">app.mascot-ai.com</span>
         </span>
       </a>
     </div>
