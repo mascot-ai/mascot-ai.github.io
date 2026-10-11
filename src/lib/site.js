@@ -23,7 +23,7 @@ export const PRICING = {
   navigatorMonthly: '$39.99',
   navigatorSemiannual: '$199.99', // ~$33.33/mo
   navigatorAnnual: '$383.88', // ~$31.99/mo
-  navigatorLive: false, // flip to true when the plus tier is purchasable
+  navigatorLive: true, // Navigator is purchasable (live with the prod launch)
 };
 
 export const ADDONS = [
