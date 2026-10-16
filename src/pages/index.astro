@@ -4,7 +4,7 @@ import BrowserFrame from '../components/BrowserFrame.astro';
 import Screenshot from '../components/Screenshot.astro';
 import VoiceRecreation from '../components/VoiceRecreation.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { APP_LOGIN_URL, TOTAL_UNIVERSITIES, PRICING } from '../lib/site.js';
+import { APP_LOGIN_URL, APP_REGISTER_URL, TOTAL_UNIVERSITIES, PRICING } from '../lib/site.js';
 
 const tools = [
   ['Talk to Mascot', 'Voice conversations that build your profile'],
@@ -33,7 +33,8 @@ const tools = [
           college list that fits, and write stronger essays. All in one app.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href={APP_LOGIN_URL} class="btn-primary">Log in</a>
+          <a href={APP_REGISTER_URL} class="btn-primary">Start free</a>
+          <a href={APP_LOGIN_URL} class="btn-ghost">Log in</a>
         </div>
         <p class="mt-4 text-sm text-text-tertiary">
           Parents can link their account for a read-only view of their student's progress and to
