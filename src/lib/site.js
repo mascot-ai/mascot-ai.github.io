@@ -1,7 +1,9 @@
 // Shared external links + copy constants. One place to change them.
-export const APP_URL = 'https://dev.mascot-ai.com'; // dev/staging instance, linked from the footer only
 export const APP_LOGIN_URL = 'https://app.mascot-ai.com';
 export const APP_REGISTER_URL = 'https://app.mascot-ai.com/register';
+// Register link tagged so GA4 can attribute signups to the page/CTA that sent them.
+export const registerUrl = (content) =>
+  `${APP_REGISTER_URL}?utm_source=website&utm_medium=cta&utm_content=${encodeURIComponent(content)}`;
 export const CONTACT_EMAIL = 'team@mascot-ai.com';
 export const TOTAL_UNIVERSITIES = '4,800+';
 

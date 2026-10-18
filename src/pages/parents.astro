@@ -4,6 +4,7 @@ import FeatureBlock from '../components/FeatureBlock.astro';
 import BrowserFrame from '../components/BrowserFrame.astro';
 import Screenshot from '../components/Screenshot.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
 
 const steps = [
   [
@@ -18,6 +19,14 @@ const steps = [
     'They accept',
     'Once your student accepts, you get a read-only view of their profile and progress, plus billing management. Either of you can unlink at any time.',
   ],
+];
+
+const faqs = [
+  ['What can I see as a parent?', 'A read-only view of your linked student\'s profile and progress, plus billing management. You cannot create, edit, or delete your student\'s work.'],
+  ['How do I link to my student?', 'Your student makes their account first. Then send a request from your dashboard using their account email, or have them invite you from their settings. They accept, and you are linked.'],
+  ['Can we unlink later?', 'Yes. Either of you can unlink at any time.'],
+  ['Can I pay for my student\'s plan?', 'Yes. Parents manage the subscription and billing from their own account.'],
+  ['How does Mascot compare with a private college counselor?', 'Mascot covers the core work of list building, essay feedback, and planning at a fraction of the cost. See the full comparison on our compare page.'],
 ];
 ---
 
@@ -49,8 +58,6 @@ const steps = [
       <Screenshot
         src="/screenshots/parents-home.jpg"
         alt="The Mascot AI parent dashboard listing a linked student with buttons for profile and billing"
-        width={1315}
-        height={924}
       />
     </BrowserFrame>
   </FeatureBlock>
@@ -70,8 +77,6 @@ const steps = [
       <Screenshot
         src="/screenshots/parents-profile.jpg"
         alt="A read-only student profile in Mascot AI showing 100 percent onboarding completion and section cards for academics, test scores, activities, and honors"
-        width={1315}
-        height={924}
       />
     </BrowserFrame>
   </FeatureBlock>
@@ -89,9 +94,7 @@ const steps = [
     <BrowserFrame label="app.mascot-ai.com">
       <Screenshot
         src="/screenshots/parents-billing.jpg"
-        alt="The Mascot AI billing view for a parent showing the student's current plan, usage bars, and upgrade options"
-        width={1315}
-        height={924}
+        alt="The Mascot AI billing view for a parent showing the student's current plan and usage bars"
       />
     </BrowserFrame>
   </FeatureBlock>
@@ -120,6 +123,8 @@ const steps = [
       </p>
     </div>
   </section>
+
+  <Faq items={faqs} />
 
   <CtaBand
     title="Get your student started"

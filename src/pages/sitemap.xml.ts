@@ -4,17 +4,18 @@ import { getCollection } from 'astro:content';
 // Generated sitemap. Replaces the old hand-written public/sitemap.xml so blog
 // posts are included automatically. robots.txt already points here.
 const SITE = 'https://mascot-ai.com';
-const today = new Date().toISOString().slice(0, 10);
 
 const staticPages: { path: string; lastmod: string }[] = [
-  { path: '/', lastmod: today },
+  { path: '/', lastmod: '2026-10-17' },
   { path: '/features/', lastmod: '2026-08-28' },
-  { path: '/pricing/', lastmod: '2026-09-06' },
-  { path: '/parents/', lastmod: '2026-09-02' },
-  { path: '/about/', lastmod: '2026-08-28' },
-  { path: '/blog/', lastmod: today },
-  { path: '/coming-soon/', lastmod: '2026-08-28' },
-  { path: '/contact/', lastmod: '2026-08-28' },
+  { path: '/pricing/', lastmod: '2026-10-17' },
+  { path: '/parents/', lastmod: '2026-10-17' },
+  { path: '/about/', lastmod: '2026-10-17' },
+  { path: '/blog/', lastmod: '2026-10-17' },
+  { path: '/college-list-builder/', lastmod: '2026-10-17' },
+  { path: '/college-essay-guide/', lastmod: '2026-10-17' },
+  { path: '/compare/', lastmod: '2026-10-17' },
+  { path: '/contact/', lastmod: '2026-10-17' },
   { path: '/privacy/', lastmod: '2026-08-28' },
   { path: '/terms/', lastmod: '2026-08-28' },
 ];

@@ -2,21 +2,38 @@
 
 > Voice-first AI college counseling for high school students. Talk through your
 > goals, get a college list that fits, and write stronger essays, all in one app.
-> Currently in private beta.
+> Free to start. Sign up at https://app.mascot-ai.com/register.
 
-## Pages
+## Product
 
 - [Features](https://mascot-ai.com/features/): Voice counseling, AI university matching, deep school data, essay coaching, profile builder, application planner.
-- [Pricing](https://mascot-ai.com/pricing/): Explorer is free. Navigator adds more AI matching and essay coaching. One-time add-ons on either plan.
+- [College list builder](https://mascot-ai.com/college-list-builder/): How Mascot ranks schools against a student's profile and splits them into reach, target, and safety with a reason for each.
+- [Pricing](https://mascot-ai.com/pricing/): Explorer is free. Navigator is $39.99 a month and adds unlimited AI match runs and more voice time. One-time add-ons on either plan.
 - [For Parents](https://mascot-ai.com/parents/): Link a parent account to a student for a read-only view of their profile and progress, plus billing management. Students stay in control of their work.
-- [About](https://mascot-ai.com/about/): Why Mascot exists and how the product works end to end.
-- [Guides](https://mascot-ai.com/blog/): Counselor-written guides on choosing college essay topics, building a balanced college list, self-discovery for applications, and the application timeline.
-- [What's next](https://mascot-ai.com/coming-soon/): Roadmap: a counselor workspace and a scholarship finder.
-- [Contact](https://mascot-ai.com/contact/): How to reach the team.
+- [About](https://mascot-ai.com/about/): Why Mascot exists, how the product works end to end, and how it approaches AI in admissions. Mascot does not write students' essays.
+- [Mascot AI vs ChatGPT vs a private college counselor](https://mascot-ai.com/compare/): One table covering cost, school data, college lists, essay help, deadlines, and where a human counselor is still better.
+- [Contact](https://mascot-ai.com/contact/): team@mascot-ai.com
 - [Privacy Policy](https://mascot-ai.com/privacy/)
 - [Terms of Service](https://mascot-ai.com/terms/)
 
+## Guides
+
+Written by a college counselor. [Start with the college essay guide](https://mascot-ai.com/college-essay-guide/).
+
+- [How to build a balanced college list](https://mascot-ai.com/blog/how-to-build-a-balanced-college-list/): Sort schools into reach, target, and safety, and decide how many to apply to.
+- [50 college essay topic ideas](https://mascot-ai.com/blog/college-essay-topic-ideas/): Prompts grouped by category, with three tests for whether an idea is worth writing.
+- [How to figure out what to write your college essay about](https://mascot-ai.com/blog/how-to-choose-college-essay-topic/): What the essay is for, what works, what to skip.
+- [What makes a college essay topic actually work](https://mascot-ai.com/blog/what-makes-a-college-essay-topic-work/): Three tests for a workable topic.
+- [20 questions to find your college essay story](https://mascot-ai.com/blog/questions-to-find-your-college-essay-story/): Concrete questions that surface real essay material.
+- [How to turn an ordinary moment into a strong essay topic](https://mascot-ai.com/blog/ordinary-moment-college-essay/): Why small moments often beat dramatic ones.
+- [College essay topics to avoid, and why "overdone" is mostly a myth](https://mascot-ai.com/blog/college-essay-topics-to-avoid/): Seven topics readers see every cycle and how to make them yours.
+- [The Common App essay prompts, and how to tell which one is yours](https://mascot-ai.com/blog/common-app-essay-prompts-explained/): The seven 2026-2027 prompts and how to match a topic to one.
+- [Personal statement vs supplemental essays](https://mascot-ai.com/blog/personal-statement-vs-supplemental-essays/): What each essay is for.
+- [How to find an angle for the "why us" essay](https://mascot-ai.com/blog/why-us-essay-angle/): Connect one real thing about you to a checkable detail at the school.
+- [How to choose a topic for the activity or extracurricular essay](https://mascot-ai.com/blog/activity-essay-topic/): Choosing between commitments without repeating your resume.
+- [Is it okay to use AI for your college essay?](https://mascot-ai.com/blog/using-ai-for-college-essay/): Where the line sits between feedback and ghostwriting.
+
 ## Notes
 
-- The web app lives at https://dev.mascot-ai.com and is invite-only during the beta.
-- Beta access requests: https://forms.gle/Jbpa86AMPhssyeoi8
+- The web app lives at https://app.mascot-ai.com. Sign up free: https://app.mascot-ai.com/register
+- Facts about specific schools, deadlines, and costs should be confirmed on each school's own website.

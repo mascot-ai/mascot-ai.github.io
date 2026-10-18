@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
 import { PRICING, ADDONS } from '../lib/site.js';
 
 // Rows mirror the tier limits in seed_platform_config.py (free vs plus).
@@ -24,6 +25,30 @@ const faqs = [
   ['What happens to my essays if I downgrade?', 'Your essays and profile data are always yours. Downgrading only limits AI features, not your saved content.'],
 ];
 
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Mascot AI',
+  applicationCategory: 'EducationalApplication',
+  operatingSystem: 'Web',
+  offers: [
+    { '@type': 'Offer', name: 'Explorer', price: '0', priceCurrency: 'USD' },
+    {
+      '@type': 'Offer',
+      name: 'Navigator',
+      price: PRICING.navigatorMonthly.replace('$', ''),
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: PRICING.navigatorMonthly.replace('$', ''),
+        priceCurrency: 'USD',
+        billingDuration: 1,
+        unitCode: 'MON',
+      },
+    },
+  ],
+};
+
 const cell = (v) =>
   v === true
     ? '<svg class="mx-auto h-4 w-4 text-brand-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
@@ -37,6 +62,7 @@ const cell = (v) =>
   title="Mascot AI Pricing: Free Explorer and Navigator Plans"
   description="Mascot AI pricing. Explorer is free with no card. Navigator adds more AI college matching and essay coaching. One-time add-ons work on either plan."
 >
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(productSchema)} />
   <section class="container-x py-16 text-center sm:py-20">
     <h1 class="text-4xl sm:text-5xl">Plans and pricing</h1>
     <p class="mx-auto mt-4 max-w-xl text-lg text-text-tertiary">
@@ -128,21 +154,7 @@ const cell = (v) =>
     </div>
   </section>
 
-  <section class="container-x pb-20">
-    <div class="mx-auto max-w-3xl">
-      <h2 class="text-2xl">Frequently asked questions</h2>
-      <dl class="mt-6 space-y-6" data-anim-group>
-        {
-          faqs.map(([q, a]) => (
-            <div data-anim>
-              <dt class="font-medium text-text-primary">{q}</dt>
-              <dd class="mt-1 text-sm text-text-tertiary">{a}</dd>
-            </div>
-          ))
-        }
-      </dl>
-    </div>
-  </section>
+  <Faq items={faqs} />
 
   <CtaBand />
 </BaseLayout>

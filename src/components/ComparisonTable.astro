@@ -1,0 +1,41 @@
+---
+import { PRICING, TOTAL_UNIVERSITIES } from '../lib/site.js';
+
+const rows = [
+  ['Cost', `Free to start. Navigator is ${PRICING.navigatorMonthly} a month`, 'Free and paid tiers', 'Often hundreds of dollars an hour'],
+  ['Availability', 'Any time, by voice or text', 'Any time', 'By appointment'],
+  ['Built for', 'College applications only', 'Everything', 'College applications'],
+  ['Remembers your story', 'Yes. One profile builds across voice sessions', 'Only what you paste into each chat', 'Depends on the counselor'],
+  ['School data', `A database of ${TOTAL_UNIVERSITIES} schools, six tabs each`, 'General knowledge that may be out of date', "The counselor's experience"],
+  ['College list', 'Ranked reach, target, and safety, with a reason for each', 'Suggestions you must check yourself', 'Built from experience'],
+  ['Essays', 'Questions and critique. You write every word', 'Can generate text, which admissions offices discourage', 'Feedback on your drafts'],
+  ['Deadlines and tasks', 'Built-in application planner', 'None', 'Varies'],
+  ['Parent view', 'Read-only parent account with billing', 'No separate role', 'Varies'],
+  ['Personal judgment and advocacy', 'Limited. It is software', 'Limited', 'Strong. The main reason to hire one'],
+];
+---
+
+<div class="overflow-x-auto rounded-2xl border border-border-primary">
+  <table class="w-full min-w-[40rem] text-sm">
+    <thead>
+      <tr class="border-b border-border-primary bg-bg-secondary text-left">
+        <th scope="col" class="px-4 py-4 font-semibold"></th>
+        <th scope="col" class="px-4 py-4 font-semibold text-brand-primary">Mascot AI</th>
+        <th scope="col" class="px-4 py-4 font-semibold">ChatGPT</th>
+        <th scope="col" class="px-4 py-4 font-semibold">Private counselor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map(([label, a, b, c]) => (
+          <tr class="border-b border-border-primary align-top last:border-0">
+            <th scope="row" class="px-4 py-4 text-left font-medium text-text-primary">{label}</th>
+            <td class="bg-brand-primary/5 px-4 py-4 text-text-secondary">{a}</td>
+            <td class="px-4 py-4 text-text-tertiary">{b}</td>
+            <td class="px-4 py-4 text-text-tertiary">{c}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

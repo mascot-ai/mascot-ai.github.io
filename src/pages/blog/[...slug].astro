@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import BlogAuthor from '../../components/BlogAuthor.astro';
 import { PILLARS, AUTHOR } from '../../lib/blog.js';
+import { registerUrl } from '../../lib/site.js';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (p) => (import.meta.env.PROD ? !p.data.draft : true));
@@ -21,11 +22,22 @@ const path = `/blog/${post.slug}/`;
 const url = new URL(path, Astro.site).href;
 const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
-const related = posts
-  .filter((p) => p.data.pillar === pillar && p.slug !== post.slug)
-  .filter((p) => !(import.meta.env.PROD && p.data.draft))
-  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-  .slice(0, 3);
+// Same-pillar posts first, then the newest from other pillars, so every post links onward.
+const others = posts
+  .filter((p) => p.slug !== post.slug && !(import.meta.env.PROD && p.data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const related = [
+  ...others.filter((p) => p.data.pillar === pillar),
+  ...others.filter((p) => p.data.pillar !== pillar),
+].slice(0, 3);
+
+// Product tie-in shown after every post, keyed to the post's pillar.
+const TIE_IN = {
+  'essay-topic': ['Find your essay story by talking it through', 'Mascot asks follow-up questions and pulls out the moments worth writing about. The writing stays yours.', '/features/', 'See how it works'],
+  'college-list': ['Get a ranked list with a reason for every school', 'Mascot splits schools into reach, target, and safety and explains each fit.', '/college-list-builder/', 'See the list builder'],
+  'ai-admissions': ['An AI counselor that asks, not writes', 'Mascot gives feedback and asks questions. It does not write your essay.', '/compare/', 'See how it compares'],
+};
+const tieIn = TIE_IN[pillar] ?? TIE_IN['essay-topic'];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -69,17 +81,34 @@ const schema = {
     <p class="mt-4 text-sm text-text-muted">
       By {AUTHOR.byline} · {fmt(pubDate)}{updatedDate && ` · Updated ${fmt(updatedDate)}`}
     </p>
+    {
+      pillar === 'essay-topic' && (
+        <p class="mt-2 text-sm">
+          Part of the <a href="/college-essay-guide/" class="font-medium text-brand-primary hover:underline">college essay guide</a>.
+        </p>
+      )
+    }
 
     <div class="post mt-10">
       <Content />
     </div>
+
+    <aside class="mt-12 rounded-2xl border border-border-primary bg-bg-secondary p-6">
+      <p class="eyebrow">Mascot AI</p>
+      <h2 class="mt-2 text-xl">{tieIn[0]}</h2>
+      <p class="mt-2 text-sm text-text-tertiary">{tieIn[1]}</p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href={registerUrl(`blog-${post.slug}`)} class="btn-primary !px-4 !py-2">Start free</a>
+        <a href={tieIn[2]} class="btn-ghost !px-4 !py-2">{tieIn[3]}</a>
+      </div>
+    </aside>
 
     <BlogAuthor />
 
     {
       related.length > 0 && (
         <section class="mt-14 border-t border-border-primary pt-8">
-          <h2 class="text-lg">More on {PILLARS[pillar].toLowerCase()}</h2>
+          <h2 class="text-lg">Keep reading</h2>
           <ul class="mt-4 space-y-3">
             {related.map((p) => (
               <li>

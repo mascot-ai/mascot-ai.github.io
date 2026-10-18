@@ -1,5 +1,17 @@
 ---
-// A captured app screenshot for use inside <BrowserFrame>.
-const { src, alt, width = 1440, height = 723 } = Astro.props;
+// A captured app screenshot for use inside <BrowserFrame>. Themed shots ship as
+// <name>-light.jpg and <name>-dark.jpg; the one matching the site theme shows.
+const { src, alt, width = 1440, height = 748, themed = true } = Astro.props;
+const light = src.replace(/\.jpg$/, '-light.jpg');
+const dark = src.replace(/\.jpg$/, '-dark.jpg');
 ---
-<img src={src} alt={alt} width={width} height={height} loading="lazy" class="block w-full" />
+{
+  themed ? (
+    <>
+      <img src={light} alt={alt} width={width} height={height} loading="lazy" class="block w-full dark:hidden" />
+      <img src={dark} alt={alt} width={width} height={height} loading="lazy" class="hidden w-full dark:block" />
+    </>
+  ) : (
+    <img src={src} alt={alt} width={width} height={height} loading="lazy" class="block w-full" />
+  )
+}

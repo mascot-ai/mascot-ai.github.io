@@ -1,0 +1,30 @@
+---
+// FAQ list + matching FAQPage JSON-LD. items: [question, answer][]
+const { items, title = 'Frequently asked questions' } = Astro.props;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<section class="container-x pb-20">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-2xl">{title}</h2>
+    <dl class="mt-6 space-y-6" data-anim-group>
+      {
+        items.map(([q, a]) => (
+          <div data-anim>
+            <dt class="font-medium text-text-primary">{q}</dt>
+            <dd class="mt-1 text-sm text-text-tertiary">{a}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</section>

@@ -2,6 +2,7 @@
 title: 'The Common App essay prompts, and how to tell which one is yours'
 description: 'The seven Common App essay prompts for 2026-2027, what each one really asks, and how to work out which prompt your chosen topic already answers.'
 pubDate: 2026-09-21
+updatedDate: 2026-10-17
 pillar: essay-topic
 draft: false
 ---
@@ -12,6 +13,16 @@ draft: false
 > - Choose the topic first, then find the prompt it already answers. Do not hunt for a memory to fit a prompt.
 > - Prompt 7 (any topic) is a real option, not a fallback for students who could not decide.
 > - When two prompts fit, pick the one whose question you can answer most honestly.
+
+**The seven prompts at a glance**
+
+1. [Background, identity, interest, or talent](#prompt-1-background-identity-interest-or-talent)
+2. [A challenge, setback, or failure](#prompt-2-a-challenge-setback-or-failure)
+3. [Questioning or challenging a belief](#prompt-3-questioning-or-challenging-a-belief)
+4. [Gratitude](#prompt-4-gratitude)
+5. [An accomplishment, event, or realization that sparked growth](#prompt-5-an-accomplishment-event-or-realization-that-sparked-growth)
+6. [Something that makes you lose track of time](#prompt-6-something-that-makes-you-lose-track-of-time)
+7. [Any topic](#prompt-7-any-topic)
 
 Most students start the Common App essay the same way: they open the list of prompts, read all seven, and start searching their life for a memory that fits one. It feels organized. It is also backwards.
 

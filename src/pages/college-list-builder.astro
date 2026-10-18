@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import Screenshot from '../components/Screenshot.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
+import { TOTAL_UNIVERSITIES, registerUrl } from '../lib/site.js';
+
+const faqs = [
+  ['What is an AI college list builder?', 'It is a tool that turns your grades, activities, interests, and goals into a ranked list of colleges. Mascot AI also explains why each school fits and sorts the list into reach, target, and safety.'],
+  ['How does Mascot build the list?', `Matching runs in two passes. A fast filter narrows ${TOTAL_UNIVERSITIES} schools to a shortlist, then a deeper model ranks the finalists against your full profile and writes a fit explanation for each one.`],
+  ['What are reach, target, and safety schools?', 'A reach school is one where your profile sits below its typical admitted student, so admission is uncertain. A target school is a good match for your profile. A safety school is one where your profile is comfortably above the typical admitted student and you would be glad to attend.'],
+  ['Is the college list builder free?', 'Explorer, the free plan, includes AI matching with one match run a month and needs no card. Navigator removes that cap. See the pricing page for current limits.'],
+  ['Can I check one specific school?', 'Yes. You can run an on-demand match for any single school and read how it fits your profile.'],
+  ['How often should I rebuild my list?', 'Run it again whenever your profile changes: new grades, a new activity, or a shift in what you want from a college.'],
+];
+---
+
+<BaseLayout
+  path="/college-list-builder/"
+  title="AI College List Builder: Reach, Target and Safety Schools | Mascot AI"
+  description="Build a balanced college list with AI. Mascot AI ranks schools against your profile, splits them into reach, target, and safety, and explains why each one fits. Free to start."
+>
+  <section class="container-x py-16 sm:py-20">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow">AI college list builder</p>
+        <h1 class="mt-3 text-4xl leading-tight sm:text-5xl">A college list that fits you, with a reason for every school</h1>
+        <p class="mt-5 text-lg leading-relaxed text-text-tertiary">
+          Mascot AI is a college list builder for high schoolers. It reads your profile, ranks schools
+          against it, and splits the results into reach, target, and safety. Each school comes with a
+          plain explanation of why it made the list.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href={registerUrl('list-builder-hero')} class="btn-primary">Build my list free</a>
+          <a href="/features/" class="btn-ghost">See all features</a>
+        </div>
+      </div>
+      <BrowserFrame label="app.mascot-ai.com/matches">
+        <Screenshot src="/screenshots/matches.jpg" alt="Mascot AI matches split into reach, target, and safety schools with strengths and tips" />
+      </BrowserFrame>
+    </div>
+  </section>
+
+  <section class="border-y border-border-primary bg-bg-secondary py-16">
+    <div class="container-x max-w-3xl">
+      <div class="post">
+        <h2>How the list gets built</h2>
+        <ol>
+          <li>Tell Mascot about yourself. Talk through your interests, activities, grades, and goals by voice, or fill in the profile by typing. Upload a transcript and Mascot parses your courses.</li>
+          <li>Run matching. A fast filter narrows {TOTAL_UNIVERSITIES} schools. A deeper model then ranks the finalists against your full profile.</li>
+          <li>Read the reasons. Every school gets a fit explanation with strengths and tips, so you can push back on it.</li>
+          <li>Save what you like. Saved schools flow into the application planner, with deadlines and tasks.</li>
+        </ol>
+
+        <h2>What a balanced list looks like</h2>
+        <p>
+          A balanced list has schools in all three groups, so one rejection does not leave you with
+          nowhere to go. Mascot splits your results for you:
+        </p>
+        <ul>
+          <li>Reach: admission is uncertain. Worth applying to, not worth counting on.</li>
+          <li>Target: your profile is a good match for the school.</li>
+          <li>Safety: your profile is comfortably strong for the school, and you would be glad to go.</li>
+        </ul>
+        <p>
+          For the thinking behind the groups, read
+          <a href="/blog/how-to-build-a-balanced-college-list/">How to build a balanced college list</a>.
+        </p>
+
+        <h2>Go deeper on any school</h2>
+        <p>
+          Open a school for six tabs of real data: Overview, Admissions, Academics, Costs, Student
+          Life, and Life After Graduation. You can also filter all {TOTAL_UNIVERSITIES} schools by
+          state, size, selectivity, and major.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} />
+  <CtaBand title="Build your college list" subtitle="Free to start. No card needed." />
+</BaseLayout>
