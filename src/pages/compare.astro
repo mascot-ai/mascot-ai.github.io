@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
+import { PRICING, TOTAL_UNIVERSITIES } from '../lib/site.js';
+
+const faqs = [
+  ['Can an AI college counselor replace a private counselor?', 'For many students it covers the same ground: building a list, planning deadlines, and getting feedback on essays. Some students want a person for judgment calls and advocacy. The two can work together.'],
+  ['Can I just use ChatGPT for college counseling?', 'You can use any chatbot to brainstorm. For facts like deadlines, costs, and admissions data, check the school\'s own site, because a general chatbot can be wrong or out of date.'],
+  ['What does Mascot do that a general chatbot does not?', `Mascot is built for one job. It keeps one profile across sessions, matches you against a database of ${TOTAL_UNIVERSITIES} schools, tracks deadlines in a planner, and gives parents a read-only view.`],
+  ['Does Mascot write my college essay?', 'No. It asks questions, points out problems, and helps you find the story worth telling. The writing stays yours. See our guide on whether it is okay to use AI for your college essay.'],
+  ['How much does Mascot cost?', `Explorer is free. Navigator is ${PRICING.navigatorMonthly} a month. Writing, search, and the planner have no limits on any plan.`],
+];
+---
+
+<BaseLayout
+  path="/compare/"
+  title="Mascot AI vs ChatGPT vs a Private College Counselor"
+  description="Compare Mascot AI, ChatGPT, and a private college counselor on cost, school data, college lists, essay help, deadlines, and where a human is still the better choice."
+>
+  <section class="container-x max-w-4xl py-16 sm:py-20">
+    <p class="eyebrow">Compare</p>
+    <h1 class="mt-3 text-4xl leading-tight sm:text-5xl">Mascot AI vs ChatGPT vs a private college counselor</h1>
+    <p class="mt-5 max-w-3xl text-lg leading-relaxed text-text-tertiary">
+      A private counselor can cost hundreds of dollars an hour, and most students never get one.
+      ChatGPT is a general-purpose assistant. Mascot AI is a Conversational AI Counselor built only
+      for the college application process. Here is how the three compare.
+    </p>
+    <div class="mt-10"><ComparisonTable /></div>
+
+    <div class="post mt-12 max-w-3xl">
+      <h2>When a private counselor is the better choice</h2>
+      <p>
+        If you want someone who knows your family, advocates for you, or can read the room on a hard
+        decision, hire a person. Software does not replace that.
+      </p>
+      <h2>When a general chatbot is fine</h2>
+      <p>
+        Brainstorming, explaining a concept, or rephrasing a confusing prompt. Verify any fact about
+        a school on the school's own website.
+      </p>
+      <h2>When Mascot is the better choice</h2>
+      <p>
+        If cost is a barrier, if you want help at 11pm, or if you want one place for your profile,
+        college list, essays, and deadlines. You can also use two together: Mascot to build your
+        profile and draft list, a person to sanity-check it.
+      </p>
+      <p>
+        See <a href="/features/">how Mascot works</a>, build your
+        <a href="/college-list-builder/">college list</a>, or read
+        <a href="/blog/using-ai-for-college-essay/">is it okay to use AI for your college essay?</a>
+      </p>
+    </div>
+  </section>
+  <Faq items={faqs} />
+  <CtaBand title="Try it free" subtitle="Talk to Mascot and see what it builds from one conversation." />
+</BaseLayout>

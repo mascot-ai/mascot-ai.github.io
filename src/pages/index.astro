@@ -12,7 +12,7 @@ const faqs = [
   ['Does Mascot write my college essay?', 'No. Mascot asks questions, points out problems, and helps you find the story worth telling. The writing stays yours.'],
   ['How much does Mascot cost?', `Explorer is free and needs no card. Navigator is ${PRICING.navigatorMonthly} a month and adds unlimited AI match runs and more voice time. Writing, search, and the planner are never limited.`],
   ['Who is Mascot for?', 'High school students planning for college, and their parents. Parents can link an account for a read-only view of progress and manage billing. Students stay in control of their work.'],
-  ['How is Mascot different from ChatGPT or a private counselor?', 'It keeps one profile across sessions, matches you against a database of ' + TOTAL_UNIVERSITIES + ' schools, and tracks deadlines. See the comparisons with ChatGPT and a private counselor.'],
+  ['How is Mascot different from ChatGPT or a private counselor?', 'It keeps one profile across sessions, matches you against a database of ' + TOTAL_UNIVERSITIES + ' schools, and tracks deadlines. See the full comparison.'],
 ];
 
 const tools = [
@@ -78,7 +78,7 @@ const tools = [
       data-anim-group
     >
       <p data-anim>
-        <span class="font-headline text-lg font-bold text-text-primary" data-count="5800" data-suffix="+"
+        <span class="font-headline text-lg font-bold text-text-primary" data-count="4800" data-suffix="+"
           >{TOTAL_UNIVERSITIES}</span
         > universities
       </p>
@@ -160,9 +160,7 @@ const tools = [
         <dd class="text-text-tertiary">Free to start. Navigator is {PRICING.navigatorMonthly} a month.</dd>
         <dt class="font-semibold text-text-primary">Compare</dt>
         <dd class="text-text-tertiary">
-          <a href="/compare/private-college-counselor/" class="font-medium text-brand-primary hover:underline">vs a private counselor</a>
-          &middot;
-          <a href="/compare/chatgpt/" class="font-medium text-brand-primary hover:underline">vs ChatGPT</a>
+          <a href="/compare/" class="font-medium text-brand-primary hover:underline">vs ChatGPT and a private counselor</a>
           &middot;
           <a href="/college-list-builder/" class="font-medium text-brand-primary hover:underline">college list builder</a>
         </dd>

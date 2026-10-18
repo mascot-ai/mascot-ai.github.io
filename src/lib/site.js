@@ -5,7 +5,7 @@ export const APP_REGISTER_URL = 'https://app.mascot-ai.com/register';
 export const registerUrl = (content) =>
   `${APP_REGISTER_URL}?utm_source=website&utm_medium=cta&utm_content=${encodeURIComponent(content)}`;
 export const CONTACT_EMAIL = 'team@mascot-ai.com';
-export const TOTAL_UNIVERSITIES = '5,800+';
+export const TOTAL_UNIVERSITIES = '4,800+';
 
 // GA4 Measurement ID for the "Mascot AI Website" property (account "Mascot AI").
 // The tag only loads in production builds (see BaseLayout).

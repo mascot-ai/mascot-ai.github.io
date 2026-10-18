@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import RadarChart from '../components/RadarChart.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
 import { TOTAL_UNIVERSITIES, STORY_TOPICS } from '../lib/site.js';
 
 const loop = [
@@ -181,18 +182,19 @@ const steps = [
   </section>
 
   <section class="border-y border-border-primary bg-bg-secondary py-16">
-    <div class="container-x max-w-3xl">
-      <h2 class="text-2xl">How we think about AI in admissions</h2>
-      <ul class="mt-5 space-y-3 text-text-tertiary">
-        <li><strong class="text-text-primary">Your writing stays yours.</strong> Mascot asks questions and critiques. It does not write your essays.</li>
-        <li><strong class="text-text-primary">Real data, with reasons.</strong> Matches come from a database of {TOTAL_UNIVERSITIES} schools, and each one explains why it fits so you can disagree.</li>
-        <li><strong class="text-text-primary">Students stay in control.</strong> Parents get a read-only view and billing. They never edit a student's work.</li>
-        <li><strong class="text-text-primary">Check the facts.</strong> Confirm any deadline or requirement on the school's own website before you rely on it.</li>
-      </ul>
+    <div class="container-x">
+      <div class="max-w-2xl">
+        <p class="eyebrow">How we compare</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Mascot, ChatGPT, and a private counselor</h2>
+        <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+          Each has a place. Here is what each one is good at, so you can pick or combine them.
+        </p>
+      </div>
+      <div class="mt-8"><ComparisonTable /></div>
       <p class="mt-6 text-sm text-text-tertiary">
-        Read our <a href="/privacy/" class="font-medium text-brand-primary hover:underline">privacy policy</a>,
-        or see how Mascot <a href="/compare/chatgpt/" class="font-medium text-brand-primary hover:underline">compares with ChatGPT</a>
-        and <a href="/compare/private-college-counselor/" class="font-medium text-brand-primary hover:underline">a private counselor</a>.
+        <a href="/compare/" class="font-medium text-brand-primary hover:underline">Read the full comparison</a>.
+        Confirm any deadline or requirement on the school's own website before you rely on it. See our
+        <a href="/privacy/" class="font-medium text-brand-primary hover:underline">privacy policy</a>.
       </p>
     </div>
   </section>
