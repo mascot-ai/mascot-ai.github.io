@@ -8,11 +8,11 @@ draft: false
 
 > **TL;DR**
 >
-> - A good topic is specific, personal, and something only you could write. These 50 ideas are prompts to think with, not topics to copy.
+> - A good topic is specific, personal, and something only you could write. Use these 50 ideas as prompts to think with. Do not copy them as topics.
 > - Start from a moment or object, not from a big theme. The big theme comes out of the writing.
 > - Run any idea through three tests before you commit: Can I picture a scene? Do I have something to say about it? Does it show something the rest of my application does not?
 
-Most "topic idea" lists hand you finished topics: "write about overcoming a challenge." That is not an idea, it is a category. The ideas below are seeds. Each one points at a kind of material. Your job is to find the specific version that is true for you.
+Most "topic idea" lists hand you a category, like "write about overcoming a challenge." The ideas below are smaller. Each one points at a kind of material, and your job is to find the specific version that is true for you.
 
 If you want the thinking behind this list first, read [What makes a college essay topic actually work](/blog/what-makes-a-college-essay-topic-work/) and [How to figure out what to write your college essay about](/blog/how-to-choose-college-essay-topic/).
 
@@ -99,12 +99,12 @@ There is more on why small moments often beat dramatic ones in [How to turn an o
 
 Pick two or three ideas that pull at you and run each through these:
 
-1. **Can you picture a scene?** If you can describe one specific moment, with where you were and what happened, you have something to write. If you can only summarize, keep looking.
-2. **Do you have something to say about it?** An event is not an essay. The essay is what you understood, or noticed, or changed your mind about.
-3. **Does it add something new?** Your activity list, grades, and recommendations already cover a lot. The best essay shows a side of you they do not.
+1. Can you picture a scene? If you can describe one specific moment, with where you were and what happened, you have something to write. If you can only summarize, keep looking.
+2. Do you have something to say about it? An event is not an essay. The essay is what you understood, or noticed, or changed your mind about.
+3. Does it add something new? Your activity list, grades, and recommendations already cover a lot. The best essay shows a side of you they do not.
 
 Then check the idea against the [topics admissions readers see every cycle](/blog/college-essay-topics-to-avoid/) and the [Common App prompts](/blog/common-app-essay-prompts-explained/). Almost any honest topic fits at least one prompt.
 
 ## Not sure which idea is yours?
 
-Reading a list is a weak way to find a story. Saying things out loud works better, because you hear which ones you keep returning to. That is how [Mascot](/features/) works: you talk through a topic, it asks follow-up questions, and you find out which of your stories have enough in them. The writing stays yours.
+Reading a list is a weak way to find a story. Saying things out loud works better, because you hear which ones you keep coming back to. [Mascot](/features/) works that way: you talk through a topic, it asks follow-up questions, and you find out which of your stories have enough in them.

@@ -13,17 +13,17 @@ draft: false
 > - Every school on the list should be one you would genuinely be glad to attend, including the safeties.
 > - Revisit the list when your grades, interests, or finances change.
 
-Most students build a college list backwards. They start with the schools they have heard of, add a few more because a friend applied, and end up with a list that reflects name recognition more than fit. A better list starts with you.
+Most students build a college list backwards. They start with the schools they have heard of, add a few because a friend applied, and end up with a list based on name recognition instead of fit. Start with yourself instead.
 
 ## Start with what you want, not where you might get in
 
 Before you look at a single school, write down what matters. Keep it concrete.
 
-- **Size.** Do you want classes where the professor knows your name, or a large campus with more options?
-- **Place.** City, college town, or somewhere remote? Close to home or far?
-- **What you want to study,** or whether you want room to change your mind.
-- **Cost.** What can your family realistically pay, and what would you need in aid?
-- **Environment.** Competitive or collaborative? Heavy on research, internships, or the arts?
+- Size. Do you want classes where the professor knows your name, or a large campus with more options?
+- Place. City, college town, or somewhere remote? Close to home or far?
+- What you want to study, or whether you want room to change your mind.
+- Cost. What can your family realistically pay, and what would you need in aid?
+- Environment. Competitive or collaborative? Heavy on research, internships, or the arts?
 
 You do not need perfect answers. Even rough ones narrow thousands of schools to a few hundred. If you are not sure what you want yet, our [20 questions to find your college essay story](/blog/questions-to-find-your-college-essay-story/) also surface what you care about, and a voice conversation with Mascot can pull it out of you.
 
@@ -31,9 +31,9 @@ You do not need perfect answers. Even rough ones narrow thousands of schools to 
 
 Once you have a pool of schools that fit what you want, sort them by how likely admission is.
 
-- **Reach.** Your grades, scores, or profile sit below what the school typically sees from admitted students, or the school is so selective that admission is uncertain for almost everyone. Apply, but do not count on it.
-- **Target.** Your profile is in line with typical admitted students. Admission is likely but not guaranteed.
-- **Safety.** Your profile is comfortably above what the school typically sees, and you can afford it. Admission is very likely.
+- Reach: your grades, scores, or profile sit below what the school typically sees from admitted students, or the school is so selective that admission is uncertain for almost everyone. Apply, but do not count on it.
+- Target: your profile is in line with typical admitted students. Admission is likely but not guaranteed.
+- Safety: your profile is comfortably above what the school typically sees, and you can afford it. Admission is very likely.
 
 To place a school, compare yourself with the school's own published data: the middle range of grades and scores for admitted students and the admit rate. Use the school's website or the federal College Navigator tool, and treat the numbers as a guide, not a promise. A school with a low admit rate is a reach for nearly everyone, even students with excellent records.
 
@@ -41,8 +41,8 @@ To place a school, compare yourself with the school's own published data: the mi
 
 There is no single right number, and it depends on your situation and your application budget in time and money. A common shape is a few reach schools, several targets, and a couple of safeties. Whatever the numbers, check two things:
 
-1. **Is every school on the list one you would be glad to attend?** If a safety makes you feel dread, it is not a safety, it is a placeholder. Replace it.
-2. **Can you write a strong application to each one?** Every school adds essays, forms, and deadlines. A list you cannot finish well is worse than a shorter one.
+1. Is every school on the list one you would be glad to attend? If a safety makes you feel dread, replace it.
+2. Can you write a strong application to each one? Every school adds essays, forms, and deadlines, and a list you cannot finish well is worse than a shorter one.
 
 ## Check the money before you fall in love
 
@@ -58,4 +58,4 @@ If you would rather not sort thousands of schools by hand, Mascot's [college lis
 
 ## Keep the list alive
 
-Your list is not final until you submit. A strong semester, a new interest, or a change in what your family can afford can all move a school from one group to another. Rebuild the list when your profile changes, and cut schools you have stopped caring about. Then start on the part that most affects your admission chances: choosing what to write about. [How to figure out what to write your college essay about](/blog/how-to-choose-college-essay-topic/) is the place to begin.
+Your list is not final until you submit. A strong semester, a new interest, or a change in what your family can afford can move a school from one group to another. Rebuild the list when your profile changes, and cut schools you have stopped caring about. Then start on the part that most affects your admission chances: choosing what to write about. [How to figure out what to write your college essay about](/blog/how-to-choose-college-essay-topic/) is the place to begin.
