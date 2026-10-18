@@ -1,7 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { TOTAL_UNIVERSITIES } from '../lib/site.js';
+import RadarChart from '../components/RadarChart.astro';
+import { TOTAL_UNIVERSITIES, STORY_TOPICS } from '../lib/site.js';
+
+const loop = [
+  ['Talk', 'You have a voice conversation about an activity, a goal, a setback. No forms.'],
+  ['Dig deeper', 'Mascot asks follow-up questions and writes what it learned to your profile, topic by topic.'],
+  ['Suggest', 'It proposes schools, essay angles, and feedback, each with a reason you can push back on.'],
+  ['You decide', 'You pick the schools, choose the story, and write every word of your essays.'],
+  ['Go again', 'Your profile changes, so you re-run matches and keep talking. Each round starts where the last one ended.'],
+];
+
+const does = [
+  'Asks questions that pull out stories you had not thought to tell',
+  'Builds one profile from your conversations, grades, activities, and goals',
+  'Suggests colleges with a reason for each, and essay angles you can take or leave',
+  'Gives feedback on structure and voice, and points to evidence in your own activities',
+  'Tracks deadlines, tasks, and recommendation letters',
+];
+const doesnt = [
+  'Write your essays or hand you sentences to paste in',
+  'Decide where you apply',
+  'Hide its reasoning. Every match and critique comes with a why',
+  'Share your personal information with colleges without your consent',
+];
 
 const steps = [
   [
@@ -40,7 +63,91 @@ const steps = [
     </p>
   </section>
 
+  <!-- Does / doesn't -->
   <section class="border-y border-border-primary bg-bg-secondary py-16">
+    <div class="container-x">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Our approach</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Mascot suggests. You write.</h2>
+        <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+          Mascot is a counselor, not a ghostwriter. It makes suggestions and asks hard questions. The
+          decisions and the words stay yours.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-2" data-anim-group>
+        <div class="rounded-2xl border border-border-primary bg-bg-card p-7" data-anim>
+          <h3 class="font-headline text-lg">What Mascot does</h3>
+          <ul class="mt-4 space-y-3">
+            {
+              does.map((d) => (
+                <li class="flex items-start gap-2.5 text-sm text-text-secondary">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>{d}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-border-primary bg-bg-card p-7" data-anim>
+          <h3 class="font-headline text-lg">What Mascot does not do</h3>
+          <ul class="mt-4 space-y-3">
+            {
+              doesnt.map((d) => (
+                <li class="flex items-start gap-2.5 text-sm text-text-secondary">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                  <span>{d}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The loop -->
+  <section class="container-x py-16 sm:py-20">
+    <div class="max-w-2xl">
+      <p class="eyebrow">The loop</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl">Every conversation gets Mascot to know you better</h2>
+      <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+        Good counseling is a loop, not a one-time form. Mascot keeps asking, learning, suggesting,
+        and letting you decide, and it gets sharper each time around.
+      </p>
+    </div>
+    <ol class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5" data-anim-group>
+      {
+        loop.map(([t, d], i) => (
+          <li class="rounded-2xl border border-border-primary bg-bg-card p-5" data-anim>
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-brand-primary/10 font-headline text-sm font-bold text-brand-primary">{i + 1}</span>
+            <h3 class="mt-3 font-headline text-base font-bold">{t}</h3>
+            <p class="mt-1 text-sm leading-relaxed text-text-tertiary">{d}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- Digging deeper -->
+  <section class="border-y border-border-primary bg-bg-secondary py-16 sm:py-20">
+    <div class="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div data-anim>
+        <p class="eyebrow">Going deeper</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">It looks past the resume</h2>
+        <p class="mt-4 text-lg leading-relaxed text-text-tertiary">
+          Grades and activities are the easy part. Mascot also tracks seven parts of your story and
+          scores how fully each one is covered, so it knows what to ask about next and you know what
+          is still missing.
+        </p>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          {STORY_TOPICS.map((t) => <li class="rounded-full border border-border-primary bg-bg-card px-3 py-1 text-xs font-medium text-text-secondary">{t}</li>)}
+        </ul>
+      </div>
+      <div data-anim><RadarChart /></div>
+    </div>
+  </section>
+
+  <section class="py-16">
     <div class="container-x max-w-3xl">
       <h2 class="text-2xl">How it works, start to finish</h2>
       <ol class="mt-8 space-y-8" data-anim-group>
