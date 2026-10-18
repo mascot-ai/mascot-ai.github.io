@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Faq from '../../components/Faq.astro';
+import { PRICING } from '../../lib/site.js';
+
+const faqs = [
+  ['Can an AI college counselor replace a private counselor?', 'For many students it covers the same ground: building a list, planning deadlines, and getting feedback on essays. Some students want a person for judgment calls and relationships. The two can work together, and Mascot can help you prepare for those conversations.'],
+  ['How much does Mascot cost?', `Explorer is free. Navigator is ${PRICING.navigatorMonthly} a month. Writing, search, and the planner have no limits on any plan.`],
+  ['Does Mascot write my essay?', 'No. Mascot asks questions, points out problems, and helps you find the story worth telling. The writing stays yours.'],
+];
+const rows = [
+  ['Cost', 'Often hundreds of dollars an hour', `Free to start. Navigator is ${PRICING.navigatorMonthly} a month`],
+  ['Availability', 'By appointment', 'Any time, by voice or text'],
+  ['Remembers your story', 'Depends on the counselor', 'Yes. Sessions resume across days and build one profile'],
+  ['College list', 'Built from the counselor\'s experience', 'Ranked from a school database with a reason for each pick'],
+  ['Essays', 'Feedback on drafts', 'Analysis, an essay coach conversation, and unlimited drafting'],
+  ['Parent view', 'Varies', 'Read-only parent account with billing management'],
+  ['Personal judgment and relationships', 'Strong, and the main reason to hire one', 'Limited. It is software'],
+];
+---
+
+<BaseLayout
+  path="/compare/private-college-counselor/"
+  title="AI College Counselor vs Private College Counselor | Mascot AI"
+  description="Compare Mascot AI with hiring a private college counselor: cost, availability, college lists, essay help, and where a human counselor is still the better choice."
+>
+  <section class="container-x max-w-3xl py-16 sm:py-20">
+    <p class="eyebrow">Compare</p>
+    <h1 class="mt-3 text-4xl leading-tight sm:text-5xl">AI college counselor vs private college counselor</h1>
+    <p class="mt-5 text-lg leading-relaxed text-text-tertiary">
+      A private counselor can cost hundreds of dollars an hour, and most students never get one.
+      Mascot AI is a Conversational AI Counselor that covers the same core work for a fraction of the
+      price. Here is how they compare, including where a person is still better.
+    </p>
+    <div class="post mt-10">
+      <table>
+        <thead>
+          <tr><th></th><th>Private counselor</th><th>Mascot AI</th></tr>
+        </thead>
+        <tbody>
+          {rows.map(([a, b, c]) => <tr><th>{a}</th><td>{b}</td><td>{c}</td></tr>)}
+        </tbody>
+      </table>
+
+      <h2>When a private counselor is the better choice</h2>
+      <p>
+        If you want someone who knows your family, advocates for you, or can read the room on a hard
+        decision, hire a person. Software does not replace that.
+      </p>
+      <h2>When Mascot is the better choice</h2>
+      <p>
+        If cost is a barrier, if you want help at 11pm, or if you want a college list and essay
+        feedback without waiting for the next appointment, Mascot is built for that. You can also use
+        both: Mascot to build your profile and draft list, a person to sanity-check it.
+      </p>
+      <p>
+        See <a href="/features/">how Mascot works</a> or build your
+        <a href="/college-list-builder/">college list</a>.
+      </p>
+    </div>
+  </section>
+  <Faq items={faqs} />
+  <CtaBand title="Try it free" subtitle="Talk to Mascot and see what it builds from one conversation." />
+</BaseLayout>

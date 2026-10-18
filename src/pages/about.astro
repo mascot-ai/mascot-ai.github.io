@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { TOTAL_UNIVERSITIES } from '../lib/site.js';
 
 const steps = [
   [
@@ -68,6 +69,23 @@ const steps = [
         voice conversations, the matching logic, and the essay coaching were all shaped by watching
         students use the product and hearing from the counselors who guide them every day. That
         work is still going.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-y border-border-primary bg-bg-secondary py-16">
+    <div class="container-x max-w-3xl">
+      <h2 class="text-2xl">How we think about AI in admissions</h2>
+      <ul class="mt-5 space-y-3 text-text-tertiary">
+        <li><strong class="text-text-primary">Your writing stays yours.</strong> Mascot asks questions and critiques. It does not write your essays.</li>
+        <li><strong class="text-text-primary">Real data, with reasons.</strong> Matches come from a database of {TOTAL_UNIVERSITIES} schools, and each one explains why it fits so you can disagree.</li>
+        <li><strong class="text-text-primary">Students stay in control.</strong> Parents get a read-only view and billing. They never edit a student's work.</li>
+        <li><strong class="text-text-primary">Check the facts.</strong> Confirm any deadline or requirement on the school's own website before you rely on it.</li>
+      </ul>
+      <p class="mt-6 text-sm text-text-tertiary">
+        Read our <a href="/privacy/" class="font-medium text-brand-primary hover:underline">privacy policy</a>,
+        or see how Mascot <a href="/compare/chatgpt/" class="font-medium text-brand-primary hover:underline">compares with ChatGPT</a>
+        and <a href="/compare/private-college-counselor/" class="font-medium text-brand-primary hover:underline">a private counselor</a>.
       </p>
     </div>
   </section>

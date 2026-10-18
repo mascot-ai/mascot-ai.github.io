@@ -4,7 +4,16 @@ import BrowserFrame from '../components/BrowserFrame.astro';
 import Screenshot from '../components/Screenshot.astro';
 import VoiceRecreation from '../components/VoiceRecreation.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { APP_LOGIN_URL, APP_REGISTER_URL, TOTAL_UNIVERSITIES, PRICING } from '../lib/site.js';
+import Faq from '../components/Faq.astro';
+import { APP_LOGIN_URL, registerUrl, TOTAL_UNIVERSITIES, PRICING } from '../lib/site.js';
+
+const faqs = [
+  ['What is Mascot AI?', 'Mascot AI is a Conversational AI Counselor for high school students. You talk through your goals by voice, and it builds your profile, ranks colleges against it, coaches your essays, and tracks your deadlines.'],
+  ['Does Mascot write my college essay?', 'No. Mascot asks questions, points out problems, and helps you find the story worth telling. The writing stays yours.'],
+  ['How much does Mascot cost?', `Explorer is free and needs no card. Navigator is ${PRICING.navigatorMonthly} a month and adds unlimited AI match runs and more voice time. Writing, search, and the planner are never limited.`],
+  ['Who is Mascot for?', 'High school students planning for college, and their parents. Parents can link an account for a read-only view of progress and manage billing. Students stay in control of their work.'],
+  ['How is Mascot different from ChatGPT or a private counselor?', 'It keeps one profile across sessions, matches you against a database of ' + TOTAL_UNIVERSITIES + ' schools, and tracks deadlines. See the comparisons with ChatGPT and a private counselor.'],
+];
 
 const tools = [
   ['Talk to Mascot', 'Voice conversations that build your profile'],
@@ -48,7 +57,7 @@ const tools = [
           college list that fits, and write stronger essays. All in one app.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href={APP_REGISTER_URL} class="btn-primary">Start free</a>
+          <a href={registerUrl('home-hero')} class="btn-primary">Start free</a>
           <a href={APP_LOGIN_URL} class="btn-ghost">Log in</a>
         </div>
         <p class="mt-4 text-sm text-text-tertiary">
@@ -134,6 +143,33 @@ const tools = [
     </div>
   </section>
 
+  <!-- Key facts -->
+  <section class="border-b border-border-primary py-16">
+    <div class="container-x max-w-3xl" data-anim>
+      <h2 class="text-2xl">Mascot AI at a glance</h2>
+      <dl class="mt-6 grid gap-x-8 gap-y-4 text-sm sm:grid-cols-[10rem_1fr]">
+        <dt class="font-semibold text-text-primary">What it is</dt>
+        <dd class="text-text-tertiary">A voice-first AI college counselor for high school students.</dd>
+        <dt class="font-semibold text-text-primary">What it does</dt>
+        <dd class="text-text-tertiary">Builds your profile by conversation, matches you to colleges, coaches your essays, and plans your applications.</dd>
+        <dt class="font-semibold text-text-primary">What it will not do</dt>
+        <dd class="text-text-tertiary">Write your essays for you. The writing stays yours.</dd>
+        <dt class="font-semibold text-text-primary">School data</dt>
+        <dd class="text-text-tertiary">{TOTAL_UNIVERSITIES} schools with six tabs of data each.</dd>
+        <dt class="font-semibold text-text-primary">Price</dt>
+        <dd class="text-text-tertiary">Free to start. Navigator is {PRICING.navigatorMonthly} a month.</dd>
+        <dt class="font-semibold text-text-primary">Compare</dt>
+        <dd class="text-text-tertiary">
+          <a href="/compare/private-college-counselor/" class="font-medium text-brand-primary hover:underline">vs a private counselor</a>
+          &middot;
+          <a href="/compare/chatgpt/" class="font-medium text-brand-primary hover:underline">vs ChatGPT</a>
+          &middot;
+          <a href="/college-list-builder/" class="font-medium text-brand-primary hover:underline">college list builder</a>
+        </dd>
+      </dl>
+    </div>
+  </section>
+
   <!-- Pricing preview -->
   <section class="border-b border-border-primary py-20 sm:py-24">
     <div class="container-x">
@@ -171,6 +207,8 @@ const tools = [
       </p>
     </div>
   </section>
+
+  <div class="pt-16"><Faq items={faqs} /></div>
 
   <!-- Roadmap strip -->
   <section class="border-b border-border-primary bg-bg-secondary py-12">

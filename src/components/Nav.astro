@@ -1,5 +1,5 @@
 ---
-import { NAV_LINKS, APP_LOGIN_URL, APP_REGISTER_URL } from '../lib/site.js';
+import { NAV_LINKS, APP_LOGIN_URL, registerUrl } from '../lib/site.js';
 const path = Astro.url.pathname;
 ---
 
@@ -9,7 +9,7 @@ const path = Astro.url.pathname;
 >
   <nav class="container-x flex items-center justify-between py-3" aria-label="Primary">
     <a href="/" class="flex items-center gap-2.5 font-headline text-lg font-extrabold">
-      <img src="/mascot-bear.png" alt="" width="32" height="32" class="h-8 w-8 rounded-lg" />
+      <img src="/mascot-bear-sm.png" alt="" width="32" height="32" class="h-8 w-8 rounded-lg" />
       <span>Mascot AI</span>
     </a>
 
@@ -35,7 +35,7 @@ const path = Astro.url.pathname;
         <svg class="h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
       <a href={APP_LOGIN_URL} class="btn-ghost ml-1 !px-4 !py-2">Log in</a>
-      <a href={APP_REGISTER_URL} class="btn-primary !px-4 !py-2">Start free</a>
+      <a href={registerUrl('nav')} class="btn-primary !px-4 !py-2">Start free</a>
     </div>
 
     <button
@@ -61,7 +61,7 @@ const path = Astro.url.pathname;
           </a>
         ))
       }
-      <a href={APP_REGISTER_URL} class="btn-primary mt-2">Start free</a>
+      <a href={registerUrl('nav-mobile')} class="btn-primary mt-2">Start free</a>
       <a href={APP_LOGIN_URL} class="btn-ghost">Log in</a>
     </div>
   </div>

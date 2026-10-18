@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/plus-jakarta-sans';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { GA_ID } from '../lib/site.js';
@@ -13,7 +15,7 @@ const {
 } = Astro.props;
 
 const canonical = new URL(path, Astro.site).href;
-const ogImage = new URL('/og.png', Astro.site).href;
+const ogImage = new URL('/og.jpg', Astro.site).href;
 
 // Site-wide structured data. Emitted on every page; Google dedupes by @id.
 const schema = {
@@ -25,6 +27,8 @@ const schema = {
       name: 'Mascot AI',
       url: 'https://mascot-ai.com/',
       logo: 'https://mascot-ai.com/mascot-bear.png',
+      email: 'team@mascot-ai.com',
+      contactPoint: { '@type': 'ContactPoint', email: 'team@mascot-ai.com', contactType: 'customer support' },
       description:
         'Conversational AI college counseling for high school students: profile building, university matching, and essay coaching in one app.',
     },
@@ -68,13 +72,6 @@ const schema = {
     <meta name="twitter:image" content={ogImage} />
 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
 
     {
       GA_ID && import.meta.env.PROD && (
