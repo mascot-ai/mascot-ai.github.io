@@ -17,6 +17,21 @@ const tools = [
 ---
 
 <BaseLayout path="/">
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'Mascot AI',
+      applicationCategory: 'EducationalApplication',
+      operatingSystem: 'Web',
+      url: 'https://app.mascot-ai.com',
+      description:
+        'Conversational AI college counselor for high school students: voice counseling, AI university matching, and essay coaching.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    })}
+  />
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div

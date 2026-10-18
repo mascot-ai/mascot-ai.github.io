@@ -2,7 +2,7 @@
 
 > Voice-first AI college counseling for high school students. Talk through your
 > goals, get a college list that fits, and write stronger essays, all in one app.
-> Currently in private beta.
+> Free to start. Sign up at https://app.mascot-ai.com/register.
 
 ## Pages
 
@@ -18,5 +18,18 @@
 
 ## Notes
 
-- The web app lives at https://dev.mascot-ai.com and is invite-only during the beta.
-- Beta access requests: https://forms.gle/Jbpa86AMPhssyeoi8
+- The web app lives at https://app.mascot-ai.com. Sign up free: https://app.mascot-ai.com/register
+- Contact: team@mascot-ai.com
+
+## Guides
+
+- [How to figure out what to write your college essay about](https://mascot-ai.com/blog/how-to-choose-college-essay-topic/)
+- [What makes a college essay topic actually work](https://mascot-ai.com/blog/what-makes-a-college-essay-topic-work/)
+- [20 questions to find your college essay story](https://mascot-ai.com/blog/questions-to-find-your-college-essay-story/)
+- [How to turn an ordinary moment into a strong essay topic](https://mascot-ai.com/blog/ordinary-moment-college-essay/)
+- [College essay topics to avoid, and why "overdone" is mostly a myth](https://mascot-ai.com/blog/college-essay-topics-to-avoid/)
+- [The Common App essay prompts, and how to tell which one is yours](https://mascot-ai.com/blog/common-app-essay-prompts-explained/)
+- [Personal statement vs supplemental essays](https://mascot-ai.com/blog/personal-statement-vs-supplemental-essays/)
+- [How to find an angle for the "why us" essay](https://mascot-ai.com/blog/why-us-essay-angle/)
+- [How to choose a topic for the activity or extracurricular essay](https://mascot-ai.com/blog/activity-essay-topic/)
+- [Is it okay to use AI for your college essay?](https://mascot-ai.com/blog/using-ai-for-college-essay/)

@@ -4,8 +4,9 @@ The public site at [mascot-ai.com](https://mascot-ai.com). Built with
 [Astro](https://astro.build) + Tailwind CSS, animated with GSAP, deployed as
 static files to GitHub Pages.
 
-This site has no auth and no app logic. "Request beta access" links to the
-student beta Google Form; "Log in" links to the app at `dev.mascot-ai.com`.
+This site has no auth and no app logic. "Start free" links to
+`app.mascot-ai.com/register`; "Log in" links to the live app at `app.mascot-ai.com`.
+`dev.mascot-ai.com` is the dev environment and is not linked from the site.
 
 ## Run locally
 
@@ -40,7 +41,7 @@ src/
     ShotPlaceholder.astro  temporary striped stand-in for a screenshot
     CtaBand.astro
   lib/
-    site.js         all external links + copy constants (beta form, app URL, contact email)
+    site.js         all external links + copy constants (app login/register URLs, contact email)
     anim.js         GSAP + ScrollTrigger setup, imported once by BaseLayout
   styles/global.css brand color tokens (light/dark), base styles, .btn / .legal helpers
 public/             copied as-is: CNAME, mascot-bear.png, robots.txt, sitemap.xml, screenshots/
