@@ -35,7 +35,7 @@ Once you have a pool of schools that fit what you want, sort them by how likely 
 - Target: your profile is in line with typical admitted students. Admission is likely but not guaranteed.
 - Safety: your profile is comfortably above what the school typically sees, and you can afford it. Admission is very likely.
 
-To place a school, compare yourself with the school's own published data: the middle range of grades and scores for admitted students and the admit rate. Use the school's website or the federal College Navigator tool, and treat the numbers as a guide, not a promise. A school with a low admit rate is a reach for nearly everyone, even students with excellent records.
+To place a school, compare yourself with the school's own published data: the middle range of grades and scores for admitted students and the admit rate. Use the school's website or the federal College Navigator tool, and treat the numbers as a guide, not a promise. For a worked example and a checklist, see [Reach, target, and safety: how to sort a school for your profile](/blog/reach-target-safety-schools/). A school with a low admit rate is a reach for nearly everyone, even students with excellent records.
 
 ## How many schools should you apply to?
 
