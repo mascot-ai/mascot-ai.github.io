@@ -20,8 +20,9 @@ export const NAV_LINKS = [
 ];
 
 // Navigator tier limits from project_counselor_backend/scripts/seed_platform_config.py
-// (platform_config v2.0.0: four meters -- school_saves/voice_minutes/match_runs/
-// ai_credits). Confirm the live platform_config before launch.
+// (platform_config v3.0.0: four meters -- match_score/voice_minutes/match_runs/
+// ai_credits). Match Score: Explorer 10 total, Navigator 20 a month (calendar
+// month). Saving schools is free. Confirm the live platform_config before launch.
 export const PRICING = {
   navigatorMonthly: '$39.99',
   navigatorSemiannual: '$199.99', // ~$33.33/mo
@@ -30,7 +31,7 @@ export const PRICING = {
 };
 
 export const ADDONS = [
-  { name: '+10 school saves', price: '$9.99', grants: '10 school saves' },
+  { name: '+10 Match Scores', price: '$9.99', grants: '10 Match Scores: your odds at 10 more schools' },
   { name: '+30 voice minutes', price: '$19.99', grants: '30 voice minutes' },
   { name: '+1 AI match run', price: '$3.99', grants: '1 match run' },
   { name: '+10 AI credits', price: '$19.99', grants: '10 AI actions: essay help, analysis, grammar' },

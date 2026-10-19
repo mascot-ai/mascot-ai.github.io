@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "astro build && node --test tests/pricing-copy.test.mjs"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.4",
