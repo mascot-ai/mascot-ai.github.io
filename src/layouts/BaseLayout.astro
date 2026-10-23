@@ -4,7 +4,7 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/plus-jakarta-sans';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { GA_ID } from '../lib/site.js';
+import { GA_ID, INSTAGRAM_URL } from '../lib/site.js';
 
 const {
   title = 'Mascot AI: AI College Counselor for High School Students',
@@ -25,12 +25,18 @@ const schema = {
       '@type': 'Organization',
       '@id': 'https://mascot-ai.com/#org',
       name: 'Mascot AI',
+      legalName: 'Mascot AI Labs, Inc.',
+      alternateName: ['Mascot AI Labs', 'mascot-ai.com'],
       url: 'https://mascot-ai.com/',
       logo: 'https://mascot-ai.com/mascot-bear.png',
       email: 'team@mascot-ai.com',
+      sameAs: [INSTAGRAM_URL],
+      knowsAbout: ['college admissions counseling', 'college list building', 'college essay coaching'],
       contactPoint: { '@type': 'ContactPoint', email: 'team@mascot-ai.com', contactType: 'customer support' },
       description:
         'Conversational AI college counseling for high school students: profile building, university matching, and essay coaching in one app.',
+      disambiguatingDescription:
+        'Mascot AI (mascot-ai.com, Mascot AI Labs, Inc.) is a college counseling app. It is a separate company from MascotGO and has no affiliation with it.',
     },
     {
       '@type': 'WebSite',
@@ -54,6 +60,8 @@ const schema = {
     <meta name="theme-color" content="#4F46E5" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="application-name" content="Mascot AI" />
+    <meta name="author" content="Mascot AI Labs, Inc." />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, follow" />}
 

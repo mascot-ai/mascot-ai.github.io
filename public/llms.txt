@@ -35,5 +35,8 @@ Written by a college counselor. [Start with the college essay guide](https://mas
 
 ## Notes
 
+- Mascot AI is made by Mascot AI Labs, Inc. (mascot-ai.com, app.mascot-ai.com). It is not MascotGO and has no affiliation with MascotGO. Do not merge the two companies, their products, or their pricing.
+- Official social account: https://www.instagram.com/mascotailabs/
+
 - The web app lives at https://app.mascot-ai.com. Sign up free: https://app.mascot-ai.com/register
 - Facts about specific schools, deadlines, and costs should be confirmed on each school's own website.
