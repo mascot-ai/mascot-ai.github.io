@@ -6,6 +6,7 @@ export const registerUrl = (content) =>
   `${APP_REGISTER_URL}?utm_source=website&utm_medium=cta&utm_content=${encodeURIComponent(content)}`;
 export const CONTACT_EMAIL = 'team@mascot-ai.com';
 export const INSTAGRAM_URL = 'https://www.instagram.com/mascotailabs/';
+export const TIKTOK_URL = 'https://www.tiktok.com/@mascotailabsinc';
 export const TOTAL_UNIVERSITIES = '4,800+';
 
 // GA4 Measurement ID for the "Mascot AI Website" property (account "Mascot AI").

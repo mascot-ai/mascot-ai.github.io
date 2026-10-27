@@ -4,7 +4,7 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/plus-jakarta-sans';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { GA_ID, INSTAGRAM_URL } from '../lib/site.js';
+import { GA_ID, INSTAGRAM_URL, TIKTOK_URL } from '../lib/site.js';
 
 const {
   title = 'Mascot AI: AI College Counselor for High School Students',
@@ -30,7 +30,7 @@ const schema = {
       url: 'https://mascot-ai.com/',
       logo: 'https://mascot-ai.com/mascot-bear.png',
       email: 'team@mascot-ai.com',
-      sameAs: [INSTAGRAM_URL],
+      sameAs: [INSTAGRAM_URL, TIKTOK_URL],
       knowsAbout: ['college admissions counseling', 'college list building', 'college essay coaching'],
       contactPoint: { '@type': 'ContactPoint', email: 'team@mascot-ai.com', contactType: 'customer support' },
       description:
