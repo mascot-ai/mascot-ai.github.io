@@ -21,7 +21,7 @@ const rows = [
 const faqs = [
   ['What is Prep?', `Prep is the SAT and PSAT plan: unlimited practice and full tests, the text tutor, and lessons. It costs ${PRICING.prepMonthly} a month, ${PRICING.prepAnnual} a year, or ${PRICING.prepSeason} for a 4-month season pass that does not renew. It includes 15 voice minutes a month, shared with the rest of Mascot, and Explorer limits for Match Scores, match runs, and AI credits.`],
   ['Can I switch plans anytime?', 'Yes. Upgrade or downgrade at any time. Changes take effect immediately.'],
-  ['What are add-ons?', 'One-time top-ups you can buy on either plan without upgrading: extra voice minutes, AI credits, an extra match run, or 10 more Match Scores.'],
+  ['What are add-ons?', 'One-time top-ups you can buy on any plan without upgrading: extra voice minutes, AI credits, an extra match run, or 10 more Match Scores.'],
   ['What is a Match Score?', "A Match Score is your chance of getting into one school: an odds estimate, where you land (reach, target, or safety), and what to improve. Saving schools is always free and unlimited. Explorer includes 10 Match Scores. Navigator includes 20 a month, on the 1st. Update it after your profile changes and it uses one more."],
   ['Is the free plan really free?', "Yes. Explorer is free and doesn't need a card. Writing, search, and the planner have no limits on any plan. Only the AI features are metered."],
   ['Is my data safe?', 'We use encryption in transit and at rest, and we never share your personal information with colleges without your consent.'],
@@ -76,7 +76,7 @@ const cell = (v) =>
 <BaseLayout
   path="/pricing/"
   title="Mascot AI Pricing: Explorer, Prep, and Navigator Plans"
-  description="Mascot AI pricing. Explorer is free with no card. Prep adds SAT and PSAT practice. Navigator adds more AI college matching and essay coaching. One-time add-ons work on either plan."
+  description="Mascot AI pricing. Explorer is free with no card. Prep adds SAT and PSAT practice. Navigator adds more AI college matching and essay coaching. One-time add-ons work on any plan. Navigator includes everything in Prep."
 >
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(productSchema)} />
   <section class="container-x py-16 text-center sm:py-20">
@@ -119,7 +119,7 @@ const cell = (v) =>
           )
         }
         <h2 class="font-headline text-xl">Navigator</h2>
-        <p class="mt-1 text-sm text-text-tertiary">The full power of AI college counseling.</p>
+        <p class="mt-1 text-sm text-text-tertiary">The full power of AI college counseling. Includes everything in Prep.</p>
         <p class="mt-5 text-3xl font-bold">
           {PRICING.navigatorMonthly}<span class="text-base font-normal text-text-muted">/month</span>
         </p>
@@ -170,7 +170,7 @@ const cell = (v) =>
     <div class="mx-auto max-w-4xl">
       <h2 class="text-2xl">Add-ons</h2>
       <p class="mt-2 text-sm text-text-tertiary">
-        One-time top-ups on either plan. No upgrade required.
+        One-time top-ups on any plan. No upgrade required.
       </p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2" data-anim-group>
         {
