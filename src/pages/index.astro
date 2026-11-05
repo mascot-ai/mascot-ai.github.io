@@ -176,7 +176,7 @@ const tools = [
         <p class="eyebrow">Pricing</p>
         <h2 class="mt-3 text-3xl sm:text-4xl">Start free. Upgrade when you're ready.</h2>
       </div>
-      <div class="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2" data-anim-group>
+      <div class="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-3" data-anim-group>
         <div class="rounded-2xl border border-border-primary bg-bg-card p-6" data-anim>
           <h3 class="font-headline text-lg">Explorer</h3>
           <p class="mt-1 text-2xl font-bold">Free</p>
@@ -188,6 +188,17 @@ const tools = [
             <li>2 AI credits, 1 match run a month, 30 voice minutes</li>
           </ul>
         </div>
+        <div class="rounded-2xl border border-border-primary bg-bg-card p-6" data-anim>
+          <h3 class="font-headline text-lg">Prep</h3>
+          <p class="mt-1 text-2xl font-bold">{PRICING.prepMonthly}<span class="text-sm font-normal text-text-muted">/mo</span></p>
+          <p class="mt-1 text-sm text-text-muted">or {PRICING.prepAnnual}/year, or {PRICING.prepSeason} for 4 months (does not renew)</p>
+          <ul class="mt-4 space-y-2 text-sm text-text-secondary">
+            <li>Unlimited SAT and PSAT practice and full tests</li>
+            <li>Text tutor and lessons</li>
+            <li>15 voice minutes a month, shared with the rest of Mascot</li>
+            <li>Explorer limits for Match Scores, match runs, and AI credits</li>
+          </ul>
+        </div>
         <div class="relative rounded-2xl border border-brand-primary bg-bg-card p-6" data-anim>
           {!PRICING.navigatorLive && (
             <span class="absolute -top-3 left-6 rounded-full bg-brand-primary px-3 py-1 text-xs font-bold text-white">Coming soon</span>
@@ -195,7 +206,7 @@ const tools = [
           <h3 class="font-headline text-lg">Navigator</h3>
           <p class="mt-1 text-2xl font-bold">{PRICING.navigatorMonthly}<span class="text-sm font-normal text-text-muted">/mo</span></p>
           <ul class="mt-4 space-y-2 text-sm text-text-secondary">
-            <li>Everything in Explorer, plus:</li>
+            <li>Everything in Prep, plus:</li>
             <li>Unlimited AI match runs</li>
             <li>20 Match Scores a month, your odds at any school</li>
             <li>5 AI credits a month, 60 voice minutes a month</li>

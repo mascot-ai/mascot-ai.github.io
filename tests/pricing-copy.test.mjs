@@ -42,3 +42,15 @@ test('no em dashes in the Match Score copy', () => {
     assert.doesNotMatch(copy, /Match Scores?[^<]{0,80}—/);
   }
 });
+
+test('pricing and home show the Prep plan and its prices', () => {
+  for (const p of ['pricing', '']) {
+    const html = page(p);
+    assert.match(html, /Prep/);
+    assert.match(html, /\$14\.99/);
+    assert.match(html, /\$99/);
+    assert.match(html, /\$49/);
+    assert.match(html, /does not renew/);
+    assert.match(html, /15 voice minutes a month/);
+  }
+});
