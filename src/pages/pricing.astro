@@ -4,21 +4,22 @@ import CtaBand from '../components/CtaBand.astro';
 import Faq from '../components/Faq.astro';
 import { PRICING, ADDONS } from '../lib/site.js';
 
-// Rows mirror the tier limits in seed_platform_config.py (free vs plus).
+// Rows mirror the tier limits in seed_platform_config.py (Explorer, Prep, Navigator).
 const rows = [
-  ['Profile builder with voice', true, true],
-  ['University search and browse', true, true],
-  ['Unlimited essays and drafts', true, true],
-  ['Application planner', true, true],
-  ['Schools you can save', 'Unlimited', 'Unlimited'],
-  ['Match Scores (your odds at a school)', '10 total', '20 a month'],
-  ['AI match runs', '1 a month', 'Unlimited'],
-  ['Voice minutes', '30 total', '60 a month'],
-  ['AI credits (essay help, analysis)', '2', '5 a month'],
-  ['Transcript upload and parsing', true, true],
+  ['Profile builder with voice', true, true, true],
+  ['University search and browse', true, true, true],
+  ['Unlimited essays and drafts', true, true, true],
+  ['Application planner', true, true, true],
+  ['Schools you can save', 'Unlimited', 'Unlimited', 'Unlimited'],
+  ['Match Scores (your odds at a school)', '10 total', '10 total', '20 a month'],
+  ['AI match runs', '1 a month', '1 a month', 'Unlimited'],
+  ['Voice minutes', '30 total', '15 a month', '60 a month'],
+  ['AI credits (essay help, analysis)', '2', '2', '5 a month'],
+  ['Transcript upload and parsing', true, true, true],
 ];
 
 const faqs = [
+  ['What is Prep?', `Prep is the SAT and PSAT plan: unlimited practice and full tests, the text tutor, and lessons. It costs ${PRICING.prepMonthly} a month, ${PRICING.prepAnnual} a year, or ${PRICING.prepSeason} for a 4-month season pass that does not renew. It includes 15 voice minutes a month, shared with the rest of Mascot, and Explorer limits for Match Scores, match runs, and AI credits.`],
   ['Can I switch plans anytime?', 'Yes. Upgrade or downgrade at any time. Changes take effect immediately.'],
   ['What are add-ons?', 'One-time top-ups you can buy on either plan without upgrading: extra voice minutes, AI credits, an extra match run, or 10 more Match Scores.'],
   ['What is a Match Score?', "A Match Score is your chance of getting into one school: an odds estimate, where you land (reach, target, or safety), and what to improve. Saving schools is always free and unlimited. Explorer includes 10 Match Scores. Navigator includes 20 a month, on the 1st. Update it after your profile changes and it uses one more."],
@@ -35,6 +36,19 @@ const productSchema = {
   operatingSystem: 'Web',
   offers: [
     { '@type': 'Offer', name: 'Explorer', price: '0', priceCurrency: 'USD' },
+    {
+      '@type': 'Offer',
+      name: 'Prep',
+      price: PRICING.prepMonthly.replace('$', ''),
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: PRICING.prepMonthly.replace('$', ''),
+        priceCurrency: 'USD',
+        billingDuration: 1,
+        unitCode: 'MON',
+      },
+    },
     {
       '@type': 'Offer',
       name: 'Navigator',
@@ -61,8 +75,8 @@ const cell = (v) =>
 
 <BaseLayout
   path="/pricing/"
-  title="Mascot AI Pricing: Free Explorer and Navigator Plans"
-  description="Mascot AI pricing. Explorer is free with no card. Navigator adds more AI college matching and essay coaching. One-time add-ons work on either plan."
+  title="Mascot AI Pricing: Explorer, Prep, and Navigator Plans"
+  description="Mascot AI pricing. Explorer is free with no card. Prep adds SAT and PSAT practice. Navigator adds more AI college matching and essay coaching. One-time add-ons work on either plan."
 >
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(productSchema)} />
   <section class="container-x py-16 text-center sm:py-20">
@@ -73,12 +87,28 @@ const cell = (v) =>
   </section>
 
   <section class="container-x pb-16">
-    <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2" data-anim-group>
+    <div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-3" data-anim-group>
       <div class="rounded-2xl border border-border-primary bg-bg-card p-8" data-anim>
         <h2 class="font-headline text-xl">Explorer</h2>
         <p class="mt-1 text-sm text-text-tertiary">Get started with the core tools.</p>
         <p class="mt-5 text-3xl font-bold">Free</p>
         <a href="#compare" class="btn-ghost mt-6 w-full">See what's included</a>
+      </div>
+      <div class="rounded-2xl border border-border-primary bg-bg-card p-8" data-anim>
+        <h2 class="font-headline text-xl">Prep</h2>
+        <p class="mt-1 text-sm text-text-tertiary">SAT and PSAT practice with a tutor.</p>
+        <p class="mt-5 text-3xl font-bold">
+          {PRICING.prepMonthly}<span class="text-base font-normal text-text-muted">/month</span>
+        </p>
+        <p class="mt-1 text-sm text-text-muted">or {PRICING.prepAnnual}/year</p>
+        <p class="mt-1 text-sm text-text-muted">or {PRICING.prepSeason} season pass: 4 months, does not renew</p>
+        <ul class="mt-5 space-y-2 text-sm text-text-secondary">
+          <li>Unlimited SAT and PSAT practice and full tests</li>
+          <li>Text tutor and lessons</li>
+          <li>15 voice minutes a month, shared with the rest of Mascot</li>
+          <li>Explorer limits for Match Scores, match runs, and AI credits</li>
+        </ul>
+        <a href="#compare" class="btn-ghost mt-6 w-full">Compare plans</a>
       </div>
       <div class="relative rounded-2xl border border-brand-primary bg-bg-card p-8" data-anim>
         {
@@ -113,15 +143,17 @@ const cell = (v) =>
           <tr class="border-b border-border-primary bg-bg-secondary text-left">
             <th class="px-5 py-4 font-semibold">Feature</th>
             <th class="px-5 py-4 text-center font-semibold">Explorer</th>
+            <th class="px-5 py-4 text-center font-semibold">Prep</th>
             <th class="px-5 py-4 text-center font-semibold">Navigator</th>
           </tr>
         </thead>
         <tbody>
           {
-            rows.map(([label, e, n]) => (
+            rows.map(([label, e, p, n]) => (
               <tr class="border-b border-border-primary last:border-0">
                 <td class="px-5 py-4 text-text-secondary">{label}</td>
                 <td class="px-5 py-4 text-center" set:html={cell(e)} />
+                <td class="px-5 py-4 text-center" set:html={cell(p)} />
                 <td class="px-5 py-4 text-center" set:html={cell(n)} />
               </tr>
             ))

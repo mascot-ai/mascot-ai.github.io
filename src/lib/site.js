@@ -30,6 +30,10 @@ export const PRICING = {
   navigatorSemiannual: '$199.99', // ~$33.33/mo
   navigatorAnnual: '$383.88', // ~$31.99/mo
   navigatorLive: true, // Navigator is purchasable (live with the prod launch)
+  // Prep tier (test prep, docs/test-prep/SPEC.md D5). Ships only at the test prep launch.
+  prepMonthly: '$14.99',
+  prepAnnual: '$99',
+  prepSeason: '$49', // 4 months, does not renew
 };
 
 export const ADDONS = [
