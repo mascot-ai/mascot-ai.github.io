@@ -6,7 +6,7 @@ static files to GitHub Pages.
 
 This site has no auth and no app logic. "Start free" links to
 `app.mascot-ai.com/register`; "Log in" links to the live app at `app.mascot-ai.com`.
-`dev.mascot-ai.com` is the dev environment and is not linked from the site.
+The dev environment is not linked from the site.
 
 ## Run locally
 

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { CONTACT_EMAIL } from '../lib/site.js';
+
+const sections = [
+  [
+    'Who writes and reviews the guides',
+    'The Mascot AI counseling team writes every guide. Each one is reviewed before it goes live by a private school administrator with years of college advising experience. We describe our people by role, not by name.',
+  ],
+  [
+    'Why we do not list names',
+    'Members of our team hold roles at schools and keep that work separate from Mascot. Names would put students and colleagues in an awkward spot, so we leave them off. You should not have to take our word for anything. Every factual claim in a guide points to a source you can open yourself.',
+  ],
+  [
+    'How we check facts',
+    "We check facts against primary sources: the Common App, NCES College Navigator, and each college's own admissions pages. Deadlines, costs, test policies and essay prompts change every year, so we link to the official page and tell you to confirm it there before you rely on it. We do not cite a number we cannot trace to its source.",
+  ],
+  [
+    'How often we update',
+    'We review each guide at least once a year and again when something it depends on changes, such as the Common App prompts. When a guide changes in a way that matters, we show an updated date at the top of the post.',
+  ],
+  [
+    'What Mascot will never do',
+    'Mascot never writes essays for students. Our guides and our product ask questions, give feedback and point to evidence in your own experience. The writing, and the decision about where to apply, stay yours.',
+  ],
+  [
+    'Corrections',
+    null,
+  ],
+];
+---
+
+<BaseLayout
+  path="/editorial-standards/"
+  title="Editorial Standards: How Mascot AI Guides Are Made | Mascot AI"
+  description="Who writes and reviews Mascot AI's college guides, how we check facts against primary sources, how often we update them, and why we never write essays."
+>
+  <section class="container-x max-w-3xl py-16 sm:py-24">
+    <p class="eyebrow">Editorial standards</p>
+    <h1 class="mt-3 text-4xl leading-tight sm:text-5xl">How we make our college guides</h1>
+    <p class="mt-6 text-lg leading-relaxed text-text-tertiary">
+      Admissions advice is only useful if you can trust it. Here is who stands behind our guides,
+      how we check them, and what we will not do.
+    </p>
+
+    <div class="mt-12 space-y-10">
+      {
+        sections.map(([h, body]) => (
+          <section>
+            <h2 class="text-2xl">{h}</h2>
+            <p class="mt-3 leading-relaxed text-text-tertiary">
+              {body ?? (
+                <Fragment>
+                  Found a mistake or an out-of-date detail? Email <a href={`mailto:${CONTACT_EMAIL}?subject=Guide%20correction`} class="font-medium text-brand-primary hover:underline">{CONTACT_EMAIL}</a> and we will check it against the source and fix it.
+                </Fragment>
+              )}
+            </p>
+          </section>
+        ))
+      }
+    </div>
+
+    <p class="mt-12 text-sm text-text-tertiary">
+      Read the guides in <a href="/blog/" class="font-medium text-brand-primary hover:underline">Guides</a>, or learn more
+      <a href="/about/" class="font-medium text-brand-primary hover:underline">about Mascot AI</a>.
+    </p>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

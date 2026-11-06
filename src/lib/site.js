@@ -8,6 +8,8 @@ export const CONTACT_EMAIL = 'team@mascot-ai.com';
 export const INSTAGRAM_URL = 'https://www.instagram.com/mascotailabs/';
 export const TIKTOK_URL = 'https://www.tiktok.com/@mascotailabsinc';
 export const TOTAL_UNIVERSITIES = '4,800+';
+export const BRAND = 'Mascot AI College Counselor';
+export const SITE_ORG_ID = 'https://mascot-ai.com/#org';
 
 // GA4 Measurement ID for the "Mascot AI Website" property (account "Mascot AI").
 // The tag only loads in production builds (see BaseLayout).

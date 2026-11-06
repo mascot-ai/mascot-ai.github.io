@@ -1,6 +1,6 @@
 ---
 title: '50 college essay topic ideas, sorted by what they show about you'
-description: '50 college essay topic ideas organized by category, from everyday moments to disagreements and hobbies, with a quick test to tell if an idea is worth writing.'
+description: '50 college essay topic ideas by category, from everyday moments to hobbies, with a quick test to tell whether an idea is worth writing about.'
 pubDate: 2026-10-17
 pillar: essay-topic
 draft: false

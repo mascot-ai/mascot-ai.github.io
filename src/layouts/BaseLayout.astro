@@ -4,10 +4,10 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/plus-jakarta-sans';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { GA_ID, INSTAGRAM_URL, TIKTOK_URL } from '../lib/site.js';
+import { GA_ID, INSTAGRAM_URL, TIKTOK_URL, BRAND, SITE_ORG_ID } from '../lib/site.js';
 
 const {
-  title = 'Mascot AI: AI College Counselor for High School Students',
+  title = 'Mascot AI College Counselor: Voice Counseling for Students',
   description = 'Mascot AI is a Conversational AI Counselor for high schoolers. Talk through your goals, get a college list that fits, and write stronger essays in one app.',
   path = '',
   noindex = false,
@@ -23,10 +23,10 @@ const schema = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://mascot-ai.com/#org',
+      '@id': SITE_ORG_ID,
       name: 'Mascot AI',
       legalName: 'Mascot AI Labs, Inc.',
-      alternateName: ['Mascot AI Labs', 'mascot-ai.com'],
+      alternateName: BRAND,
       url: 'https://mascot-ai.com/',
       logo: 'https://mascot-ai.com/mascot-bear.png',
       email: 'team@mascot-ai.com',
@@ -42,8 +42,8 @@ const schema = {
       '@type': 'WebSite',
       '@id': 'https://mascot-ai.com/#website',
       url: 'https://mascot-ai.com/',
-      name: 'Mascot AI',
-      publisher: { '@id': 'https://mascot-ai.com/#org' },
+      name: BRAND,
+      publisher: { '@id': SITE_ORG_ID },
       inLanguage: 'en-US',
     },
   ],
@@ -66,7 +66,7 @@ const schema = {
     {noindex && <meta name="robots" content="noindex, follow" />}
 
     <meta property="og:type" content={ogType} />
-    <meta property="og:site_name" content="Mascot AI" />
+    <meta property="og:site_name" content={BRAND} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

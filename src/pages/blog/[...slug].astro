@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import BlogAuthor from '../../components/BlogAuthor.astro';
 import { PILLARS, AUTHOR } from '../../lib/blog.js';
-import { registerUrl } from '../../lib/site.js';
+import { registerUrl, SITE_ORG_ID } from '../../lib/site.js';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (p) => (import.meta.env.PROD ? !p.data.draft : true));
@@ -43,14 +43,15 @@ const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'BlogPosting',
+      '@type': 'Article',
       '@id': `${url}#post`,
       headline: title,
       description,
       datePublished: pubDate.toISOString(),
       dateModified: (updatedDate ?? pubDate).toISOString(),
-      author: { '@type': 'Person', name: AUTHOR.byline, description: AUTHOR.bio },
-      publisher: { '@id': 'https://mascot-ai.com/#org' },
+      image: new URL('/og.jpg', Astro.site).href,
+      author: { '@type': 'Organization', '@id': SITE_ORG_ID, name: 'Mascot AI' },
+      publisher: { '@id': SITE_ORG_ID },
       isPartOf: { '@id': 'https://mascot-ai.com/#website' },
       mainEntityOfPage: url,
       inLanguage: 'en-US',
@@ -79,7 +80,7 @@ const schema = {
 
     <h1 class="mt-4 text-3xl leading-tight sm:text-4xl">{title}</h1>
     <p class="mt-4 text-sm text-text-muted">
-      By {AUTHOR.byline} · {fmt(pubDate)}{updatedDate && ` · Updated ${fmt(updatedDate)}`}
+      <a href={AUTHOR.standardsPath} class="hover:underline">{AUTHOR.byline}</a> · {fmt(pubDate)}{updatedDate && ` · Updated ${fmt(updatedDate)}`}
     </p>
     {
       pillar === 'essay-topic' && (

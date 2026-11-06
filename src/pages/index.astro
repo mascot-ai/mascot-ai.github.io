@@ -6,6 +6,7 @@ import VoiceRecreation from '../components/VoiceRecreation.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Faq from '../components/Faq.astro';
 import { APP_LOGIN_URL, registerUrl, TOTAL_UNIVERSITIES, PRICING } from '../lib/site.js';
+import { softwareApplicationSchema } from '../lib/schema.js';
 
 const faqs = [
   ['What is Mascot AI?', 'Mascot AI is a Conversational AI Counselor for high school students. You talk through your goals by voice, and it builds your profile, ranks colleges against it, coaches your essays, and tracks your deadlines.'],
@@ -27,21 +28,8 @@ const tools = [
 ---
 
 <BaseLayout path="/">
-  <script
-    type="application/ld+json"
-    slot="head"
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'Mascot AI',
-      applicationCategory: 'EducationalApplication',
-      operatingSystem: 'Web',
-      url: 'https://app.mascot-ai.com',
-      description:
-        'Conversational AI college counselor for high school students: voice counseling, AI university matching, and essay coaching.',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    })}
-  />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(softwareApplicationSchema())} />
+
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div

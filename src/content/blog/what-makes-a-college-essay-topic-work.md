@@ -1,6 +1,6 @@
 ---
 title: 'What makes a college essay topic actually work'
-description: 'A workable college essay topic passes three tests. Learn what they are and how to pressure-test a Common App topic you already have for the 2026-2027 cycle.'
+description: 'A college essay topic works if it passes three tests. Learn them and pressure-test a Common App topic you already have for the 2026-2027 cycle.'
 pubDate: 2026-09-11
 pillar: essay-topic
 draft: false

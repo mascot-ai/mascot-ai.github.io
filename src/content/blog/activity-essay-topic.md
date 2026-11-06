@@ -1,6 +1,6 @@
 ---
 title: 'How to choose a topic for the activity or extracurricular essay'
-description: 'Pick the right activity for the extracurricular essay: how to choose between your commitments, find the one moment that matters, and avoid repeating your resume.'
+description: 'How to pick an activity for the extracurricular essay: choose between your commitments, find the one moment that matters, and skip the resume repeat.'
 pubDate: 2026-10-12
 updatedDate: 2026-10-12
 pillar: essay-topic

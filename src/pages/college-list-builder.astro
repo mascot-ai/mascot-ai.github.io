@@ -10,7 +10,7 @@ const faqs = [
   ['What is an AI college list builder?', 'It is a tool that turns your grades, activities, interests, and goals into a ranked list of colleges. Mascot AI also explains why each school fits and sorts the list into reach, target, and safety.'],
   ['How does Mascot build the list?', `Matching runs in two passes. A fast filter narrows ${TOTAL_UNIVERSITIES} schools to a shortlist, then a deeper model ranks the finalists against your full profile and writes a fit explanation for each one.`],
   ['What are reach, target, and safety schools?', 'A reach school is one where your profile sits below its typical admitted student, so admission is uncertain. A target school is a good match for your profile. A safety school is one where your profile is comfortably above the typical admitted student and you would be glad to attend.'],
-  ['Is the college list builder free?', 'Explorer, the free plan, includes AI matching with one match run a month and needs no card. Navigator removes that cap. See the pricing page for current limits.'],
+  ['Is the college list builder free?', 'It is free to start with an account. Explorer, the free plan, includes AI matching with one match run a month and needs no card. Navigator removes that cap. See the pricing page for current limits.'],
   ['Can I check one specific school?', 'Yes. You can run an on-demand match for any single school and read how it fits your profile.'],
   ['How often should I rebuild my list?', 'Run it again whenever your profile changes: new grades, a new activity, or a shift in what you want from a college.'],
 ];
@@ -19,7 +19,7 @@ const faqs = [
 <BaseLayout
   path="/college-list-builder/"
   title="AI College List Builder: Reach, Target and Safety Schools | Mascot AI"
-  description="Build a balanced college list with AI. Mascot AI ranks schools against your profile, splits them into reach, target, and safety, and explains why each one fits. Free to start."
+  description="AI college list builder that ranks schools against your profile, sorts reach, target, and safety, and explains each fit. Free to start with an account."
 >
   <section class="container-x py-16 sm:py-20">
     <div class="grid items-center gap-12 lg:grid-cols-2">
@@ -32,7 +32,7 @@ const faqs = [
           plain explanation of why it made the list.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href={registerUrl('list-builder-hero')} class="btn-primary">Build my list free</a>
+          <a href={registerUrl('list-builder-hero')} class="btn-primary">Build my list</a>
           <a href="/features/" class="btn-ghost">See all features</a>
         </div>
       </div>
@@ -79,5 +79,5 @@ const faqs = [
   </section>
 
   <Faq items={faqs} />
-  <CtaBand title="Build your college list" subtitle="Free to start. No card needed." />
+  <CtaBand title="Build your college list" subtitle="Free to start with an account. No card needed." />
 </BaseLayout>

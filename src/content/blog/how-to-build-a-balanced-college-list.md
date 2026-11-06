@@ -1,6 +1,6 @@
 ---
 title: 'How to build a balanced college list: reach, target, and safety'
-description: 'A step-by-step guide to building a college list: define what you want, find schools, sort reach, target, and safety, check the money, and set the final number.'
+description: 'Build a college list step by step: define what you want, find schools, sort reach, target, and safety, check the money, and set your final number.'
 pubDate: 2026-10-17
 updatedDate: 2026-11-02
 pillar: college-list
