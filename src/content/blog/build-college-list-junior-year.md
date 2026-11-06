@@ -3,7 +3,7 @@ title: 'How to build your college list in junior year'
 description: 'A step-by-step plan for juniors: what to do in fall, winter, spring and summer so you start senior year with a working college list instead of a scramble.'
 pubDate: 2026-11-05
 pillar: college-list
-draft: true
+draft: false
 ---
 
 > **TL;DR**
