@@ -25,3 +25,4 @@ npm-debug.log*
 docs/
 BLOG_CALENDAR.md
 BLOG_CALENDAR*.md
+.demo-work/

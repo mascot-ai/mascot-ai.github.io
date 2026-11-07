@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureBlock from '../components/FeatureBlock.astro';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import Screenshot from '../components/Screenshot.astro';
+import VideoPlayer from '../components/VideoPlayer.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
+import { registerUrl, CONTACT_EMAIL } from '../lib/site.js';
+
+// Plans and prices mirror org_plans in project_counselor_backend/scripts/seed_platform_config.py.
+// Annual is 11 months for the price of 12. Confirm the live platform_config before launch.
+const plans = [
+  { name: 'Scout', price: 'Free', note: 'For trying it with one student', team: '1', students: '1', ai: 'None', extras: 'Notes, essay comments, college list view' },
+  { name: 'Guide', price: '$19', note: 'per AI student, per month', team: '1', students: '10', ai: '1 to 10, as you buy', extras: 'Branded invite page, outcomes tracking' },
+  { name: 'Pathfinder', price: '$199', note: 'per month, solo practice', team: '1', students: '60', ai: '15', extras: 'Everything in Guide', featured: true },
+  { name: 'Basecamp', price: '$449', note: 'per month, small team', team: '3', students: '150', ai: '35', extras: 'Custom questions, essay rubric, roles' },
+];
+
+const steps = [
+  ['Create your practice', 'Sign up as a counselor and name your organization. Scout is free for one student, so you can try the whole flow first.'],
+  ['Invite your students', 'Invite by email or share a join code. Every student approves the link and chooses what you can see.'],
+  ['Meet them prepared', "Students talk to Mascot, build their story and draft essays. You open their page and spend your time on judgment."],
+];
+
+const control = [
+  ['They choose what you see', 'Profile, matches, essays and planner are each a switch the student controls, and they can change it at any time.'],
+  ['Editing is opt in', "You comment and suggest by default. A student can allow direct edits, and every edit is attributed."],
+  ['They can leave', 'A student can end the link whenever they want. Parents never see your notes, comments or review rounds.'],
+];
+
+const faqs = [
+  ['Does Mascot write essays?', 'No. Mascot suggests what to write about, checks a draft against the school it is for, and flags grammar. The essay stays the student\'s own, and so do your comments on it.'],
+  ['What does a student need to work with me?', 'A Mascot account. Students on a free or paid plan can link to you. Students under 13, or with no date of birth on file, cannot link to an organization.'],
+  ['Who pays for the AI?', 'You choose. Turn on AI for a student and their voice time, essay help and matching come from your monthly pool. Leave it off and they use their own plan. When your pool runs out, they fall back to their own plan.'],
+  ['Can a student work with more than one counselor?', "Yes. A student can link to several organizations. Nothing your organization holds reaches another one unless the student shares it."],
+  ['What happens when a student leaves?', 'They become a past student. They stop counting toward your plan limits, and what your organization wrote about them stays with your organization.'],
+  ['Is there a free trial?', 'No trial, but Scout is free for one student, with no card needed. Paid plans are billed monthly, or annually for the price of 11 months.'],
+  ['What is Expedition?', `For larger firms: custom limits, contracts and invoicing. Email ${CONTACT_EMAIL} and we will set it up.`],
+];
+
+---
+
+<BaseLayout
+  path="/counselors/"
+  title="Mascot AI for Counselors: Students Who Arrive Prepared"
+  description="Mascot AI for private counselors: students build their story by voice, you review essays, keep notes, recommend schools and run your team. Free for one student."
+>
+  <section class="container-x py-16 text-center sm:py-20">
+    <p class="eyebrow">For counselors</p>
+    <h1 class="mt-3 text-4xl sm:text-5xl">Meet every student already prepared</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-text-tertiary">
+      Your students talk to Mascot first. It builds their story, their list and their essay angles, so you open a
+      student already knowing who they are and spend your time on judgment.
+    </p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href={registerUrl('counselors-hero')} class="btn-primary">Start free with Scout</a>
+      <a href="#demo" class="btn-ghost">Watch the demo</a>
+    </div>
+  </section>
+
+  <section id="demo" class="border-t border-border-primary pb-16 pt-12 sm:pb-20">
+    <div class="container-x">
+      <VideoPlayer id="counselor" />
+    </div>
+  </section>
+
+  <FeatureBlock
+    eyebrow="Your day"
+    title="Everything that needs you, on one screen"
+    body="Today lists the essays waiting for review, students asking to join, and the deadlines coming up in the next two weeks from students who share their planner. See your students by stage and who is carrying how many."
+    bullets={[
+      'Essays waiting for review, oldest first',
+      'Requests to join, approved in one click',
+      'Deadlines in the next 14 days',
+      'Students by stage and caseload by counselor',
+    ]}
+  >
+    <BrowserFrame label="app.mascot-ai.com">
+      <Screenshot
+        src="/screenshots/counselors-today.jpg"
+        alt="The Mascot AI counselor Today screen with essays waiting for review, requests to join, deadlines in the next 14 days and students by stage"
+      />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <FeatureBlock
+    reverse
+    eyebrow="Students"
+    title="Open a student and already know them"
+    body="A student page brings together the profile, story, matches, essays and planner that Mascot built from their conversations. Add notes for yourself or your team, set a stage, and see who else works with them."
+    bullets={[
+      'Profile, matches, essays and planner in one place',
+      'Notes shared with your team or kept private to you',
+      'Stages from active to decided, with outcomes you can record',
+      'Only what the student chooses to share',
+    ]}
+  >
+    <BrowserFrame label="app.mascot-ai.com">
+      <Screenshot
+        src="/screenshots/counselors-student.jpg"
+        alt="A student page in Mascot AI showing the stage, assigned counselors, and tabs for profile, essays, matches and notes"
+      />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <FeatureBlock
+    eyebrow="Essay review"
+    title="Feedback that keeps the student's voice"
+    body="Students send an essay for review and it lands in your queue. Comment on a highlight or suggest a rewrite, then return it. The student reads your feedback next to their draft and applies what they agree with."
+    bullets={[
+      'A review queue with how long each essay has waited',
+      'Comments and suggested rewrites anchored to the text',
+      'Mascot never writes the essay, and neither do you unless the student allows direct edits',
+      'Every edit is attributed',
+    ]}
+  >
+    <BrowserFrame label="app.mascot-ai.com">
+      <Screenshot
+        src="/screenshots/counselors-review.jpg"
+        alt="A returned essay review in Mascot AI with highlighted text and a counselor's suggestion and comment beside it"
+      />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <FeatureBlock
+    reverse
+    eyebrow="Colleges"
+    title="A college list your whole team can use"
+    body="Search any school, keep notes your team can share, and see which of your students saved it or were matched to it by Mascot. Recommend a school to a student with a reason, and they see it on their matches page."
+    bullets={[
+      'Shared or private notes on every college',
+      'Saved by the student, and matched by Mascot, shown separately',
+      'Recommend a school with a reason',
+      'Your own fit notes and priorities for each college',
+    ]}
+  >
+    <BrowserFrame label="app.mascot-ai.com">
+      <Screenshot
+        src="/screenshots/counselors-colleges.jpg"
+        alt="A college page in Mascot AI with the Saved by tab listing students who saved the school and students Mascot matched to it"
+      />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <FeatureBlock
+    eyebrow="Your team"
+    title="Run it as a team"
+    body="Invite counselors with the role that fits: owner, admin, lead, counselor, specialist or coordinator. Assign each student a primary counselor, see seat usage, and manage plan and billing in one place."
+    bullets={[
+      'Roles control which students and tools each person sees',
+      'A primary counselor for every student',
+      'One monthly AI pool shared by the students you sponsor',
+      'Reports by school and CSV exports of your records',
+    ]}
+  >
+    <BrowserFrame label="app.mascot-ai.com">
+      <Screenshot
+        src="/screenshots/counselors-team.jpg"
+        alt="The Mascot AI Team screen showing team seats, members and their roles, and an invite form"
+      />
+    </BrowserFrame>
+  </FeatureBlock>
+
+  <section class="border-b border-border-primary bg-bg-secondary py-16">
+    <div class="container-x max-w-4xl">
+      <h2 class="text-2xl">Students stay in control</h2>
+      <p class="mt-2 text-text-tertiary">Families trust a counselor more when the student holds the switches.</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-3" data-anim-group>
+        {
+          control.map(([t, d]) => (
+            <div class="rounded-2xl border border-border-primary bg-bg-card p-5" data-anim>
+              <h3 class="font-headline text-lg">{t}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-text-tertiary">{d}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-border-primary py-16">
+    <div class="container-x max-w-3xl">
+      <h2 class="text-2xl">How it works</h2>
+      <ol class="mt-8 space-y-8" data-anim-group>
+        {
+          steps.map(([t, d], i) => (
+            <li class="flex gap-5" data-anim>
+              <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-primary/10 font-headline text-sm font-bold text-brand-primary">{i + 1}</span>
+              <div>
+                <h3 class="font-headline text-lg">{t}</h3>
+                <p class="mt-1 leading-relaxed text-text-tertiary">{d}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section id="pricing" class="border-b border-border-primary bg-bg-secondary py-16 sm:py-20">
+    <div class="container-x">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl sm:text-4xl">Plans for your practice</h2>
+        <p class="mt-3 text-text-tertiary">Students keep their own Mascot plan. Your plan covers your tools and, if you choose, the AI for the students you sponsor.</p>
+      </div>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-anim-group>
+        {
+          plans.map((p) => (
+            <div class:list={['flex flex-col rounded-2xl border bg-bg-card p-6', p.featured ? 'border-brand-primary shadow-lg' : 'border-border-primary']} data-anim>
+              <h3 class="font-headline text-xl">{p.name}</h3>
+              <p class="mt-3 font-headline text-3xl font-extrabold">{p.price}</p>
+              <p class="text-sm text-text-muted">{p.note}</p>
+              <dl class="mt-5 space-y-2 text-sm">
+                <div class="flex justify-between"><dt class="text-text-muted">Team members</dt><dd class="font-medium text-text-secondary">{p.team}</dd></div>
+                <div class="flex justify-between"><dt class="text-text-muted">Students</dt><dd class="font-medium text-text-secondary">{p.students}</dd></div>
+                <div class="flex justify-between"><dt class="text-text-muted">AI students</dt><dd class="font-medium text-text-secondary">{p.ai}</dd></div>
+              </dl>
+              <p class="mt-4 text-sm text-text-tertiary">{p.extras}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="mx-auto mt-8 max-w-3xl space-y-2 text-center text-sm text-text-muted">
+        <p>Annual billing is 11 months for the price of 12. Extra AI students are $15 a month and extra team members $29 a month.</p>
+        <p>Each AI student adds 30 voice minutes, 3 AI credits, 1 match run and 5 Match Scores to your pool every month. Unused AI does not roll over.</p>
+        <p>Expedition, for larger firms, is custom. <a href={`mailto:${CONTACT_EMAIL}`} class="font-medium text-brand-primary hover:underline">Talk to us</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} />
+
+  <CtaBand
+    title="Start with one student, free"
+    subtitle="Create a counselor account and invite your first student today."
+  />
+</BaseLayout>

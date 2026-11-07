@@ -9,6 +9,8 @@ const SOURCE: Record<string, string> = {
   '/features/': 'src/pages/features.astro',
   '/pricing/': 'src/pages/pricing.astro',
   '/parents/': 'src/pages/parents.astro',
+  '/counselors/': 'src/pages/counselors.astro',
+  '/demo/': 'src/pages/demo.astro',
   '/about/': 'src/pages/about.astro',
   '/editorial-standards/': 'src/pages/editorial-standards.astro',
   '/blog/': 'src/pages/blog/index.astro',

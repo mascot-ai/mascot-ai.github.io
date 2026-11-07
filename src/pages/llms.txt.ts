@@ -18,6 +18,8 @@ export const GET: APIRoute = async () => {
 - [How it works](${SITE}/features/): voice counseling, AI school matching across ${TOTAL_UNIVERSITIES} US colleges, essay coaching, application planner
 - [Pricing](${SITE}/pricing/)
 - [For parents](${SITE}/parents/)
+- [For counselors](${SITE}/counselors/)
+- [Demo videos](${SITE}/demo/)
 - [College list builder](${SITE}/college-list-builder/)
 - [Mascot AI vs ChatGPT vs a private counselor](${SITE}/compare/)
 
