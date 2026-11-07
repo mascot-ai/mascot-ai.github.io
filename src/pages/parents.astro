@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FeatureBlock from '../components/FeatureBlock.astro';
 import BrowserFrame from '../components/BrowserFrame.astro';
 import Screenshot from '../components/Screenshot.astro';
+import VideoPlayer from '../components/VideoPlayer.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Faq from '../components/Faq.astro';
 
@@ -42,6 +43,12 @@ const faqs = [
       a read-only view of their profile and progress, and you handle the subscription. Everything
       your student builds stays theirs.
     </p>
+  </section>
+
+  <section class="border-t border-border-primary pb-16 pt-12">
+    <div class="container-x">
+      <VideoPlayer id="parent" />
+    </div>
   </section>
 
   <FeatureBlock

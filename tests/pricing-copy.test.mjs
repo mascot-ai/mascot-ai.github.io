@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const page = (p) => readFileSync(new URL(`../dist/${p}/index.html`, import.meta.url), 'utf8');
-const pages = ['', 'pricing', 'features', 'compare', 'college-list-builder', 'parents'];
+const pages = ['', 'pricing', 'features', 'compare', 'college-list-builder', 'parents', 'counselors', 'demo'];
 
 test('no page uses the retired School Saves or Regenerate wording', () => {
   for (const p of pages) {
@@ -40,5 +40,19 @@ test('no em dashes in the Match Score copy', () => {
   for (const p of ['pricing', '']) {
     const copy = page(p).replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '');
     assert.doesNotMatch(copy, /Match Scores?[^<]{0,80}—/);
+  }
+});
+
+test('counselor page shows the live plan prices and the control promises', () => {
+  const html = page('counselors');
+  for (const re of [/Scout/, /\$19/, /\$199/, /\$449/, /Expedition/, /never writes the essay/i, /11 months for the price of 12/]) assert.match(html, re);
+});
+
+test('every demo video ships with captions and a transcript', () => {
+  for (const p of ['demo', 'counselors', 'parents', 'features']) {
+    const html = page(p);
+    assert.match(html, /<track kind="captions"/, `/${p}`);
+    assert.match(html, /Read the transcript/, `/${p}`);
+    assert.doesNotMatch(html, /<video[^>]*\bautoplay\b/, `/${p}`);
   }
 });
