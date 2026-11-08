@@ -6,6 +6,7 @@ import Screenshot from '../components/Screenshot.astro';
 import VoiceRecreation from '../components/VoiceRecreation.astro';
 import RadarChart from '../components/RadarChart.astro';
 import CtaBand from '../components/CtaBand.astro';
+import VideoPlayer from '../components/VideoPlayer.astro';
 import { TOTAL_UNIVERSITIES } from '../lib/site.js';
 ---
 
@@ -16,6 +17,12 @@ import { TOTAL_UNIVERSITIES } from '../lib/site.js';
 >
   <section class="container-x py-16 text-center sm:py-20">
     <h1 class="text-4xl sm:text-5xl">How Mascot works</h1>
+  </section>
+
+  <section class="border-t border-border-primary pb-16 pt-12">
+    <div class="container-x">
+      <VideoPlayer id="student" />
+    </div>
   </section>
 
   <FeatureBlock
