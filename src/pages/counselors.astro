@@ -9,7 +9,7 @@ import Faq from '../components/Faq.astro';
 import { registerUrl, CONTACT_EMAIL } from '../lib/site.js';
 
 // Plans and prices mirror org_plans in project_counselor_backend/scripts/seed_platform_config.py.
-// Annual is 11 months for the price of 12. Confirm the live platform_config before launch.
+// Annual covers 12 months for the price of 11. Confirm the live platform_config before launch.
 const plans = [
   { name: 'Scout', price: 'Free', note: 'For trying it with one student', team: '1', students: '1', ai: 'None', extras: 'Notes, essay comments, college list view' },
   { name: 'Guide', price: '$19', note: 'per AI student, per month', team: '1', students: '10', ai: '1 to 10, as you buy', extras: 'Branded invite page, outcomes tracking' },
@@ -222,7 +222,7 @@ const faqs = [
         }
       </div>
       <div class="mx-auto mt-8 max-w-3xl space-y-2 text-center text-sm text-text-muted">
-        <p>Annual billing is 11 months for the price of 12. Extra AI students are $15 a month and extra team members $29 a month.</p>
+        <p>Annual billing covers 12 months for the price of 11. Extra AI students are $15 a month and extra team members $29 a month.</p>
         <p>Each AI student adds 30 voice minutes, 3 AI credits, 1 match run and 5 Match Scores to your pool every month. Unused AI does not roll over.</p>
         <p>Expedition, for larger firms, is custom. <a href={`mailto:${CONTACT_EMAIL}`} class="font-medium text-brand-primary hover:underline">Talk to us</a>.</p>
       </div>

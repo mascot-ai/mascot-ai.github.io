@@ -22,7 +22,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
 
     <h2>What data we collect</h2>
     <ul>
-      <li><strong>Account information:</strong> email address, name, password (stored hashed), and account type (student or parent).</li>
+      <li><strong>Account information:</strong> email address, name, password (stored hashed), and account type (student, parent, or counselor).</li>
       <li><strong>Profile information:</strong> academic history (GPA, test scores, coursework), extracurricular activities, honors, hometown, graduation year, college preferences, and free-text responses about your goals and experiences.</li>
       <li><strong>Uploaded documents:</strong> transcripts and other files you choose to upload for parsing.</li>
       <li><strong>Voice conversations:</strong> your voice audio is processed in real time by Google's Gemini model on Google Cloud Vertex AI to hold the conversation and generate a text transcript. We store the text transcript in your account. We do not store the audio recording ourselves, and under Google Cloud's terms Google does not use it to train its models; see "Service providers and AI processing" below for details.</li>
@@ -58,7 +58,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       <li><strong>MongoDB Atlas</strong>: database hosting and storage.</li>
       <li><strong>Google Cloud Platform</strong>: application hosting.</li>
       <li><strong>Stripe</strong>: subscription payments.</li>
-      <li><strong>Anthropic (Claude), via Google Cloud Vertex AI</strong>: AI processing for university matching, essay analysis, and transcript parsing.</li>
+      <li><strong>Anthropic (Claude)</strong>: AI processing for university matching, essay analysis, and transcript parsing.</li>
       <li><strong>Google (Gemini), via Google Cloud Vertex AI</strong>: AI processing for real-time voice conversations. Under Google Cloud's terms, Google does not use this data to train its models. Google also handles optional "Sign in with Google" authentication.</li>
       <li><strong>Google Analytics</strong>: aggregate traffic and usage measurement for our public website.</li>
     </ul>
@@ -102,6 +102,29 @@ import { CONTACT_EMAIL } from '../lib/site.js';
     <p>
       If parent linking is enabled for your account, a parent you approve can be granted read-only
       access to parts of your profile, matches, and essays. You control which sections are shared.
+    </p>
+
+    <h2>Counselors and organizations</h2>
+    <p>
+      Independent college counselors and counseling firms can use Mascot AI through an organization
+      account. A counselor sees a student's information only after the student accepts a link to that
+      organization. We do not let anyone under 13 link to an organization, and students in the EU
+      under 16 can link only after a parent consents.
+    </p>
+    <ul>
+      <li><strong>What a counselor can see:</strong> once you accept, the organization can see your profile, college matches, essays, planner, and voice session transcripts. The accept screen shows this before you agree, and you can switch each of these sections off at any time in Settings. Direct editing of your essays is off unless you turn it on.</li>
+      <li><strong>What the organization adds:</strong> notes, essay comments and review rounds, college recommendations, stage and outcome records, and assignments to a team member. These belong to the organization's records about you.</li>
+      <li><strong>Who sees it:</strong> only members of that organization, limited by their role. One organization never sees that you work with another. If a parent is linked to you and you allow it, they can see counselor items you have shared.</li>
+      <li><strong>AI paid for by an organization:</strong> a counselor may sponsor AI use for you. Sponsored AI sessions use the same AI providers listed above. Mascot AI never writes essay text for you or for a counselor.</li>
+      <li><strong>Ending a link:</strong> you can end it at any time. The organization immediately loses access to everything you own. It keeps its own notes and records about you, read only, for up to three years after the link ends, then deletes them. Billing records are kept for seven years. If you delete your account, we delete your data; an organization's records are kept only while a safety review about that organization is open.</li>
+      <li><strong>Reporting a concern:</strong> you can report a counselor from your account. Reports go to Mascot AI, and a serious report can suspend the organization.</li>
+      <li><strong>Counselor data:</strong> for counselors we hold a profile (name, title, credentials, contact and booking details you add), your organization's name and members, and billing information handled by Stripe.</li>
+    </ul>
+    <p>
+      The organization is responsible for how it uses what you share with it, including its own
+      professional obligations to you and your family. Students aged 13 to 17 can link without a
+      parent's consent in the United States; we send a notice to linked parents, or to the parent
+      email given at signup.
     </p>
 
     <h2>Your rights</h2>

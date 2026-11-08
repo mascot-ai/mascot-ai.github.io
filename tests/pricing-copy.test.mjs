@@ -45,7 +45,7 @@ test('no em dashes in the Match Score copy', () => {
 
 test('counselor page shows the live plan prices and the control promises', () => {
   const html = page('counselors');
-  for (const re of [/Scout/, /\$19/, /\$199/, /\$449/, /Expedition/, /never writes the essay/i, /11 months for the price of 12/]) assert.match(html, re);
+  for (const re of [/Scout/, /\$19/, /\$199/, /\$449/, /Expedition/, /never writes the essay/i, /12 months for the price of 11/]) assert.match(html, re);
 });
 
 test('every demo video ships with captions and a transcript', () => {
