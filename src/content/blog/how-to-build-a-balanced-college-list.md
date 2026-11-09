@@ -147,6 +147,8 @@ That last move is the whole method. The list is not done when it has the right c
 - **Using last year's numbers as a promise.** Admit rates and score ranges move every cycle.
 - **Letting someone else build it.** Parents, friends, and counselors have useful input. You are the one who has to go.
 
+Each of these shows up differently when decisions arrive. [Nine college list mistakes that lead to a rough April](/blog/college-list-mistakes/) covers how to spot them in your own list now and fix them.
+
 ## How do you check the list one last time?
 
 Before you submit anything, run the finished list through this checklist. Answer yes or no for every school.

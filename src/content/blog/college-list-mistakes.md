@@ -2,6 +2,7 @@
 title: 'Nine college list mistakes that lead to a rough April'
 description: 'Nine college list mistakes that show up when decisions arrive in spring, how to spot each one in your own list now, and the quick fix for every one.'
 pubDate: 2026-11-09
+updatedDate: 2026-11-09
 pillar: college-list
 draft: false
 ---
@@ -25,7 +26,7 @@ Each item has the same three parts: how it plays out, how to spot it now, and th
 
 **How it plays out:** you are admitted everywhere that was "safe" and cannot afford any of it.
 
-**Spot it:** you have not run the net price calculator on your safeties. Colleges that take federal aid must post one on their website. It takes about ten minutes per school.
+**Spot it:** you have not run the net price calculator on your safeties. Federal law requires most four-year colleges that take federal aid to post one on their website. It takes about ten minutes per school.
 
 **Fix:** run it at every safety. The U.S. Department of Education's [College Scorecard](https://collegescorecard.ed.gov/) shows average net price by income band if you want a first look. If the net price is more than your family can pay, the school is not a safety. Look for a public university in your state, or a school that advertises automatic merit aid for your grades.
 
@@ -49,7 +50,7 @@ Each item has the same three parts: how it plays out, how to spot it now, and th
 
 **How it plays out:** you are admitted in December to a school you are committed to, and the aid offer is not enough.
 
-**Spot it:** early decision is binding. You can usually leave only if the aid offer cannot cover the cost, and each school handles that its own way.
+**Spot it:** early decision is binding. Schools generally release students only when the aid offer makes attending impossible, not when you are merely unhappy with it. You ask in writing, and each school decides case by case.
 
 **Fix:** run the net price calculator before you commit to a binding round. If the number scares you, apply early action or regular decision instead.
 
@@ -73,7 +74,7 @@ Each item has the same three parts: how it plays out, how to spot it now, and th
 
 **How it plays out:** you get in and the aid is thinner than a friend's at the same school.
 
-**Spot it:** some schools set an earlier deadline for merit scholarships or honors programs than for admission, and the application may not say so.
+**Spot it:** some schools set the deadline for merit scholarships or honors programs earlier than the regular admission deadline, and the application may not say so.
 
 **Fix:** put the scholarship deadline next to the admission deadline in each school's row. Check the school's financial aid page, not just the admissions page.
 
@@ -142,4 +143,4 @@ Keep the ones you love, then add targets you can be excited about. A list can be
 
 ### Do I need to apply to more than eight schools?
 
-Not always. The [Common App](https://www.commonapp.org/) allows up to twenty (check its current limit), but a longer list is not a better one. Eight to twelve schools with strong applications usually beats twenty rushed ones.
+Not always. The [Common App](https://www.commonapp.org/) caps you at twenty colleges per admissions cycle, but a longer list is not a better one. Eight to twelve schools with strong applications usually beats twenty rushed ones.
