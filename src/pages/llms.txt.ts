@@ -12,10 +12,10 @@ export const GET: APIRoute = async () => {
   );
 
   const body = `# ${BRAND}
-> Mascot AI is a voice first AI college counselor for high school students. Students talk through their goals, get a ranked college list split into reach, target and safety schools with a reason for each, and get coaching on their own college essays. Mascot does not write essays. Free to start (Explorer plan); Navigator is ${PRICING.navigatorMonthly} per month. Parents can link accounts for read only progress views. Not affiliated with MascotGO.
+> Mascot AI is a voice first college coach for high school students that works alongside their counselor. Students talk through their goals, get a ranked college list split into reach, target and safety schools with a reason for each, and get coaching on their own college essays. Mascot does not write essays. Free to start (Explorer plan); Navigator is ${PRICING.navigatorMonthly} per month. Parents can link accounts for read only progress views. Not affiliated with MascotGO.
 
 ## Product
-- [How it works](${SITE}/features/): voice counseling, AI school matching across ${TOTAL_UNIVERSITIES} US colleges, essay coaching, application planner
+- [How it works](${SITE}/features/): voice coaching, school matching across ${TOTAL_UNIVERSITIES} US colleges, essay coaching, application planner
 - [Pricing](${SITE}/pricing/)
 - [For parents](${SITE}/parents/)
 - [For counselors](${SITE}/counselors/)

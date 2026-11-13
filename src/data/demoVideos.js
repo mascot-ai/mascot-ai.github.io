@@ -8,7 +8,7 @@ export const DEMO_VIDEOS = {
     audience: 'Students',
     summary: 'Follow Maya, a junior, from a voice conversation to a college list, essays and a deadline plan.',
     segments: [
-      { id: 'dashboard', say: "This is Mascot AI, your AI college counselor. Meet Maya, a junior who wants to study computer science. This is her dashboard: how far along her profile is, her matches, her essays, and what is coming up." },
+      { id: 'dashboard', say: "This is Mascot AI, your college coach. Meet Maya, a junior who wants to study computer science. This is her dashboard: how far along her profile is, her matches, her essays, and what is coming up." },
       { id: 'talk', say: "Maya builds her profile by talking. Instead of filling out forms, she has a voice conversation with Mascot about her activities, what she is proud of, and what she wants from college. Mascot listens, takes notes, and turns the conversation into a story she can write from." },
       { id: 'profile', say: "Her profile fills in as she talks: grades, test scores, activities, honors, and the story behind them. She can edit any of it at any time." },
       { id: 'matches', say: "From that profile, Mascot builds a college list and sorts it into reach, target and safety. Every school comes with the reasons it fits and an estimate of her chances." },
@@ -47,7 +47,7 @@ export const DEMO_VIDEOS = {
       { id: 'colleges', say: "Search any school, keep notes your team can share, see which of your students saved it or were matched to it, and recommend it to a student with a reason." },
       { id: 'team', say: "Teams add counselors with different roles, and assign each student a primary counselor." },
       { id: 'reports', say: "Reports show outcomes by school without naming a student, and your records export as spreadsheets." },
-      { id: 'billing', say: "You can pay for the AI of the students who need it from one monthly pool, and the rest keep using their own plan." },
+      { id: 'billing', say: "You can pay for the coaching of the students who need it from one monthly pool, and the rest keep using their own plan." },
       { id: 'outro', say: "Scout is free for one student. See plans for your practice at mascot a i dot com slash counselors." },
     ],
   },

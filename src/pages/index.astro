@@ -9,17 +9,17 @@ import { APP_LOGIN_URL, registerUrl, TOTAL_UNIVERSITIES, PRICING } from '../lib/
 import { softwareApplicationSchema } from '../lib/schema.js';
 
 const faqs = [
-  ['What is Mascot AI?', 'Mascot AI is a Conversational AI Counselor for high school students. You talk through your goals by voice, and it builds your profile, ranks colleges against it, coaches your essays, and tracks your deadlines.'],
+  ['What is Mascot AI?', 'Mascot AI is a college coach that works alongside your counselor. You talk through your goals by voice, and it builds your profile, ranks colleges against it, coaches your essays, and tracks your deadlines.'],
   ['Is Mascot AI the same as MascotGO?', 'No. Mascot AI (mascot-ai.com) is made by Mascot AI Labs, Inc. It is a separate company from MascotGO, with no ownership or partnership between them.'],
   ['Does Mascot write my college essay?', 'No. Mascot asks questions, points out problems, and helps you find the story worth telling. The writing stays yours.'],
-  ['How much does Mascot cost?', `Explorer is free and needs no card. Navigator is ${PRICING.navigatorMonthly} a month and adds unlimited AI match runs and more voice time. Writing, search, and the planner are never limited.`],
+  ['How much does Mascot cost?', `Explorer is free and needs no card. Navigator is ${PRICING.navigatorMonthly} a month and adds unlimited match runs and more voice coaching time. Writing, search, and the planner are never limited.`],
   ['Who is Mascot for?', 'High school students planning for college, and their parents. Parents can link an account for a read-only view of progress and manage billing. Students stay in control of their work.'],
   ['How is Mascot different from ChatGPT or a private counselor?', 'It keeps one profile across sessions, matches you against a database of ' + TOTAL_UNIVERSITIES + ' schools, and tracks deadlines. See the full comparison.'],
 ];
 
 const tools = [
   ['Talk to Mascot', 'Voice conversations that build your profile'],
-  ['AI Matching', 'A ranked college list with a reason for each pick'],
+  ['College matching', 'A ranked college list with a reason for each pick'],
   ['University Search', `${TOTAL_UNIVERSITIES} schools with six tabs of real data`],
   ['Essays', 'A clean editor with analysis and a coach'],
   ['Profile Builder', 'Grades, activities, and goals, by voice or typing'],
@@ -42,8 +42,8 @@ const tools = [
           Talk it through.<br />Find your fit.<br />Apply with confidence.
         </h1>
         <p class="mt-5 max-w-xl text-lg leading-relaxed text-text-tertiary">
-          Mascot is a Conversational AI Counselor for high schoolers. Talk through your goals, get a
-          college list that fits, and write stronger essays. All in one app.
+          Your college coach that works alongside your counselor. Talk through your goals, get a
+          college list that fits, and write essays that sound like you. All in one app.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a href={registerUrl('home-hero')} class="btn-primary">Start free</a>
@@ -138,7 +138,7 @@ const tools = [
       <h2 class="text-2xl">Mascot AI at a glance</h2>
       <dl class="mt-6 grid gap-x-8 gap-y-4 text-sm sm:grid-cols-[10rem_1fr]">
         <dt class="font-semibold text-text-primary">What it is</dt>
-        <dd class="text-text-tertiary">A voice-first AI college counselor for high school students.</dd>
+        <dd class="text-text-tertiary">A voice-first college coach for high school students, working alongside their counselor.</dd>
         <dt class="font-semibold text-text-primary">What it does</dt>
         <dd class="text-text-tertiary">Builds your profile by conversation, matches you to colleges, coaches your essays, and plans your applications.</dd>
         <dt class="font-semibold text-text-primary">What it will not do</dt>
@@ -172,8 +172,9 @@ const tools = [
             <li>Profile builder with voice</li>
             <li>University search and browse</li>
             <li>Unlimited essays and drafts</li>
-            <li>Save unlimited schools, 10 Match Scores</li>
-            <li>2 AI credits, 1 match run a month, 30 voice minutes</li>
+            <li>Save unlimited schools, 5 Match Scores</li>
+            <li>2 coach credits, 1 match run a month, 15 voice coaching minutes</li>
+            <li>7 days of Navigator free to start</li>
           </ul>
         </div>
         <div class="relative rounded-2xl border border-brand-primary bg-bg-card p-6" data-anim>
@@ -184,9 +185,9 @@ const tools = [
           <p class="mt-1 text-2xl font-bold">{PRICING.navigatorMonthly}<span class="text-sm font-normal text-text-muted">/mo</span></p>
           <ul class="mt-4 space-y-2 text-sm text-text-secondary">
             <li>Everything in Explorer, plus:</li>
-            <li>Unlimited AI match runs</li>
+            <li>Unlimited match runs</li>
             <li>20 Match Scores a month, your odds at any school</li>
-            <li>5 AI credits a month, 60 voice minutes a month</li>
+            <li>5 coach credits a month, 60 voice coaching minutes a month</li>
           </ul>
         </div>
       </div>
