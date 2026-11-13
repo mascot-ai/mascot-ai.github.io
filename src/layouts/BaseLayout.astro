@@ -7,8 +7,8 @@ import Footer from '../components/Footer.astro';
 import { GA_ID, INSTAGRAM_URL, TIKTOK_URL, BRAND, SITE_ORG_ID } from '../lib/site.js';
 
 const {
-  title = 'Mascot AI College Counselor: Voice Counseling for Students',
-  description = 'Mascot AI is a Conversational AI Counselor for high schoolers. Talk through your goals, get a college list that fits, and write stronger essays in one app.',
+  title = 'Mascot AI: Your College Coach, Alongside Your Counselor',
+  description = 'Mascot AI is a college coach that works alongside your counselor. Talk through your goals, get a college list that fits, and write essays that sound like you.',
   path = '',
   noindex = false,
   ogType = 'website',
@@ -34,9 +34,9 @@ const schema = {
       knowsAbout: ['college admissions counseling', 'college list building', 'college essay coaching'],
       contactPoint: { '@type': 'ContactPoint', email: 'team@mascot-ai.com', contactType: 'customer support' },
       description:
-        'Conversational AI college counseling for high school students: profile building, university matching, and essay coaching in one app.',
+        'College coaching for high school students: profile building, university matching, and essay coaching in one app.',
       disambiguatingDescription:
-        'Mascot AI (mascot-ai.com, Mascot AI Labs, Inc.) is a college counseling app. It is a separate company from MascotGO and has no affiliation with it.',
+        'Mascot AI (mascot-ai.com, Mascot AI Labs, Inc.) is a college coaching app. It is a separate company from MascotGO and has no affiliation with it.',
     },
     {
       '@type': 'WebSite',
@@ -87,7 +87,7 @@ const schema = {
           <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
           <script
             is:inline
-            set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+            set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{linker:{domains:['mascot-ai.com','app.mascot-ai.com']}});`}
           />
         </Fragment>
       )

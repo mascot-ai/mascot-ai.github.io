@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Faq from '../components/Faq.astro';
-import { PRICING, ADDONS } from '../lib/site.js';
+import { PRICING, PACKS, ADDONS } from '../lib/site.js';
 import { softwareApplicationSchema } from '../lib/schema.js';
 
 // Rows mirror the tier limits in seed_platform_config.py (free vs plus).
@@ -12,20 +12,22 @@ const rows = [
   ['Unlimited essays and drafts', true, true],
   ['Application planner', true, true],
   ['Schools you can save', 'Unlimited', 'Unlimited'],
-  ['Match Scores (your odds at a school)', '10 total', '20 a month'],
-  ['AI match runs', '1 a month', 'Unlimited'],
-  ['Voice minutes', '30 total', '60 a month'],
-  ['AI credits (essay help, analysis)', '2', '5 a month'],
+  ['Match Scores (your odds at a school)', '5 total', '20 a month'],
+  ['Match runs', '1 a month', 'Unlimited'],
+  ['Voice coaching minutes', '15 total', '60 a month'],
+  ['Coach credits (essay feedback, analysis)', '2 total', '5 a month'],
   ['Transcript upload and parsing', true, true],
 ];
 
 const faqs = [
   ['Can I switch plans anytime?', 'Yes. Upgrade or downgrade at any time. Changes take effect immediately.'],
-  ['What are add-ons?', 'One-time top-ups you can buy on either plan without upgrading: extra voice minutes, AI credits, an extra match run, or 10 more Match Scores.'],
-  ['What is a Match Score?', "A Match Score is your chance of getting into one school: an odds estimate, where you land (reach, target, or safety), and what to improve. Saving schools is always free and unlimited. Explorer includes 10 Match Scores. Navigator includes 20 a month, on the 1st. Update it after your profile changes and it uses one more."],
-  ['Is the free plan really free?', "Yes. Explorer is free and doesn't need a card. Writing, search, and the planner have no limits on any plan. Only the AI features are metered."],
+  ['Is there a free trial?', 'Yes. Every student gets 7 days of Navigator, free, with no card. It happens once, and what you use counts toward Explorer\'s limits.'],
+  ['What is the 6 Month Pass?', `A one-time ${PRICING.sixMonthPass} for Navigator for six months. It does not renew, so there is nothing to cancel.`],
+  ['What are packs and add-ons?', 'Packs are one-time bundles of coach credits and voice coaching minutes for any student. Add-ons are top-ups for students on a paid plan: extra voice coaching minutes, coach credits, a match run, or 10 more Match Scores.'],
+  ['What is a Match Score?', "A Match Score is your chance of getting into one school: an odds estimate, where you land (reach, target, or safety), and what to improve. Saving schools is always free and unlimited. Explorer includes 5 Match Scores. Navigator includes 20 a month, on the 1st. Update it after your profile changes and it uses one more."],
+  ['Is the free plan really free?', "Yes. Explorer is free and doesn't need a card. Writing, search, and the planner have no limits on any plan. Coaching time and essay reviews have limits."],
   ['Is my data safe?', 'We use encryption in transit and at rest, and we never share your personal information with colleges without your consent.'],
-  ['What happens to my essays if I downgrade?', 'Your essays and profile data are always yours. Downgrading only limits AI features, not your saved content.'],
+  ['What happens to my essays if I downgrade?', 'Your essays and profile data are always yours. Downgrading only lowers your coaching limits, not your saved content.'],
 ];
 
 const cell = (v) =>
@@ -39,13 +41,13 @@ const cell = (v) =>
 <BaseLayout
   path="/pricing/"
   title="Mascot AI Pricing: Free Explorer and Navigator Plans"
-  description="Mascot AI pricing. Explorer is free with no card. Navigator adds more AI college matching and essay coaching. One-time add-ons work on either plan."
+  description="Mascot AI pricing. Explorer is free with no card. Navigator adds more matching, voice coaching and essay coaching. Packs and a 6 Month Pass are one time."
 >
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(softwareApplicationSchema())} />
   <section class="container-x py-16 text-center sm:py-20">
     <h1 class="text-4xl sm:text-5xl">Plans and pricing</h1>
     <p class="mx-auto mt-4 max-w-xl text-lg text-text-tertiary">
-      Start free. Writing is always free. Only the AI features have limits.
+      Start free. Writing is always free. Coaching time and essay reviews have limits.
     </p>
   </section>
 
@@ -66,7 +68,7 @@ const cell = (v) =>
           )
         }
         <h2 class="font-headline text-xl">Navigator</h2>
-        <p class="mt-1 text-sm text-text-tertiary">The full power of AI college counseling.</p>
+        <p class="mt-1 text-sm text-text-tertiary">Full coaching through every deadline.</p>
         <p class="mt-5 text-3xl font-bold">
           {PRICING.navigatorMonthly}<span class="text-base font-normal text-text-muted">/month</span>
         </p>
@@ -113,9 +115,26 @@ const cell = (v) =>
 
   <section class="container-x pb-20">
     <div class="mx-auto max-w-4xl">
-      <h2 class="text-2xl">Add-ons</h2>
+      <h2 class="text-2xl">Packs and the 6 Month Pass</h2>
       <p class="mt-2 text-sm text-text-tertiary">
-        One-time top-ups on either plan. No upgrade required.
+        One-time purchases for any student. Packs never expire. The 6 Month Pass is Navigator for six months, {PRICING.sixMonthPass}, and does not renew.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        {
+          PACKS.map((a) => (
+            <div class="flex items-start justify-between rounded-xl border border-border-primary bg-bg-card p-5">
+              <div>
+                <p class="font-medium text-text-primary">{a.name}</p>
+                <p class="mt-0.5 text-sm text-text-tertiary">{a.grants}</p>
+              </div>
+              <span class="font-headline text-lg font-bold text-text-primary">{a.price}</span>
+            </div>
+          ))
+        }
+      </div>
+      <h2 class="mt-12 text-2xl">Add-ons</h2>
+      <p class="mt-2 text-sm text-text-tertiary">
+        Top-ups for students on a paid plan.
       </p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2" data-anim-group>
         {

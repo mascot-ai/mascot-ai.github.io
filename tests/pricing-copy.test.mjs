@@ -16,7 +16,7 @@ test('pricing table shows unlimited saving and the Match Score allowances', () =
   const html = page('pricing');
   assert.match(html, /Schools you can save/);
   assert.match(html, /Match Scores \(your odds at a school\)/);
-  assert.match(html, /10 total/);
+  assert.match(html, /5 total/);
   assert.match(html, /20 a month/);
 });
 
@@ -33,7 +33,19 @@ test('the add-on is sold as +10 Match Scores', () => {
 test('home plan cards state the Match Score allowances', () => {
   const html = page('');
   assert.match(html, /20 Match Scores a month/);
-  assert.match(html, /10 Match Scores/);
+  assert.match(html, /5 Match Scores/);
+});
+
+test('pricing names the meters, the trial, the packs and the 6 Month Pass', () => {
+  const html = page('pricing');
+  for (const re of [/Coach credits/, /Voice coaching minutes/, /7 days of Navigator|free trial/i, /Essay Pack/, /4 Essay Pack/, /6 Month Pass/, /\$199\.99/]) assert.match(html, re);
+  assert.doesNotMatch(html, /AI credits|AI match runs|Voice minutes/);
+});
+
+test('no page outside the legal pages says AI counselor or AI powered', () => {
+  for (const p of [...pages, 'about', 'founders', 'contact', 'blog']) {
+    assert.doesNotMatch(page(p), /AI[- ]powered|AI (college )?counselor|Conversational AI/i, `/${p}`);
+  }
 });
 
 test('no em dashes in the Match Score copy', () => {

@@ -32,7 +32,7 @@ const control = [
 const faqs = [
   ['Does Mascot write essays?', 'No. Mascot suggests what to write about, checks a draft against the school it is for, and flags grammar. The essay stays the student\'s own, and so do your comments on it.'],
   ['What does a student need to work with me?', 'A Mascot account. Students on a free or paid plan can link to you. Students under 13, or with no date of birth on file, cannot link to an organization.'],
-  ['Who pays for the AI?', 'You choose. Turn on AI for a student and their voice time, essay help and matching come from your monthly pool. Leave it off and they use their own plan. When your pool runs out, they fall back to their own plan.'],
+  ['Who pays for the coaching?', 'You choose. Turn on coaching for a student and their voice coaching time, essay help and matching come from your monthly pool. Leave it off and they use their own plan. When your pool runs out, they fall back to their own plan.'],
   ['Can a student work with more than one counselor?', "Yes. A student can link to several organizations. Nothing your organization holds reaches another one unless the student shares it."],
   ['What happens when a student leaves?', 'They become a past student. They stop counting toward your plan limits, and what your organization wrote about them stays with your organization.'],
   ['Is there a free trial?', 'No trial, but Scout is free for one student, with no card needed. Paid plans are billed monthly, or annually for the price of 11 months.'],
@@ -79,7 +79,7 @@ const faqs = [
     <BrowserFrame label="app.mascot-ai.com">
       <Screenshot
         src="/screenshots/counselors-today.jpg"
-        alt="The Mascot AI counselor Today screen with essays waiting for review, requests to join, deadlines in the next 14 days and students by stage"
+        alt="The Today screen for counselors in Mascot AI with essays waiting for review, requests to join, deadlines in the next 14 days and students by stage"
       />
     </BrowserFrame>
   </FeatureBlock>
@@ -150,7 +150,7 @@ const faqs = [
     bullets={[
       'Roles control which students and tools each person sees',
       'A primary counselor for every student',
-      'One monthly AI pool shared by the students you sponsor',
+      'One monthly coaching pool shared by the students you sponsor',
       'Reports by school and CSV exports of your records',
     ]}
   >
@@ -202,7 +202,7 @@ const faqs = [
     <div class="container-x">
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl sm:text-4xl">Plans for your practice</h2>
-        <p class="mt-3 text-text-tertiary">Students keep their own Mascot plan. Your plan covers your tools and, if you choose, the AI for the students you sponsor.</p>
+        <p class="mt-3 text-text-tertiary">Students keep their own Mascot plan. Your plan covers your tools and, if you choose, the coaching for the students you sponsor.</p>
       </div>
       <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-anim-group>
         {
@@ -222,8 +222,8 @@ const faqs = [
         }
       </div>
       <div class="mx-auto mt-8 max-w-3xl space-y-2 text-center text-sm text-text-muted">
-        <p>Annual billing covers 12 months for the price of 11. Extra AI students are $15 a month and extra team members $29 a month.</p>
-        <p>Each AI student adds 30 voice minutes, 3 AI credits, 1 match run and 5 Match Scores to your pool every month. Unused AI does not roll over.</p>
+        <p>Annual billing covers 12 months for the price of 11. On Pathfinder and Basecamp, extra AI students are $15 a month and extra team members $29 a month. Guide can add up to 20 extra students without AI at $7 a month each.</p>
+        <p>Each AI student adds 30 voice coaching minutes, 3 coach credits, 1 match run and 5 Match Scores to your pool every month. Unused coaching does not roll over.</p>
         <p>Expedition, for larger firms, is custom. <a href={`mailto:${CONTACT_EMAIL}`} class="font-medium text-brand-primary hover:underline">Talk to us</a>.</p>
       </div>
     </div>
