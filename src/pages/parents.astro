@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FeatureBlock from '../components/FeatureBlock.astro';
 import BrowserFrame from '../components/BrowserFrame.astro';
 import Screenshot from '../components/Screenshot.astro';
+import VideoPlayer from '../components/VideoPlayer.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Faq from '../components/Faq.astro';
 
@@ -33,7 +34,7 @@ const faqs = [
 <BaseLayout
   path="/parents/"
   title="Mascot AI for Parents: Follow Your Student's College Progress"
-  description="Link your account to your student's and get a read-only view of their profile, application progress, and college matches, plus billing for the subscription. Students stay in control of their work."
+  description="Mascot AI for parents: a read-only view of your student's profile, progress, and college matches, plus billing. Students stay in control of their work."
 >
   <section class="container-x py-16 text-center sm:py-20">
     <h1 class="text-4xl sm:text-5xl">For parents</h1>
@@ -42,6 +43,12 @@ const faqs = [
       a read-only view of their profile and progress, and you handle the subscription. Everything
       your student builds stays theirs.
     </p>
+  </section>
+
+  <section class="border-t border-border-primary pb-16 pt-12">
+    <div class="container-x">
+      <VideoPlayer id="parent" />
+    </div>
   </section>
 
   <FeatureBlock

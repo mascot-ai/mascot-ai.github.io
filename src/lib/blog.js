@@ -8,9 +8,11 @@ export const PILLARS = {
   'ai-admissions': 'AI and admissions',
 };
 
-// Anonymous byline for now. Swap in a real name, photo, and bio at public
-// launch (that is the biggest trust upgrade available for this content).
+// Anonymous byline. One place to change it: the post header, the author box, and
+// the Article schema all read from here. Never add a person's name.
 export const AUTHOR = {
-  byline: 'A counselor at a private high school',
-  bio: 'These guides are written by the college counselor who came up with the idea for Mascot AI. He advises high school students through the whole application process, from building a list to sending it in. His name and school are off the site until we launch publicly, because he still works with students directly and keeps that separate. If you want to check the advice against someone you trust, that is the right instinct. Nothing here depends on taking our word for it.',
+  byline:
+    'Written by the Mascot AI counseling team. Reviewed by a private school administrator with years of college advising experience.',
+  bio: 'Team members hold roles at schools, so we describe them by role instead of by name. Facts are checked against primary sources such as the Common App, NCES College Navigator, and each college\'s admissions site. If you want to check the advice against someone you trust, that is the right instinct.',
+  standardsPath: '/editorial-standards/',
 };

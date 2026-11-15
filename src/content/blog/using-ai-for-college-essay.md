@@ -1,6 +1,6 @@
 ---
 title: 'Is it okay to use AI for your college essay? Where the line is'
-description: 'Using AI to brainstorm or get feedback on a college essay is widely tolerated. Having it write your essay is not. Here is where the line sits and how to stay on the right side.'
+description: 'Using AI to brainstorm or get feedback on a college essay is widely tolerated; having it write the essay is not. See where the line sits.'
 pubDate: 2026-10-15
 updatedDate: 2026-10-15
 pillar: ai-admissions

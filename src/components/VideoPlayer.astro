@@ -1,0 +1,33 @@
+---
+// Click-to-play demo video with captions and a transcript. No autoplay, nothing downloads until play.
+import { DEMO_VIDEOS, captionText } from '../data/demoVideos.js';
+const { id, heading = 'h2' } = Astro.props;
+const video = DEMO_VIDEOS[id];
+const Title = heading;
+---
+
+<figure class="mx-auto w-full max-w-4xl" data-anim>
+  <div class="overflow-hidden rounded-2xl border border-border-primary bg-bg-card shadow-[0_24px_60px_-24px_rgba(30,27,90,0.35)]">
+    <video
+      controls
+      playsinline
+      preload="none"
+      poster={`/videos/${id}-poster.jpg`}
+      width="1440"
+      height="810"
+      class="block aspect-video w-full bg-black"
+      aria-label={`${video.title}: product demo`}
+    >
+      <source src={`/videos/${id}.mp4`} type="video/mp4" />
+      <track kind="captions" src={`/videos/${id}.vtt`} srclang="en" label="English" default />
+      <p class="p-4 text-sm">Your browser can't play this video. The transcript below has the same content.</p>
+    </video>
+  </div>
+  <figcaption class="mt-3 text-sm text-text-muted">{video.summary}</figcaption>
+  <details class="mt-3 rounded-xl border border-border-primary bg-bg-secondary px-4 py-3">
+    <summary class="cursor-pointer text-sm font-medium text-text-secondary">Read the transcript</summary>
+    <div class="mt-3 space-y-3 text-sm leading-relaxed text-text-tertiary">
+      {video.segments.map((s) => <p>{captionText(s.say)}</p>)}
+    </div>
+  </details>
+</figure>

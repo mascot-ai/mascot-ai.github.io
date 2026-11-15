@@ -34,8 +34,8 @@ import { CONTACT_EMAIL } from '../lib/site.js';
     <h2>3. AI-powered features</h2>
     <p>
       Mascot AI uses third-party AI services to power core features: Claude (by Anthropic) for
-      university matching, essay analysis, and transcript parsing, and Gemini (by Google) for
-      real-time voice conversations, both accessed through Google Cloud Vertex AI. Voice audio is
+      university matching, essay analysis, and transcript parsing, and Gemini (by Google, accessed through
+      Google Cloud Vertex AI) for real-time voice conversations. Voice audio is
       processed in real time; we store the resulting text transcript and do not store the audio
       ourselves. Under Google Cloud's terms, Google does not use this data to train its models.
     </p>
@@ -163,7 +163,22 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       CA 95834, or by phone at (800) 952-5210.
     </p>
 
-    <h2>17. Contact</h2>
+    <h2>17. Counselor organizations</h2>
+    <p>
+      Counselors and counseling firms can use Mascot AI through an organization account. These
+      terms apply to them and to students who link to them.
+    </p>
+    <ul>
+      <li><strong>Students choose.</strong> An organization can see a student's information only after the student accepts the link, and only the sections the student allows. A student can change those sections or end the link at any time.</li>
+      <li><strong>Age rules.</strong> Students under 13 cannot link to an organization. EU students under 16 can link only after a parent consents. In the United States a parent usually hires the counselor, and we send a notice to linked parents or to the parent email given at signup when a student aged 13 to 17 links.</li>
+      <li><strong>Counselor duties.</strong> Counselors must give accurate credentials, use student information only to serve that student, keep it confidential, and follow the professional codes and laws that apply to them. Mascot AI does not write essay text. A counselor must not submit AI-written text as a student's own work or ask a student to.</li>
+      <li><strong>Independent professionals.</strong> Counselors are independent of Mascot AI. We do not employ, certify or endorse them, and we do not guarantee any admission outcome or the quality of their advice. Fees between a student or family and a counselor are their own arrangement.</li>
+      <li><strong>Plans and billing.</strong> Organization plans are billed monthly or annually through Stripe. Organizations can sponsor AI use for students on paid plans, within the plan's limits. If a payment fails we allow a short grace period, then the organization returns to the free plan and sponsored AI stops. Students are never charged for AI an organization sponsors.</li>
+      <li><strong>Safety.</strong> Anyone can report a counselor. We may suspend an organization while we review a report, or end its access if the report is upheld.</li>
+      <li><strong>Records.</strong> When a link ends, the organization keeps its own notes and records about the student, read only, for up to three years, then deletes them. See the Privacy Policy.</li>
+    </ul>
+
+    <h2>18. Contact</h2>
     <p>
       Questions about these Terms: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We aim to respond within 2 to 3 business days.
     </p>
