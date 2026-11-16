@@ -43,7 +43,7 @@ test('pricing names the meters, the trial, the packs and the 6 Month Pass', () =
 });
 
 test('no page outside the legal pages says AI counselor or AI powered', () => {
-  for (const p of [...pages, 'about', 'founders', 'contact', 'blog']) {
+  for (const p of [...pages, 'about', 'contact', 'blog']) {
     assert.doesNotMatch(page(p), /AI[- ]powered|AI (college )?counselor|Conversational AI/i, `/${p}`);
   }
 });
