@@ -15,6 +15,11 @@ export const SITE_ORG_ID = 'https://mascot-ai.com/#org';
 // The tag only loads in production builds (see BaseLayout).
 export const GA_ID = 'G-YFSFMPDLCH';
 
+// Meta Pixel (dataset "Mascot AI Website", business portfolio "Mascot AI Labs Inc").
+// Loads in production only and never for visitors sending Global Privacy Control (see BaseLayout).
+// Public site only: the app serves students under 18, so it carries no Meta pixel.
+export const META_PIXEL_ID = '28999185283036708';
+
 export const NAV_LINKS = [
   { href: '/features/', label: 'For Students' },
   { href: '/parents/', label: 'For Parents' },
