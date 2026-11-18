@@ -39,6 +39,10 @@ export const PRICING = {
   navigatorAnnual: '$383.88', // ~$31.99/mo
   sixMonthPass: '$199.99', // one time, never renews
   navigatorLive: true, // Navigator is purchasable (live with the prod launch)
+  // Prep tier (test prep, docs/test-prep/SPEC.md D5). Ships only at the test prep launch.
+  prepMonthly: '$14.99',
+  prepAnnual: '$99',
+  prepSeason: '$49', // 4 months, does not renew
 };
 
 // One-time bundles for any student. They never expire.

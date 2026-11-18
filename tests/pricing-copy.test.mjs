@@ -55,6 +55,18 @@ test('no em dashes in the Match Score copy', () => {
   }
 });
 
+test('pricing and home show the Prep plan and its prices', () => {
+  for (const p of ['pricing', '']) {
+    const html = page(p);
+    assert.match(html, /Prep/);
+    assert.match(html, /\$14\.99/);
+    assert.match(html, /\$99/);
+    assert.match(html, /\$49/);
+    assert.match(html, /does not renew/);
+    assert.match(html, /15 voice coaching minutes a month/);
+  }
+});
+
 test('counselor page shows the live plan prices and the control promises', () => {
   const html = page('counselors');
   for (const re of [/Scout/, /\$19/, /\$199/, /\$449/, /Expedition/, /never writes the essay/i, /12 months for the price of 11/]) assert.match(html, re);
