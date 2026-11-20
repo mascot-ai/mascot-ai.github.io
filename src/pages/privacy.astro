@@ -12,7 +12,7 @@ import { CONTACT_EMAIL } from '../lib/site.js';
 >
   <article class="container-x max-w-3xl py-16 legal sm:py-20">
     <h1 class="text-4xl">Privacy Policy</h1>
-    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> October 1, 2026</p>
+    <p class="mt-2 text-sm text-text-muted"><strong>Last updated:</strong> November 20, 2026</p>
 
     <h2>Introduction</h2>
     <p>
@@ -29,7 +29,8 @@ import { CONTACT_EMAIL } from '../lib/site.js';
       <li><strong>Essay content:</strong> drafts you write and the feedback conversations you have about them.</li>
       <li><strong>Usage data:</strong> features used, pages visited, and time spent, to operate and improve the service.</li>
       <li><strong>Device information:</strong> browser type, device type, IP address, and operating system, for support and security.</li>
-      <li><strong>Billing information:</strong> subscription status and payment metadata. Card details are handled by Stripe and are not stored on our servers.</li>
+      <li><strong>Billing information:</strong> subscription status, free-trial status, one-time purchases, and payment metadata. Card details are handled by Stripe and are not stored on our servers.</li>
+      <li><strong>Referral information:</strong> if you share or use a referral code, we record which account referred which, so that we can grant rewards.</li>
     </ul>
 
     <h2>Why we collect this data</h2>
@@ -73,15 +74,21 @@ import { CONTACT_EMAIL } from '../lib/site.js';
 
     <h2>Analytics and cookies</h2>
     <p>
-      Our public website at mascot-ai.com uses Google Analytics 4 to understand how visitors find
-      and use the site: pages viewed, referring source, approximate location, device type, and
-      similar aggregate measures. Google Analytics sets cookies in your browser to do this. We have
+      Our public website at mascot-ai.com and the Mascot AI web app at app.mascot-ai.com use
+      Google Analytics 4 to understand how visitors find and use them: pages viewed, referring
+      source, approximate location, device type, and similar aggregate measures. In the app it
+      also records that a sign-up, a free trial start, a purchase (with its price), or a parent
+      invitation happened. It does not receive your profile, essays, transcripts, or voice content. Google Analytics sets cookies in your browser to do this. We have
       turned off Google Signals, so this data is not linked to your Google account or used for ad
       personalization, and we have set the shortest practical data retention.
     </p>
     <p>
       You can block these cookies through your browser settings or with the Google Analytics
-      opt-out browser add-on. The rest of the website works without them.
+      opt-out browser add-on. The rest of the website and the app work without them.
+    </p>
+    <p>
+      The web app also stores an authentication token in your browser's local storage to keep you
+      signed in.
     </p>
     <p>
       Our public website also uses the Meta Pixel to measure how our Instagram and Facebook ads
