@@ -119,10 +119,10 @@ const cell = (v) =>
       <p class="mt-2 text-sm text-text-tertiary">
         One-time purchases for any student. Packs never expire. The 6 Month Pass is Navigator for six months, {PRICING.sixMonthPass}, and does not renew.
       </p>
-      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      <div class="mt-6 grid gap-4 sm:grid-cols-2" data-anim-group>
         {
           PACKS.map((a) => (
-            <div class="flex items-start justify-between rounded-xl border border-border-primary bg-bg-card p-5">
+            <div class="flex items-start justify-between rounded-xl border border-border-primary bg-bg-card p-5" data-anim>
               <div>
                 <p class="font-medium text-text-primary">{a.name}</p>
                 <p class="mt-0.5 text-sm text-text-tertiary">{a.grants}</p>
