@@ -149,6 +149,8 @@ That last move is the whole method. The list is not done when it has the right c
 
 Each of these shows up differently when decisions arrive. [Nine college list mistakes that lead to a rough April](/blog/college-list-mistakes/) covers how to spot them in your own list now and fix them.
 
+If your list leans on famous names, [Fit over prestige](/blog/fit-over-prestige/) shows what the research says about that and how to check fit school by school.
+
 ## How do you check the list one last time?
 
 Before you submit anything, run the finished list through this checklist. Answer yes or no for every school.
