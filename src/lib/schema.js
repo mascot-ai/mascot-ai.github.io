@@ -17,7 +17,7 @@ export const softwareApplicationSchema = () => {
       { '@type': 'Offer', name: 'Explorer', price: '0', priceCurrency: 'USD' },
       {
         '@type': 'Offer',
-        name: 'Prep',
+        name: 'Test Prep Pro',
         price: prep,
         priceCurrency: 'USD',
         priceSpecification: { '@type': 'UnitPriceSpecification', price: prep, priceCurrency: 'USD', billingDuration: 'P1M' },

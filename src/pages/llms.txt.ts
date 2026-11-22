@@ -12,7 +12,7 @@ export const GET: APIRoute = async () => {
   );
 
   const body = `# ${BRAND}
-> Mascot AI is a voice first college coach for high school students that works alongside their counselor. Students talk through their goals, get a ranked college list split into reach, target and safety schools with a reason for each, and get coaching on their own college essays. Mascot does not write essays. Free to start (Explorer plan); Prep (SAT and PSAT practice) is ${PRICING.prepMonthly} per month, ${PRICING.prepAnnual} per year, or ${PRICING.prepSeason} for a 4 month season pass that does not renew; Navigator is ${PRICING.navigatorMonthly} per month and includes everything in Prep. Parents can link accounts for read only progress views. Not affiliated with MascotGO.
+> Mascot AI is a voice first college coach for high school students that works alongside their counselor. Students talk through their goals, get a ranked college list split into reach, target and safety schools with a reason for each, and get coaching on their own college essays. Mascot does not write essays. Free to start (Explorer plan); Navigator is ${PRICING.navigatorMonthly} per month. Test prep (SAT and PSAT) is a separate product: Test Prep Free, or Test Prep Pro at ${PRICING.prepMonthly} per month, ${PRICING.prepAnnual} per year, or ${PRICING.prepSeason} for a 4 month season pass that does not renew. Parents can link accounts for read only progress views. Not affiliated with MascotGO.
 
 ## Product
 - [How it works](${SITE}/features/): voice coaching, school matching across ${TOTAL_UNIVERSITIES} US colleges, essay coaching, application planner
