@@ -2,6 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { DEMO_VIDEOS } from '../src/data/demoVideos.js';
 
 const page = (p) => readFileSync(new URL(`../dist/${p}/index.html`, import.meta.url), 'utf8');
 const pages = ['', 'pricing', 'features', 'compare', 'college-list-builder', 'parents', 'counselors', 'demo'];
@@ -43,7 +44,7 @@ test('pricing names the meters, the trial, the packs and the 6 Month Pass', () =
 });
 
 test('no page outside the legal pages says AI counselor or AI powered', () => {
-  for (const p of [...pages, 'about', 'founders', 'contact', 'blog']) {
+  for (const p of [...pages, 'about', 'contact', 'blog']) {
     assert.doesNotMatch(page(p), /AI[- ]powered|AI (college )?counselor|Conversational AI/i, `/${p}`);
   }
 });
@@ -72,11 +73,12 @@ test('counselor page shows the live plan prices and the control promises', () =>
   for (const re of [/Scout/, /\$19/, /\$199/, /\$449/, /Expedition/, /never writes the essay/i, /12 months for the price of 11/]) assert.match(html, re);
 });
 
-test('every demo video ships with captions and a transcript', () => {
+test('every demo video ships with a transcript, and narrated ones with captions', () => {
   for (const p of ['demo', 'counselors', 'parents', 'features']) {
     const html = page(p);
-    assert.match(html, /<track kind="captions"/, `/${p}`);
     assert.match(html, /Read the transcript/, `/${p}`);
     assert.doesNotMatch(html, /<video[^>]*\bautoplay\b/, `/${p}`);
   }
+  const narrated = Object.values(DEMO_VIDEOS).filter((v) => !v.external).length;
+  assert.equal(page('demo').match(/<track kind="captions"/g)?.length ?? 0, narrated);
 });

@@ -16,3 +16,8 @@ export const AUTHOR = {
   bio: 'Team members hold roles at schools, so we describe them by role instead of by name. Facts are checked against primary sources such as the Common App, NCES College Navigator, and each college\'s admissions site. If you want to check the advice against someone you trust, that is the right instinct.',
   standardsPath: '/editorial-standards/',
 };
+
+// pubDate is parsed as UTC midnight. Format in UTC too, or the build machine's
+// timezone shows the previous day.
+export const formatDate = (d) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });

@@ -1,22 +1,24 @@
 // Narration for the three product demo videos. One source for the voiceover
-// (scripts/demo-video/record.mjs reads `say`) and the on-page transcript.
+// (scripts/demo-video/record.mjs reads `say`) and the on-page transcript. Entries with `external: true` are
+// produced elsewhere and only use `say` as the transcript.
 // Keep every claim true of the shipped app; the counselor video follows docs/counselor/SPEC.md.
 export const DEMO_VIDEOS = {
   student: {
     id: 'student',
     title: 'Mascot AI for students',
     audience: 'Students',
-    summary: 'Follow Maya, a junior, from a voice conversation to a college list, essays and a deadline plan.',
+    summary: 'A three minute tour: build a profile by talking, find schools that fit, coach your essays and keep every deadline.',
+    // Produced outside this repo (music, on-screen text, no narration). `say` is the text alternative for the
+    // transcript; record.mjs refuses to re-record it and the player shows no caption track.
+    external: true,
+    uploaded: '2026-11-20',
     segments: [
-      { id: 'dashboard', say: "This is Mascot AI, your college coach. Meet Maya, a junior who wants to study computer science. This is her dashboard: how far along her profile is, her matches, her essays, and what is coming up." },
-      { id: 'talk', say: "Maya builds her profile by talking. Instead of filling out forms, she has a voice conversation with Mascot about her activities, what she is proud of, and what she wants from college. Mascot listens, takes notes, and turns the conversation into a story she can write from." },
-      { id: 'profile', say: "Her profile fills in as she talks: grades, test scores, activities, honors, and the story behind them. She can edit any of it at any time." },
-      { id: 'matches', say: "From that profile, Mascot builds a college list and sorts it into reach, target and safety. Every school comes with the reasons it fits and an estimate of her chances." },
-      { id: 'universities', say: "She can also search thousands of schools. Saving a school is always free, and saved schools feed her planner." },
-      { id: 'essays', say: "Her essays live here. Mascot suggests what to write about, checks a draft against the school it is for, and flags grammar. It never writes the essay for her." },
-      { id: 'planner', say: "The planner keeps every deadline in one place: supplements, test dates and scholarships." },
-      { id: 'counselors', say: "If Maya works with a private counselor, she links with them here and chooses exactly what they can see. She can change that, or end the link, whenever she wants." },
-      { id: 'outro', say: "Writing is always free. Start with the free plan at mascot a i dot com." },
+      { id: 'intro', say: "Mascot AI, your college coach, working alongside your counselor. Thousands of schools. A stack of essays. Four things it does: builds your profile, finds schools that fit, coaches your essays, and keeps you on deadline." },
+      { id: 'profile', say: "Build your profile. Talk to Mascot in a 10-minute voice conversation that builds your profile as you speak, or type your answers. Your story is kept in your own words, with a Story Map of the experiences you have shared and how they connect. One dashboard shows your matches, favorites, profile and next steps." },
+      { id: 'schools', say: "Find schools that fit. Mascot compares your profile against thousands of universities and sorts your matches into reach, target and safety, each with a match percentage, an estimated chance of admission and the reasons it fits. It shows your strengths and gives specific tips to improve your odds. You can also search and filter by state, type, level, enrollment, tuition and admission rate, and see admissions, costs and graduate outcomes before you apply." },
+      { id: 'essays', say: "Coach your essays. Write in the essay workspace. Mascot reads your story, your prompt and the school, then says what fits and what to explore, with feedback on strengths, grammar and prompt relevance. You can brainstorm story ideas by voice or text." },
+      { id: 'deadlines', say: "Stay on deadline. Each saved school becomes a checklist: essays, fee, transcript and submit. One timeline tracks tests and recommenders, and you can export deadlines to your calendar. Link with a counselor using a join code. Counselors see only what you share." },
+      { id: 'outro', say: "What you just saw: a profile built from your own story, matches with reasons, an essay coach that reads your draft, a planner for every deadline, and your counselor in the loop. Build your profile. Find your fit. Write essays that sound like you. Start at app.mascot-ai.com." },
     ],
   },
   parent: {

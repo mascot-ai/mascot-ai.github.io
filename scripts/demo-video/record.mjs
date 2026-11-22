@@ -1,4 +1,4 @@
-// Records one demo video: node scripts/demo-video/record.mjs <student|parent|counselor> [--frames]
+// Records one demo video: node scripts/demo-video/record.mjs <parent|counselor> [--frames]
 // Needs the demo stack from docs/DEMO_VIDEOS.md (backend, seeded DB, frontend). Output: public/videos/<name>.{mp4,vtt,-poster.jpg}.
 // --frames skips audio/encoding and saves a screenshot at the end of each segment into $FRAMES_DIR for a dry check.
 import { chromium } from 'playwright';
@@ -12,7 +12,7 @@ import { ACCOUNTS, TOURS } from './tours.mjs';
 const name = process.argv[2];
 const frames = process.argv.includes('--frames');
 const video = DEMO_VIDEOS[name];
-if (!video) { console.error('usage: record.mjs <student|parent|counselor> [--frames]'); process.exit(1); }
+if (!video || video.external) { console.error('usage: record.mjs <parent|counselor> [--frames]'); process.exit(1); }
 
 const APP = process.env.DEMO_APP_URL || 'http://localhost:5174';
 const API = process.env.DEMO_API_URL || 'http://localhost:8001/api/v1';

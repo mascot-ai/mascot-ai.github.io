@@ -13,21 +13,21 @@ const schema = Object.values(DEMO_VIDEOS).map((v) => ({
   description: v.summary,
   thumbnailUrl: `${SITE}/videos/${v.id}-poster.jpg`,
   contentUrl: `${SITE}/videos/${v.id}.mp4`,
-  uploadDate: '2026-11-07',
+  uploadDate: v.uploaded ?? '2026-11-07',
 }));
 ---
 
 <BaseLayout
   path="/demo/"
   title="Mascot AI Demo Videos: Students, Parents and Counselors"
-  description="Watch Mascot AI in action: a student builds a profile and essays, a parent follows along, and a counselor runs their practice. Three short walkthroughs."
+  description="Watch Mascot AI in action: a student builds a profile and essays, a parent follows along, and a counselor runs their practice. Three walkthroughs."
 >
   {schema.map((s) => <script type="application/ld+json" slot="head" set:html={JSON.stringify(s)} />)}
   <section class="container-x py-16 text-center sm:py-20">
     <h1 class="text-4xl sm:text-5xl">See Mascot AI in action</h1>
     <p class="mx-auto mt-4 max-w-2xl text-lg text-text-tertiary">
-      Three short walkthroughs with the same student, Maya, seen by her, by her parent, and by her counselor.
-      Every video has captions and a transcript.
+      Three short walkthroughs: what a student does, what a parent sees, and how a counselor runs a practice.
+      Every video has a transcript.
     </p>
   </section>
 
