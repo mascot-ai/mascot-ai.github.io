@@ -14,6 +14,14 @@ export const GET: APIRoute = async () => {
   const body = `# ${BRAND}
 > Mascot AI is a voice first college coach for high school students that works alongside their counselor. Students talk through their goals, get a ranked college list split into reach, target and safety schools with a reason for each, and get coaching on their own college essays. Mascot does not write essays. Free to start (Explorer plan); Navigator is ${PRICING.navigatorMonthly} per month. Parents can link accounts for read only progress views. Not affiliated with MascotGO.
 
+## Key facts
+- Who it is for: high school students (about ages 14 to 19), with read only views for linked parents and seats for private counselors.
+- What it does: voice conversations build a student profile; matching across ${TOTAL_UNIVERSITIES} US colleges gives reach, target and safety schools with a reason for each; essay coaching gives feedback on the student's own writing; an application planner tracks deadlines.
+- What it does not do: write essays, guarantee admission, or replace a human counselor.
+- Price: Explorer is free. Navigator is ${PRICING.navigatorMonthly} per month, ${PRICING.navigatorSemiannual} per six months, or ${PRICING.navigatorAnnual} per year. A ${PRICING.sixMonthPass} six month pass never renews. Saving schools, writing and the planner are never limited.
+- Data caveat: school facts come from public federal data and can lag; verify deadlines and costs on each school's own site.
+- Company: Mascot AI Labs, Inc. Not affiliated with MascotGO.
+
 ## Product
 - [How it works](${SITE}/features/): voice coaching, school matching across ${TOTAL_UNIVERSITIES} US colleges, essay coaching, application planner
 - [Pricing](${SITE}/pricing/)
