@@ -30,7 +30,7 @@ export const NAV_LINKS = [
 ];
 
 // Prices and limits from project_counselor_backend/scripts/seed_platform_config.py
-// (platform_config v3.1.0). Explorer: 5 Match Scores, 15 voice coaching minutes, 2 coach
+// (platform_config v3.2.0, test prep is its own product). Explorer: 5 Match Scores, 15 voice coaching minutes, 2 coach
 // credits for life, 1 match run a month. Navigator: 20 Match Scores, 60 voice coaching
 // minutes, 5 coach credits a month, unlimited match runs. Saving schools is free.
 export const PRICING = {
@@ -39,7 +39,25 @@ export const PRICING = {
   navigatorAnnual: '$383.88', // ~$31.99/mo
   sixMonthPass: '$199.99', // one time, never renews
   navigatorLive: true, // Navigator is purchasable (live with the prod launch)
+  // Test Prep Pro (test prep is a separate product from Explorer/Navigator). Ships at the test prep launch.
+  prepMonthly: '$14.99',
+  prepAnnual: '$99',
+  prepSeason: '$49', // 4 months, does not renew
 };
+
+// Test prep plans (platform_config prep.entitlements prep_free / prep_pro). Separate from
+// Explorer and Navigator: a student can hold either counseling plan and either test prep plan.
+export const TEST_PREP_FREE = [
+  '20 practice questions a day',
+  '1 full practice test',
+  '10 tutor messages a day',
+  'Free preview lessons',
+];
+export const TEST_PREP_PRO = [
+  'Unlimited SAT and PSAT practice and full tests',
+  'Unlimited tutor messages and every lesson',
+  '15 voice coaching minutes a month, just for test prep',
+];
 
 // One-time bundles for any student. They never expire.
 export const PACKS = [

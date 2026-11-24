@@ -2,10 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Faq from '../components/Faq.astro';
-import { PRICING, PACKS, ADDONS } from '../lib/site.js';
+import { PRICING, PACKS, ADDONS, TEST_PREP_FREE, TEST_PREP_PRO } from '../lib/site.js';
 import { softwareApplicationSchema } from '../lib/schema.js';
 
-// Rows mirror the tier limits in seed_platform_config.py (free vs plus).
+// Rows mirror the counseling tier limits in seed_platform_config.py (Explorer, Navigator).
 const rows = [
   ['Profile builder with voice', true, true],
   ['University search and browse', true, true],
@@ -20,12 +20,13 @@ const rows = [
 ];
 
 const faqs = [
+  ['How does test prep work with my plan?', `Test prep is a separate plan from Explorer and Navigator, so you can have one of each. Test Prep Free is free. Test Prep Pro costs ${PRICING.prepMonthly} a month, ${PRICING.prepAnnual} a year, or ${PRICING.prepSeason} for a 4-month season pass that does not renew. Its 15 voice coaching minutes a month are for test prep only. Navigator does not include test prep.`],
   ['Can I switch plans anytime?', 'Yes. Upgrade or downgrade at any time. Changes take effect immediately.'],
   ['Is there a free trial?', 'Yes. Every student gets 7 days of Navigator, free, with no card. It happens once, and what you use counts toward Explorer\'s limits.'],
   ['What is the 6 Month Pass?', `A one-time ${PRICING.sixMonthPass} for Navigator for six months. It does not renew, so there is nothing to cancel.`],
   ['What are packs and add-ons?', 'Packs are one-time bundles of coach credits and voice coaching minutes for any student. Add-ons are top-ups for students on a paid plan: extra voice coaching minutes, coach credits, a match run, or 10 more Match Scores.'],
   ['What is a Match Score?', "A Match Score is your chance of getting into one school: an odds estimate, where you land (reach, target, or safety), and what to improve. Saving schools is always free and unlimited. Explorer includes 5 Match Scores. Navigator includes 20 a month, on the 1st. Update it after your profile changes and it uses one more."],
-  ['Is the free plan really free?', "Yes. Explorer is free and doesn't need a card. Writing, search, and the planner have no limits on any plan. Coaching time and essay reviews have limits."],
+  ['Is the free plan really free?', "Yes. Explorer is free and doesn't need a card. Writing and the planner have no limits on any plan. Coaching time and essay reviews have limits."],
   ['Is my data safe?', 'We use encryption in transit and at rest, and we never share your personal information with colleges without your consent.'],
   ['What happens to my essays if I downgrade?', 'Your essays and profile data are always yours. Downgrading only lowers your coaching limits, not your saved content.'],
 ];
@@ -40,8 +41,8 @@ const cell = (v) =>
 
 <BaseLayout
   path="/pricing/"
-  title="Mascot AI Pricing: Free Explorer and Navigator Plans"
-  description="Mascot AI pricing. Explorer is free with no card. Navigator adds more matching, voice coaching and essay coaching. Packs and a 6 Month Pass are one time."
+  title="Mascot AI Pricing: Explorer, Navigator, and Test Prep Plans"
+  description="Mascot AI pricing. Explorer is free with no card. Navigator adds more matching, voice coaching and essay coaching. Test Prep Free and Test Prep Pro are separate SAT and PSAT plans. Packs and a 6 Month Pass are one time."
 >
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(softwareApplicationSchema())} />
   <section class="container-x py-16 text-center sm:py-20">
@@ -52,7 +53,7 @@ const cell = (v) =>
   </section>
 
   <section class="container-x pb-16">
-    <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2" data-anim-group>
+    <div class="mx-auto grid max-w-3xl gap-6 md:grid-cols-2" data-anim-group>
       <div class="rounded-2xl border border-border-primary bg-bg-card p-8" data-anim>
         <h2 class="font-headline text-xl">Explorer</h2>
         <p class="mt-1 text-sm text-text-tertiary">Get started with the core tools.</p>
@@ -86,7 +87,7 @@ const cell = (v) =>
   </section>
 
   <section id="compare" class="container-x pb-16">
-    <div class="mx-auto max-w-4xl overflow-x-auto rounded-2xl border border-border-primary">
+    <div class="mx-auto max-w-3xl overflow-x-auto rounded-2xl border border-border-primary">
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-border-primary bg-bg-secondary text-left">
@@ -108,9 +109,41 @@ const cell = (v) =>
         </tbody>
       </table>
     </div>
-    <p class="mx-auto mt-3 max-w-4xl text-xs text-text-muted">
+    <p class="mx-auto mt-3 max-w-3xl text-xs text-text-muted">
       Limits may change. The current limits always show in the app.
     </p>
+  </section>
+
+  <section id="test-prep" class="container-x scroll-mt-24 pb-16">
+    <div class="mx-auto max-w-3xl">
+      <p class="eyebrow">Test prep</p>
+      <h2 class="mt-2 text-2xl">SAT and PSAT prep, its own plan</h2>
+      <p class="mt-2 text-sm text-text-tertiary">
+        Test prep is separate from Explorer and Navigator. Pick any test prep plan alongside any college plan.
+      </p>
+      <div class="mt-6 grid gap-6 md:grid-cols-2" data-anim-group>
+        <div class="rounded-2xl border border-border-primary bg-bg-card p-8" data-anim>
+          <h3 class="font-headline text-xl">Test Prep Free</h3>
+          <p class="mt-1 text-sm text-text-tertiary">Practice a little every day.</p>
+          <p class="mt-5 text-3xl font-bold">Free</p>
+          <ul class="mt-5 space-y-2 text-sm text-text-secondary">
+            {TEST_PREP_FREE.map((f) => (<li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>{f}</span></li>))}
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-brand-primary bg-bg-card p-8" data-anim>
+          <h3 class="font-headline text-xl">Test Prep Pro</h3>
+          <p class="mt-1 text-sm text-text-tertiary">Unlimited practice with your coach.</p>
+          <p class="mt-5 text-3xl font-bold">
+            {PRICING.prepMonthly}<span class="text-base font-normal text-text-muted">/month</span>
+          </p>
+          <p class="mt-1 text-sm text-text-muted">or {PRICING.prepAnnual}/year</p>
+          <p class="mt-1 text-sm text-text-muted">or {PRICING.prepSeason} season pass: 4 months, does not renew</p>
+          <ul class="mt-5 space-y-2 text-sm text-text-secondary">
+            {TEST_PREP_PRO.map((f) => (<li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>{f}</span></li>))}
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="container-x pb-20">

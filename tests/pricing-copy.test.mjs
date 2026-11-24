@@ -56,6 +56,20 @@ test('no em dashes in the Match Score copy', () => {
   }
 });
 
+test('pricing shows test prep as its own product with Test Prep Free and Test Prep Pro', () => {
+  const html = page('pricing');
+  for (const re of [/id="test-prep"/, /Test Prep Free/, /Test Prep Pro/, /\$14\.99/, /\$99/, /\$49/, /does not renew/, /15 voice coaching minutes a month/, /20 practice questions a day/]) assert.match(html, re);
+});
+
+test('no page sells a Prep counseling tier or says Navigator includes Prep', () => {
+  for (const p of ['pricing', '']) {
+    const html = page(p);
+    assert.doesNotMatch(html, /Everything in Prep|includes everything in Prep/i, `/${p}`);
+    assert.doesNotMatch(html, />Prep</, `/${p}`);
+  }
+  assert.match(page(''), /Test Prep Pro/);
+});
+
 test('counselor page shows the live plan prices and the control promises', () => {
   const html = page('counselors');
   for (const re of [/Scout/, /\$19/, /\$199/, /\$449/, /Expedition/, /never writes the essay/i, /12 months for the price of 11/]) assert.match(html, re);

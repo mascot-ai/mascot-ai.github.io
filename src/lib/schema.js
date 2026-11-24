@@ -4,6 +4,7 @@ import { BRAND, SITE_ORG_ID, APP_LOGIN_URL, PRICING } from './site.js';
 // Used on the home page and /pricing/ only. No aggregateRating: we have no reviews.
 export const softwareApplicationSchema = () => {
   const navigator = PRICING.navigatorMonthly.replace('$', '');
+  const prep = PRICING.prepMonthly.replace('$', '');
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -14,6 +15,13 @@ export const softwareApplicationSchema = () => {
     publisher: { '@id': SITE_ORG_ID },
     offers: [
       { '@type': 'Offer', name: 'Explorer', price: '0', priceCurrency: 'USD' },
+      {
+        '@type': 'Offer',
+        name: 'Test Prep Pro',
+        price: prep,
+        priceCurrency: 'USD',
+        priceSpecification: { '@type': 'UnitPriceSpecification', price: prep, priceCurrency: 'USD', billingDuration: 'P1M' },
+      },
       {
         '@type': 'Offer',
         name: 'Navigator',
