@@ -39,6 +39,28 @@ const schema = {
         'Mascot AI (mascot-ai.com, Mascot AI Labs, Inc.) is a college coaching app. It is a separate company from MascotGO and has no affiliation with it.',
     },
     {
+      '@type': 'WebApplication',
+      '@id': 'https://mascot-ai.com/#app',
+      name: BRAND,
+      url: 'https://app.mascot-ai.com/',
+      applicationCategory: 'EducationalApplication',
+      operatingSystem: 'Web',
+      description:
+        'Voice-first college coach for high school students. Builds a profile by conversation, matches students to colleges (reach, target, safety) with a reason for each, and coaches their own essays. Does not write essays.',
+      audience: { '@type': 'PeopleAudience', suggestedMinAge: 14, suggestedMaxAge: 19 },
+      publisher: { '@id': SITE_ORG_ID },
+      offers: [
+        { '@type': 'Offer', name: 'Explorer', price: '0', priceCurrency: 'USD' },
+        {
+          '@type': 'Offer',
+          name: 'Navigator',
+          price: '39.99',
+          priceCurrency: 'USD',
+          priceSpecification: { '@type': 'UnitPriceSpecification', price: '39.99', priceCurrency: 'USD', billingDuration: 'P1M' },
+        },
+      ],
+    },
+    {
       '@type': 'WebSite',
       '@id': 'https://mascot-ai.com/#website',
       url: 'https://mascot-ai.com/',
